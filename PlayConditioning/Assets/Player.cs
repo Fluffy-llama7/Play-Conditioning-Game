@@ -1,0 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Mech;
+
+public class Player : MonoBehaviour, IMechanic
+{
+    Rigidbody2D body;
+    float horizontal;
+    float vertical;
+    public float speed = 10.0f;
+    // Start is called before the first frame update
+    void Start()
+    {
+        body = GetComponent<Rigidbody2D>();
+    }
+    public void Damage(GameObject enemy)
+    {
+
+    }
+
+    public void OnLeftClick(GameObject player, string mechanic)
+    {
+
+    }
+
+    public void OnRightClick(GameObject player, string mechanic)
+    {
+
+    }
+
+    void Update()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+    }
+
+    void FixedUpdate()
+    {
+        body.velocity = new Vector2(horizontal * speed, vertical * speed);
+    }
+
+
+    // Update is called once per frame
+
+}
