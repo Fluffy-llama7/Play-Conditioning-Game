@@ -7,8 +7,8 @@ namespace Mech
 {
     public class BallMechanic : MonoBehaviour, IMechanic
     {
-        [SerializeField] private float speed = 100.0f;
-        [SerializeField] private float torque = 100.0f;
+        [SerializeField] private float speed = 1000.0f;
+        [SerializeField] private float torque = 10000.0f;
         private GameObject ball;
         private LineRenderer line;
         private HingeJoint2D joint;
@@ -29,7 +29,7 @@ namespace Mech
         void Update()
         {
             // Testing to see if mechanic 2 is working
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 OnRightClick(gameObject, "BallMechanic");
             }
@@ -55,7 +55,13 @@ namespace Mech
         // </summary>
         public void SwingBall(GameObject player)
         {
+            // Enable line renderer to draw string from player to ball
+            line.enabled = true;
+            line.SetPositions(new Vector3[] { player.transform.position, ball.transform.position });
+            Debug.Log("Drawing line");
+
             // Create hinge joint to attach the ball to the player
+            joint.enabled = true;
             joint.connectedBody = ball.GetComponent<Rigidbody2D>();
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = Vector2.zero;
@@ -67,10 +73,8 @@ namespace Mech
             motor.motorSpeed = speed;
             motor.maxMotorTorque = torque;
             joint.motor = motor;
+            Debug.Log($"Motor speed: {joint.motor.motorSpeed}, Motor torque: {joint.motor.maxMotorTorque}");
 
-            // Enable line renderer to draw string from player to ball
-            line.enabled = true;
-            Debug.Log("Drawing line");
         }
     }
 } 
