@@ -9,7 +9,5 @@ namespace Mech
         void Damage(GameObject enemy);
         void OnLeftClick(GameObject player, string mechanic);
         void OnRightClick(GameObject player, string mechanic);
-
     }
 }
-

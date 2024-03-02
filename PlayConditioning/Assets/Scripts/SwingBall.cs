@@ -2,56 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Mech;
 
-namespace Mech
+public class SwingBall : ScriptableObject
 {
-    public class SwingBall : MonoBehaviour
+    private Rigidbody2D body;
+    private GameObject ball;
+    private HingeJoint2D hinge;
+    private JointMotor2D motor;
+
+    void Awake()
     {
-        [SerializeField] private float speed = 100.0f;
-        [SerializeField] private float torque = 1000.0f;
-        private GameObject player;
-        private GameObject ball;
-        private LineRenderer rope;
-        private HingeJoint2D ropeHinge;
-        private HingeJoint2D ballHinge;
-        private JointMotor2D ropeMotor;
+        ball = GameObject.Find("Ball");
+        hinge = ball.GetComponent<HingeJoint2D>();
 
-        void Awake()
-        {
-            player = GameObject.Find("Player");
-
-            ball = GameObject.Find("Ball");
-            ballHinge = ball.GetComponent<HingeJoint2D>();
-
-            rope = GameObject.Find("Rope").GetComponent<LineRenderer>();
-            ropeHinge = rope.GetComponent<HingeJoint2D>();
-        }
-
-        void Update()
-        {
-            Swing();
-        }
-
-        public void Swing()
-        {
-            // Set rope to attach ball to player
-            rope.SetPositions(new Vector3[] { player.transform.position, ball.transform.position });
-
-            // Set up hinge joint to attach ball to rope;
-            ballHinge.connectedBody = rope.GetComponent<Rigidbody2D>();
-            ballHinge.autoConfigureConnectedAnchor = true;
-
-            // Set up hinge joint to attach rope to player
-            ropeHinge.connectedBody = player.GetComponent<Rigidbody2D>();
-            ropeHinge.autoConfigureConnectedAnchor = true;
-
-            // Set up motor to swing ball
-            ropeHinge.useMotor = true;
-            ropeMotor.motorSpeed = speed;
-            ropeMotor.maxMotorTorque = torque;
-            ropeHinge.motor = ropeMotor;
-
-            // FIXME: rope and ball speed are not the same
-        }
+        body = ball.GetComponent<Rigidbody2D>();
     }
-} 
+
+    /// <summary>
+    /// Swings the ball
+    /// </summary>
+    /// <param name="player"> player that is swinging the ball </param>
+    public void Execute(GameObject player)
+    {
+        body.bodyType = RigidbodyType2D.Dynamic;
+
+        hinge.enabled = true;
+        hinge.connectedBody = player.GetComponent<Rigidbody2D>();
+        hinge.autoConfigureConnectedAnchor = false;
+
+        hinge.useMotor = true;
+        motor = hinge.motor;
+        motor.motorSpeed = 200;
+        motor.maxMotorTorque = 1000;
+        hinge.motor = motor;
+    }
+
+    /// <summary>
+    /// Stops the ball from swinging
+    /// </summary>
+    public void Stop()
+    {
+        hinge.enabled = false;
+        body.velocity = Vector2.zero;
+        body.bodyType = RigidbodyType2D.Kinematic;
+    }
+}
