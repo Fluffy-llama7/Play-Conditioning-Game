@@ -6,8 +6,7 @@ namespace Mech
 {
     public interface IMechanic
     {
-        void Damage(GameObject enemy);
-        void OnLeftClick(GameObject player, string mechanic);
-        void OnRightClick(GameObject player, string mechanic);
+        void Execute(); //execute function of mechanic
+        void Update(); //function to call on every frame
     }
 }

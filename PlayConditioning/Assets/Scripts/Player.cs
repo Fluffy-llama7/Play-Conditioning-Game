@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mech;
 
-public class Player : MonoBehaviour, IMechanic
+public class Player : MonoBehaviour
 {
     Rigidbody2D body;
     float horizontal;
     float vertical;
     public float speed = 10.0f;
+    private IMechanic left1;
+    private IMechanic right1;
+    private IMechanic left2;
+    private IMechanic right2;
+    private IMechanic left3;
+    private IMechanic right3;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +45,4 @@ public class Player : MonoBehaviour, IMechanic
     {
         body.velocity = new Vector2(horizontal * speed, vertical * speed);
     }
-
-
-    // Update is called once per frame
-
 }

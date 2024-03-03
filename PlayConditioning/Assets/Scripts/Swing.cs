@@ -4,32 +4,47 @@ using UnityEditor;
 using UnityEngine;
 using Mech;
 
-public class SwingBall : ScriptableObject
+public class Swing : MonoBehaviour, IMechanic
 {
-    private Rigidbody2D body;
+
+    private GameObject rope;
+    private Rigidbody2D rb;
     private GameObject ball;
     private HingeJoint2D hinge;
     private JointMotor2D motor;
 
     void Awake()
     {
+        rope = GameObject.Find("Rope");
+
         ball = GameObject.Find("Ball");
         hinge = ball.GetComponent<HingeJoint2D>();
+        rb = ball.GetComponent<Rigidbody2D>();
+    }
 
-        body = ball.GetComponent<Rigidbody2D>();
+    public void Update()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            Execute();
+        }
+        else
+        {
+            Stop();
+        }
     }
 
     /// <summary>
     /// Swings the ball
     /// </summary>
-    /// <param name="player"> player that is swinging the ball </param>
-    public void Execute(GameObject player)
+    public void Execute()
     {
-        body.bodyType = RigidbodyType2D.Dynamic;
+        rb.bodyType = RigidbodyType2D.Dynamic;
 
         hinge.enabled = true;
-        hinge.connectedBody = player.GetComponent<Rigidbody2D>();
+        hinge.connectedBody = rope.GetComponent<Rigidbody2D>();
         hinge.autoConfigureConnectedAnchor = false;
+        hinge.useConnectedAnchor = true;
 
         hinge.useMotor = true;
         motor = hinge.motor;
@@ -44,7 +59,11 @@ public class SwingBall : ScriptableObject
     public void Stop()
     {
         hinge.enabled = false;
-        body.velocity = Vector2.zero;
-        body.bodyType = RigidbodyType2D.Kinematic;
+        hinge.connectedBody = null;
+        hinge.useMotor = false;
+
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0.0f;
+        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 }
