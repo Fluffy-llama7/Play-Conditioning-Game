@@ -7,13 +7,11 @@ public class Ball : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 lastVelocity;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         lastVelocity = rb.velocity;
@@ -21,9 +19,10 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        // Prevents ball from moving outside of the field
         if (other.gameObject.name == "Wall")
         {
-            // Reflects the ball's velocity when it collides with an object
+            // Reflects the ball's velocity when it collides with the wall
             var speed = lastVelocity.magnitude;
             var direction = Vector3.Reflect(lastVelocity.normalized, other.contacts[0].normal);
 

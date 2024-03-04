@@ -6,12 +6,12 @@ using Mech;
 
 public class Swing : MonoBehaviour, IMechanic
 {
-
+    private GameObject ball;
     private GameObject rope;
     private Rigidbody2D rb;
-    private GameObject ball;
     private HingeJoint2D hinge;
     private JointMotor2D motor;
+    private bool swing;
 
     void Awake()
     {
@@ -20,13 +20,29 @@ public class Swing : MonoBehaviour, IMechanic
         ball = GameObject.Find("Ball");
         hinge = ball.GetComponent<HingeJoint2D>();
         rb = ball.GetComponent<Rigidbody2D>();
+
+        hinge.enabled = false;
+        swing = false;
     }
 
-    public void Update()
+    public void Execute()
     {
-        if (Input.GetMouseButton(1))
+        swing = !swing;
+
+        if (swing)
         {
-            Execute();
+            // Connects the ball to the rope
+            hinge.enabled = true;
+            hinge.connectedBody = rope.GetComponent<Rigidbody2D>();
+            hinge.autoConfigureConnectedAnchor = false;
+            hinge.useConnectedAnchor = true;
+
+            // Uses the motor to swing the ball
+            hinge.useMotor = true;
+            motor = hinge.motor;
+            motor.motorSpeed = 200.0f;
+            motor.maxMotorTorque = 1000.0f;
+            hinge.motor = motor;
         }
         else
         {
@@ -34,36 +50,20 @@ public class Swing : MonoBehaviour, IMechanic
         }
     }
 
-    /// <summary>
-    /// Swings the ball
-    /// </summary>
-    public void Execute()
+    public void Update()
     {
-        rb.bodyType = RigidbodyType2D.Dynamic;
 
-        hinge.enabled = true;
-        hinge.connectedBody = rope.GetComponent<Rigidbody2D>();
-        hinge.autoConfigureConnectedAnchor = false;
-        hinge.useConnectedAnchor = true;
-
-        hinge.useMotor = true;
-        motor = hinge.motor;
-        motor.motorSpeed = 200;
-        motor.maxMotorTorque = 1000;
-        hinge.motor = motor;
     }
 
-    /// <summary>
-    /// Stops the ball from swinging
-    /// </summary>
     public void Stop()
     {
+        // Resets local variables
         hinge.enabled = false;
         hinge.connectedBody = null;
         hinge.useMotor = false;
 
+        rb.rotation = 0.0f;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0.0f;
-        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 }

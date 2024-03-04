@@ -4,6 +4,7 @@ using UnityEngine;
 using Mech;
 using System.Threading;
 using UnityEngine.XR;
+using Unity.VisualScripting;
 
 public class Shoot : MonoBehaviour, IMechanic
 {
@@ -24,21 +25,13 @@ public class Shoot : MonoBehaviour, IMechanic
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 0.0f;
+        
         // Shoots a bullet from the player's position
         Instantiate(bullet, gun.transform.position, Quaternion.identity);
     }
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Execute();
-        }
-    }
-
-    public void Stop()
-    {
-        rb.bodyType = RigidbodyType2D.Kinematic;
-        rb.gravityScale = 1.0f;
+    
     }
 }
