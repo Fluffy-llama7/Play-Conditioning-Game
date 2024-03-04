@@ -43,6 +43,14 @@ public class TracePath : MonoBehaviour, IMechanic
             {
                 positionList.Add(gameObject.transform.position);
             }
+
+            lineRenderer.enabled = true;
+            lineRenderer.useWorldSpace = true;
+            lineRenderer.positionCount = positionList.Count;
+            for (int i = 0; i < positionList.Count; i++)
+            {
+                lineRenderer.SetPosition(i, positionList[i]);
+            }
         }
     }
 
