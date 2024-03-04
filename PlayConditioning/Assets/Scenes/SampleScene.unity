@@ -958,7 +958,7 @@ GameObject:
   - component: {fileID: 1051126106}
   - component: {fileID: 1051126104}
   - component: {fileID: 1051126103}
-  - component: {fileID: 1051126105}
+  - component: {fileID: 1051126107}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -1030,7 +1030,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.96, y: 1.47, z: 0}
-  m_LocalScale: {x: 2.4452, y: 2.4452, z: 2.4452}
+  m_LocalScale: {x: 2.5317602, y: 2.5317602, z: 2.5317602}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1098,32 +1098,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!233 &1051126105
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051126100}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1300294130}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 3
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -1.6194994, y: -0.601178}
-  m_ConnectedAnchor: {x: 0, y: -0.00000023841858}
-  m_UseConnectedAnchor: 1
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!114 &1051126106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,6 +1110,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be2f1e19c10c3946aee67d36cdde5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!233 &1051126107
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051126100}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1300294130}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: -1.502139, y: -0.59012604}
+  m_ConnectedAnchor: {x: 0.10462952, y: -0.016038418}
+  m_UseConnectedAnchor: 1
+  m_UseMotor: 1
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
 --- !u!1 &1160610211
 GameObject:
   m_ObjectHideFlags: 0
