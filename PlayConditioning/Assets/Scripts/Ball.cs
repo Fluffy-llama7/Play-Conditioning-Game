@@ -7,12 +7,12 @@ public class Ball : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 lastVelocity;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         lastVelocity = rb.velocity;
     }
@@ -28,5 +28,7 @@ public class Ball : MonoBehaviour
 
             rb.velocity = direction * Mathf.Max(speed, 0f);
         }
+        
+        Debug.Log("Collided with " + other.gameObject.name);
     }
 }

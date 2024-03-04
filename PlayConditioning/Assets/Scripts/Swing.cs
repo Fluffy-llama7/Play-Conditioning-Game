@@ -57,7 +57,7 @@ public class Swing : MonoBehaviour, IMechanic
 
     public void Stop()
     {
-        // Resets local variables
+        // Reset variables
         hinge.enabled = false;
         hinge.connectedBody = null;
         hinge.useMotor = false;
