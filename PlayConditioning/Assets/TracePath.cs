@@ -59,6 +59,8 @@ public class TracePath : MonoBehaviour, IMechanic
     /// </summary>
     public void Stop()
     {
+        active = false;
         positionList.Clear();
+        lineRenderer.enabled = false;
     }
 }
