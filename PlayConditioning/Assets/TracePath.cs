@@ -7,16 +7,17 @@ using Mech;
 public class TracePath : MonoBehaviour, IMechanic
 {
     private LineRenderer lineRenderer;
-    private List<Vector3> positionList;
+    private List<Vector2> positionList;
     private bool active;
     // TODO finalize this value
-    private float trackTime = 2.0f;
+    private float trackTime = 3.0f;
     private float elapsedTime;
 
     void Awake()
     {
+        gameObject.transform.hasChanged = false;
         lineRenderer = gameObject.GetComponent<LineRenderer>();
-        positionList = new List<Vector3>();
+        positionList = new List<Vector2>();
         active = false;
         elapsedTime = 0.0f;
     }
@@ -41,7 +42,11 @@ public class TracePath : MonoBehaviour, IMechanic
 
             if (elapsedTime <= trackTime)
             {
-                positionList.Add(gameObject.transform.position);
+                if (gameObject.transform.hasChanged)
+                {
+                    positionList.Add(gameObject.transform.position);
+                    gameObject.transform.hasChanged = false;
+                }
             }
 
             lineRenderer.enabled = true;
@@ -59,8 +64,10 @@ public class TracePath : MonoBehaviour, IMechanic
     /// </summary>
     public void Stop()
     {
+        gameObject.transform.hasChanged = false;
         active = false;
         positionList.Clear();
         lineRenderer.enabled = false;
+        lineRenderer.positionCount = 0;
     }
 }
