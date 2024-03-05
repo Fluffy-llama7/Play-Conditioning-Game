@@ -66,6 +66,18 @@ public class TracePath : MonoBehaviour, IMechanic
                     Debug.Log("Collision detected between the player and the line.");
                 }
             }
+
+            for (int i = 0; i < lineRenderer.positionCount - 1; i++) 
+            {
+                Collider2D hit1 = Physics2D.OverlapPoint(lineRenderer.GetPosition(i), LayerMask.GetMask("Default"));
+                Collider2D hit2 = Physics2D.OverlapPoint(lineRenderer.GetPosition(i + 1), 
+                    LayerMask.GetMask("Default"));
+
+                if (hit1 != null && hit2 != null)
+                {
+                    Debug.Log("Collision detected within the line.");
+                }
+            }
         }
     }
 
