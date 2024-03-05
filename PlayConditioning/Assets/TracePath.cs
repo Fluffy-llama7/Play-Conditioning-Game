@@ -6,6 +6,7 @@ using Mech;
 
 public class TracePath : MonoBehaviour, IMechanic
 {
+    private Collider2D playerCollider;
     private LineRenderer lineRenderer;
     private List<Vector2> positionList;
     private bool active;
@@ -16,6 +17,7 @@ public class TracePath : MonoBehaviour, IMechanic
     void Awake()
     {
         gameObject.transform.hasChanged = false;
+        playerCollider = gameObject.GetComponent<Collider2D>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
         positionList = new List<Vector2>();
         active = false;
@@ -55,6 +57,14 @@ public class TracePath : MonoBehaviour, IMechanic
             for (int i = 0; i < positionList.Count; i++)
             {
                 lineRenderer.SetPosition(i, positionList[i]);
+            }
+
+            for (int i = 0; i < lineRenderer.positionCount; i++) 
+            {
+                if (playerCollider.bounds.Contains(lineRenderer.GetPosition(i)))
+                {
+                    Debug.Log("Collision detected between the player and the line.");
+                }
             }
         }
     }
