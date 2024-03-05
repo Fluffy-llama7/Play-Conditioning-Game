@@ -23,15 +23,12 @@ public class Shoot : MonoBehaviour, IMechanic
 
     public void Execute()
     {
-        rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.gravityScale = 0.0f;
-        
         // Shoots a bullet from the player's position
         Instantiate(bullet, gun.transform.position, Quaternion.identity);
     }
 
     public void Update()
     {
-    
+
     }
 }

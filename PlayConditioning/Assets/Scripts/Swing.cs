@@ -11,7 +11,7 @@ public class Swing : MonoBehaviour, IMechanic
     private Rigidbody2D rb;
     private HingeJoint2D hinge;
     private JointMotor2D motor;
-    private bool swing;
+    private bool active;
 
     void Awake()
     {
@@ -22,14 +22,24 @@ public class Swing : MonoBehaviour, IMechanic
         rb = ball.GetComponent<Rigidbody2D>();
 
         hinge.enabled = false;
-        swing = false;
+        active = false;
     }
 
     public void Execute()
     {
-        swing = !swing;
+        if (!active)
+        {
+            active = true;
+        }
+        else
+        {
+            Stop();
+        }
+    }
 
-        if (swing)
+    public void Update()
+    {
+        if (active)
         {
             // Connects the ball to the rope
             hinge.enabled = true;
@@ -40,23 +50,21 @@ public class Swing : MonoBehaviour, IMechanic
             // Uses the motor to swing the ball
             hinge.useMotor = true;
             motor = hinge.motor;
-            motor.motorSpeed = 200.0f;
+            motor.motorSpeed = 700.0f;
             motor.maxMotorTorque = 1000.0f;
             hinge.motor = motor;
-        }
-        else
-        {
-            Stop();
-        }
-    }
 
-    public void Update()
-    {
-
+            if (Mathf.Abs(rb.rotation) >= 420.0f)
+            {
+                Stop();
+            }
+        }
     }
 
     public void Stop()
     {
+        active = false;
+
         // Reset variables
         hinge.enabled = false;
         hinge.connectedBody = null;
