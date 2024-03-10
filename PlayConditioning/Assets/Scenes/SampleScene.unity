@@ -914,7 +914,6 @@ GameObject:
   - component: {fileID: 1051126106}
   - component: {fileID: 1051126104}
   - component: {fileID: 1051126103}
-  - component: {fileID: 1051126107}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -1066,32 +1065,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be2f1e19c10c3946aee67d36cdde5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!233 &1051126107
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051126100}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1300294130}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 3
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -1.5641291, y: -0.5806237}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_UseConnectedAnchor: 1
-  m_UseMotor: 1
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!1 &1160610211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,7 +1279,7 @@ Transform:
   m_GameObject: {fileID: 1300294129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.57, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1324,6 +1297,7 @@ GameObject:
   - component: {fileID: 1791896080}
   - component: {fileID: 1791896083}
   - component: {fileID: 1791896085}
+  - component: {fileID: 1791896086}
   - component: {fileID: 1791896082}
   - component: {fileID: 1791896084}
   m_Layer: 0
@@ -1497,12 +1471,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791896079}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28414617f32362c4a904d87b90cc4c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7040152947527359261, guid: c1ee5399e54328c448cdb7cfcbf88c4a, type: 3}
+--- !u!114 &1791896086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791896079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad0dd3a66c978344a9120775f3c0eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 800
+  radius: 5
 --- !u!1 &2131441646
 GameObject:
   m_ObjectHideFlags: 0

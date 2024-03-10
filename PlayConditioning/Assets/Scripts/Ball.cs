@@ -28,7 +28,5 @@ public class Ball : MonoBehaviour
 
             rb.velocity = direction * Mathf.Max(speed, 0f);
         }
-        
-        Debug.Log("Collided with " + other.gameObject.name);
     }
 }

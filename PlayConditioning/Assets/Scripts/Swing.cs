@@ -6,55 +6,63 @@ using Mech;
 
 public class Swing : MonoBehaviour, IMechanic
 {
+    [SerializeField] private float speed;
+    [SerializeField] private float radius;
+    private Shoot shoot;
     private GameObject ball;
     private GameObject rope;
     private Rigidbody2D rb;
-    private HingeJoint2D hinge;
-    private JointMotor2D motor;
+    private float angle;
     private bool active;
 
     void Awake()
     {
-        rope = GameObject.Find("Rope");
-
         ball = GameObject.Find("Ball");
-        hinge = ball.GetComponent<HingeJoint2D>();
+        rope = GameObject.Find("Rope");
+        shoot = GetComponent<Shoot>();
         rb = ball.GetComponent<Rigidbody2D>();
 
-        hinge.enabled = false;
-        active = false;
+        angle = 0.0f;
+        this.active = false;
     }
 
     public void Execute()
     {
-        if (!active)
+        // If the player is not swinging, start swinging
+        if (!this.active)
         {
-            active = true;
+            shoot.Stop();
+            this.active = true;
         }
         else
         {
+            // If player left clicks while swinging, stop swinging
             Stop();
         }
     }
 
     public void Update()
     {
-        if (active)
+        // If active, then the player is swinging
+        if (this.active)
         {
-            // Connects the ball to the rope
-            hinge.enabled = true;
-            hinge.connectedBody = rope.GetComponent<Rigidbody2D>();
-            hinge.autoConfigureConnectedAnchor = false;
-            hinge.useConnectedAnchor = true;
+            var distance = Vector3.Distance(ball.transform.position, rope.transform.position);
 
-            // Uses the motor to swing the ball
-            hinge.useMotor = true;
-            motor = hinge.motor;
-            motor.motorSpeed = 700.0f;
-            motor.maxMotorTorque = 1000.0f;
-            hinge.motor = motor;
+            // If the ball is outside the radius, snap it back to the radius
+            if (distance > radius)
+            {
+                SnapToRadius();
+            }
 
-            if (Mathf.Abs(rb.rotation) >= 420.0f)
+            // Debug.DrawLine(rope.transform.position, ball.transform.position, Color.red);
+
+            // Swinging logic
+            ball.transform.RotateAround(rope.transform.position, Vector3.forward, speed * Time.deltaTime);
+            
+            angle += speed * Time.deltaTime;
+
+            // If the player made full rotation, stop swinging
+            if (angle >= 360.0f)
             {
                 Stop();
             }
@@ -63,15 +71,26 @@ public class Swing : MonoBehaviour, IMechanic
 
     public void Stop()
     {
-        active = false;
+        // Resets local variables
+        this.active = false;
 
-        // Reset variables
-        hinge.enabled = false;
-        hinge.connectedBody = null;
-        hinge.useMotor = false;
-
-        rb.rotation = 0.0f;
+        angle = 0.0f;
+        ball.transform.rotation = Quaternion.identity;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0.0f;
+    }
+
+    public bool IsActive()
+    {
+        return this.active;
+    }
+
+    private void SnapToRadius()
+    {
+        // Calculate the direction vector from rope to ball and normalize it
+        Vector3 direction = (ball.transform.position - rope.transform.position).normalized;
+
+        // Move the ball to the correct position on the radius
+        ball.transform.position = rope.transform.position + direction * radius;
     }
 }
