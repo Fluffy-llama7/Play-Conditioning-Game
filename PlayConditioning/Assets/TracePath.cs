@@ -7,7 +7,7 @@ using Mech;
 public class TracePath : MonoBehaviour, IMechanic
 {
     private Collider2D playerCollider;
-    private LineRenderer lineRenderer;
+    private TrailRenderer trailRenderer;
     private List<Vector2> positionList;
     private bool active;
     // TODO finalize this value
@@ -18,7 +18,7 @@ public class TracePath : MonoBehaviour, IMechanic
     {
         gameObject.transform.hasChanged = false;
         playerCollider = gameObject.GetComponent<Collider2D>();
-        lineRenderer = gameObject.GetComponent<LineRenderer>();
+        trailRenderer = GetComponent<TrailRenderer>();
         positionList = new List<Vector2>();
         active = false;
         elapsedTime = 0.0f;
@@ -40,37 +40,29 @@ public class TracePath : MonoBehaviour, IMechanic
     {
         if (active)
         {
-            elapsedTime += Time.deltaTime;
-
-            if (elapsedTime <= trackTime)
+            if (elapsedTime >= trackTime)
             {
-                if (gameObject.transform.hasChanged)
-                {
-                    positionList.Add(gameObject.transform.position);
-                    gameObject.transform.hasChanged = false;
-                }
+                trailRenderer.enabled = false;
+            }
+            else
+            {
+                elapsedTime += Time.deltaTime;
+                positionList.Add(this.transform.position);
+                trailRenderer.enabled = true;
             }
 
-            lineRenderer.enabled = true;
-            lineRenderer.useWorldSpace = true;
-            lineRenderer.positionCount = positionList.Count;
-            for (int i = 0; i < positionList.Count; i++)
+            for (int i = 0; i < positionList.Count; i++) 
             {
-                lineRenderer.SetPosition(i, positionList[i]);
-            }
-
-            for (int i = 0; i < lineRenderer.positionCount; i++) 
-            {
-                if (playerCollider.bounds.Contains(lineRenderer.GetPosition(i)))
+                if (playerCollider.bounds.Contains(positionList[i]))
                 {
                     Debug.Log("Collision detected between the player and the line.");
                 }
             }
 
-            for (int i = 0; i < lineRenderer.positionCount - 1; i++) 
+            for (int i = 0; i < positionList.Count - 1; i++) 
             {
-                Collider2D hit1 = Physics2D.OverlapPoint(lineRenderer.GetPosition(i), LayerMask.GetMask("Default"));
-                Collider2D hit2 = Physics2D.OverlapPoint(lineRenderer.GetPosition(i + 1), 
+                Collider2D hit1 = Physics2D.OverlapPoint(positionList[i], LayerMask.GetMask("Default"));
+                Collider2D hit2 = Physics2D.OverlapPoint(positionList[i + 1], 
                     LayerMask.GetMask("Default"));
 
                 if (hit1 != null && hit2 != null)
@@ -89,7 +81,7 @@ public class TracePath : MonoBehaviour, IMechanic
         gameObject.transform.hasChanged = false;
         active = false;
         positionList.Clear();
-        lineRenderer.enabled = false;
-        lineRenderer.positionCount = 0;
+        trailRenderer.enabled = false;
+        trailRenderer.Clear();
     }
 }
