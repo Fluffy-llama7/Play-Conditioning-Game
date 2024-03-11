@@ -16,7 +16,6 @@ public class TracePath : MonoBehaviour, IMechanic
 
     void Awake()
     {
-        gameObject.transform.hasChanged = false;
         playerCollider = gameObject.GetComponent<Collider2D>();
         trailRenderer = GetComponent<TrailRenderer>();
         positionList = new List<Vector2>();
@@ -78,7 +77,6 @@ public class TracePath : MonoBehaviour, IMechanic
     /// </summary>
     public void Stop()
     {
-        gameObject.transform.hasChanged = false;
         active = false;
         positionList.Clear();
         trailRenderer.enabled = false;
