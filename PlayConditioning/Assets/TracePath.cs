@@ -29,7 +29,7 @@ public class TracePath : MonoBehaviour, IMechanic
     /// </summary>
     public void Execute()
     {
-        if(!active)
+        if (!active)
         {
             active = true;
         }
@@ -47,7 +47,6 @@ public class TracePath : MonoBehaviour, IMechanic
             {
                 elapsedTime += Time.deltaTime;
                 positionList.Add(this.transform.position);
-                trailRenderer.enabled = true;
             }
 
             for (int i = 0; i < positionList.Count; i++) 

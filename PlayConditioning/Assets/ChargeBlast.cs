@@ -6,9 +6,18 @@ using Mech;
 
 public class ChargeBlast : MonoBehaviour, IMechanic
 {
+    private GameObject blast;
+    private TrailRenderer trailRenderer;
+    private bool active;
+    [SerializeField] 
+    private float blastSpeed = 2.0f;
+
     void Awake()
     {
-        
+        blast = GameObject.Find("Blast");
+        trailRenderer = GetComponent<TrailRenderer>();
+        trailRenderer.enabled = false;
+        active = false;
     }
 
     /// <summary>
@@ -16,12 +25,18 @@ public class ChargeBlast : MonoBehaviour, IMechanic
     /// </summary>
     public void Execute()
     {
-        
+        if (!active)
+        {
+            active = true;
+        }
     }
 
     public void Update()
     {
-        
+        if (active)
+        {
+
+        }
     }
 
     /// <summary>
@@ -29,6 +44,6 @@ public class ChargeBlast : MonoBehaviour, IMechanic
     /// </summary>
     public void Stop()
     {
-        
+        active = false;
     }
 }
