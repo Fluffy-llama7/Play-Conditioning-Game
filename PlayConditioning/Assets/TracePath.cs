@@ -18,6 +18,7 @@ public class TracePath : MonoBehaviour, IMechanic
     {
         playerCollider = gameObject.GetComponent<Collider2D>();
         trailRenderer = GetComponent<TrailRenderer>();
+        trailRenderer.enabled = true;
         positionList = new List<Vector2>();
         active = false;
         elapsedTime = 0.0f;
@@ -31,7 +32,6 @@ public class TracePath : MonoBehaviour, IMechanic
         if(!active)
         {
             active = true;
-            elapsedTime = 0.0f;
         }
     }
 
