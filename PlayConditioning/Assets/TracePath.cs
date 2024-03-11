@@ -10,7 +10,7 @@ public class TracePath : MonoBehaviour, IMechanic
     private TrailRenderer trailRenderer;
     private List<Vector2> positionList;
     private bool active;
-    // TODO finalize this value
+    [SerializeField]
     private float trackTime = 3.0f;
     private float elapsedTime;
 
