@@ -19,8 +19,9 @@ public class Shooting : MonoBehaviour, IMechanic
     {
         mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         angle = Mathf.Atan2(mousepos.y, mousepos.x) * Mathf.Rad2Deg;
-        gun.rotation = Quaternion.Euler(0, 0, angle);
+        gun.rotation = Quaternion.Euler(player.transform.position.x, player.transform.position.y, angle);
         bulletClone = Instantiate(bullet);
+        bulletClone.transform.position = player.transform.position;
 
     }
 
@@ -32,8 +33,8 @@ public class Shooting : MonoBehaviour, IMechanic
         {
             Execute();
         }
-            
 
+        gun.position = player.transform.position;
         bulletClone.GetComponent<Rigidbody2D>().velocity = gun.right * speed;
     }
 }
