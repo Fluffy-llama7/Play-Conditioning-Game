@@ -11,6 +11,8 @@ public class ChargeBlast : MonoBehaviour, IMechanic
     private bool active;
     [SerializeField] 
     private float blastSpeed = 2.0f;
+    [SerializeField] 
+    private float chargeFactor = 0.5f;
 
     void Awake()
     {
@@ -35,7 +37,7 @@ public class ChargeBlast : MonoBehaviour, IMechanic
     {
         if (active)
         {
-
+            
         }
     }
 
