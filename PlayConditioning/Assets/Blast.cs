@@ -15,8 +15,6 @@ public class Blast : MonoBehaviour, IMechanic
     [SerializeField] 
     private float blastSpeed = 2.0f;
     [SerializeField] 
-    private float blastStrength = 4.0f;
-    [SerializeField] 
     private float blastGracePeriod = 3.0f;
     [SerializeField] 
     private float moveWaitTime = 2.0f;
