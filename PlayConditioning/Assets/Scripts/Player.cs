@@ -15,22 +15,24 @@ public class Player : MonoBehaviour
     private IMechanic right2;
     private IMechanic left3;
     private IMechanic right3;
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
     }
+
     public void Damage(GameObject enemy)
     {
 
     }
 
-    public void OnLeftClick(GameObject player, string mechanic)
+    public void OnLeftClick(string mechanic)
     {
-
+        
     }
 
-    public void OnRightClick(GameObject player, string mechanic)
+    public void OnRightClick(string mechanic)
     {
 
     }
@@ -45,8 +47,4 @@ public class Player : MonoBehaviour
     {
         body.velocity = new Vector2(horizontal * speed, vertical * speed);
     }
-
-
-    // Update is called once per frame
-
 }
