@@ -1223,11 +1223,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3645392293383000652, guid: 206d0ddb6205708458738768cc10fe72, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player(old)
       objectReference: {fileID: 0}
     - target: {fileID: 3687606037366973218, guid: 206d0ddb6205708458738768cc10fe72, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320655237241045289, guid: 206d0ddb6205708458738768cc10fe72, type: 3}
+      propertyPath: m_Name
+      value: Gun(old)
       objectReference: {fileID: 0}
     - target: {fileID: 6876631196452208182, guid: 206d0ddb6205708458738768cc10fe72, type: 3}
       propertyPath: m_LocalPosition.x
