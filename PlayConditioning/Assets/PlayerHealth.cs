@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
         {
             totalHealth -= blastDamage;
         }
-        else if (collision.gameObject.name == "Blast")
+        else if (collision.gameObject.name == "Enemy")
         {
             totalHealth -= enemyDamage;
         }
