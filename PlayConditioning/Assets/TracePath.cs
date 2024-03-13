@@ -7,6 +7,7 @@ using Mech;
 public class TracePath : MonoBehaviour, IMechanic
 {
     private Collider2D playerCollider;
+    private GameObject enemy;
     private TrailRenderer trailRenderer;
     private List<Vector2> positionList;
     private bool active;
@@ -17,6 +18,7 @@ public class TracePath : MonoBehaviour, IMechanic
     void Awake()
     {
         playerCollider = gameObject.GetComponent<Collider2D>();
+        enemy = GameObject.Find("Enemy");
         trailRenderer = GetComponent<TrailRenderer>();
         trailRenderer.enabled = true;
         positionList = new List<Vector2>();
