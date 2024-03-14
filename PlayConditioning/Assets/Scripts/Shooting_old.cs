@@ -1,9 +1,5 @@
 using Mech;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Mech;
-using UnityEditor;
 
 public class Shooting : MonoBehaviour, IMechanic
 {
