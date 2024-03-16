@@ -36,12 +36,12 @@ public class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
         // Calculate the direction of the bullet and set its velocity
-        Vector3 direction = (ball.transform.position - transform.position).normalized;
+        Vector3 direction = (ball.transform.position - this.transform.position).normalized;
         rb.velocity = direction * force;
 
         // Rotate the bullet to face the ball
         float rotation = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotation);
+        this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotation);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
