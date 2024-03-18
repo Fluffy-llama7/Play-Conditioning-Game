@@ -21,12 +21,16 @@ public class TracePath : MonoBehaviour, IMechanic
     void Awake()
     {
         playerCollider = gameObject.GetComponent<Collider2D>();
+        
         enemy = GameObject.Find("Enemy");
         lineRenderer = enemy.GetComponent<LineRenderer>();
         lineRenderer.useWorldSpace = false;
         lineRenderer.positionCount = 110;
+        lineRenderer.SetWidth(0.25f, 0.25f);
+
         trailRenderer = GetComponent<TrailRenderer>();
         trailRenderer.enabled = true;
+        
         positionList = new List<Vector2>();
         active = false;
         elapsedTime = 0.0f;
