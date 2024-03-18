@@ -8,17 +8,23 @@ public class TracePath : MonoBehaviour, IMechanic
 {
     private Collider2D playerCollider;
     private GameObject enemy;
+    private LineRenderer lineRenderer;
     private TrailRenderer trailRenderer;
     private List<Vector2> positionList;
     private bool active;
     [SerializeField]
-    private float trackTime = 3.0f;
     private float elapsedTime;
+    private float radius = 3.0f;
+    private float trackTime = 3.0f;
+    private float thetaScale = 0.01f;
 
     void Awake()
     {
         playerCollider = gameObject.GetComponent<Collider2D>();
         enemy = GameObject.Find("Enemy");
+        lineRenderer = enemy.GetComponent<LineRenderer>();
+        lineRenderer.useWorldSpace = false;
+        lineRenderer.positionCount = 110;
         trailRenderer = GetComponent<TrailRenderer>();
         trailRenderer.enabled = true;
         positionList = new List<Vector2>();
@@ -70,6 +76,17 @@ public class TracePath : MonoBehaviour, IMechanic
                     Debug.Log("Collision detected within the line.");
                 }
             }
+
+            float theta = 0f;
+            for (int i = 0; i < lineRenderer.positionCount; i++)
+            {          
+                theta += (2.0f * Mathf.PI * thetaScale);         
+                float x = radius * Mathf.Cos(theta);
+                float y = radius * Mathf.Sin(theta);
+                x += enemy.transform.position.x;
+                y += enemy.transform.position.y;
+                lineRenderer.SetPosition(i, new Vector3(x, y, 1));
+            }
         }
     }
 
@@ -80,6 +97,7 @@ public class TracePath : MonoBehaviour, IMechanic
     {
         active = false;
         positionList.Clear();
+        lineRenderer.positionCount = 0;
         trailRenderer.enabled = false;
         trailRenderer.Clear();
     }
