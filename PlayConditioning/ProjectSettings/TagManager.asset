@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -11,8 +13,8 @@ TagManager:
   - Player layer
   - Water
   - UI
+  - Enemy layer
   - Ball layer
-  - 
   - 
   - 
   - 
