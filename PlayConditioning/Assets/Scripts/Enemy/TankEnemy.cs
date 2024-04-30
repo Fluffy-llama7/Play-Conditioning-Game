@@ -5,7 +5,7 @@ using Enemy;
 using UnityEngine.Rendering;
 using static UnityEngine.GraphicsBuffer;
 
-public class RangedEnemy : MonoBehaviour, IEnemy
+public class TankEnemy: MonoBehaviour, IEnemy
 {
     [SerializeField]
     private GameObject prefab;

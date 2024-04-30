@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rope : MonoBehaviour
+public class RopeController : MonoBehaviour
 {
     private LineRenderer line;
     private GameObject ball;
-    private Swing swing;
+    private SwingMechanic swing;
 
     void Start()
     {
         ball = GameObject.Find("Ball");
-        swing = GameObject.Find("Player").GetComponent<Swing>();
+        swing = GameObject.Find("Player").GetComponent<SwingMechanic>();
         line = GetComponent<LineRenderer>();
 
         line.enabled = false;

@@ -4,11 +4,11 @@ using UnityEditor;
 using UnityEngine;
 using Mech;
 
-public class Swing : MonoBehaviour, IMechanic
+public class SwingMechanic : MonoBehaviour, IMechanic
 {
     [SerializeField] private float speed;
     [SerializeField] private float radius;
-    private Shoot shoot;
+    private ShootMechanic shoot;
     private GameObject ball;
     private GameObject rope;
     private Rigidbody2D rb;
@@ -19,7 +19,7 @@ public class Swing : MonoBehaviour, IMechanic
     {
         ball = GameObject.Find("Ball");
         rope = GameObject.Find("Rope");
-        shoot = GetComponent<Shoot>();
+        shoot = GetComponent<ShootMechanic>();
         rb = ball.GetComponent<Rigidbody2D>();
 
         angle = 0.0f;

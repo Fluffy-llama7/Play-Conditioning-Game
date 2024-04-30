@@ -6,11 +6,11 @@ using System.Threading;
 using UnityEngine.XR;
 using Unity.VisualScripting;
 
-public class Shoot : MonoBehaviour, IMechanic
+public class ShootMechanic : MonoBehaviour, IMechanic
 {
     [SerializeField] private GameObject bullet;
     private GameObject gun;
-    private Swing swing;
+    private SwingMechanic swing;
     private GameObject ball;
     private Rigidbody2D rb;
 
@@ -19,14 +19,14 @@ public class Shoot : MonoBehaviour, IMechanic
         gun = GameObject.Find("Gun");
         ball = GameObject.Find("Ball");
         rb = ball.GetComponent<Rigidbody2D>();
-        swing = GetComponent<Swing>();
+        swing = GetComponent<SwingMechanic>();
     }
 
     public void Execute()
     {
         if (swing.IsActive())
         {
-            swing.Stop();
+            Stop();
         }
 
         Instantiate(bullet, gun.transform.position, Quaternion.identity);
