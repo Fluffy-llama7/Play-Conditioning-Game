@@ -9,14 +9,15 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
 {
     private GameObject target;
     private Rigidbody2D rb;
-
-    public float health = 100f;
+    private Animator animator;
+    public float health = 10f;
     public float speed = 5f;
 
     void Start()
     {
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     public void Update()

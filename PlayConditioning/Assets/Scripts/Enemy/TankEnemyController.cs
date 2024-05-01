@@ -11,17 +11,18 @@ public class TankEnemyController : MonoBehaviour, IEnemy
     private GameObject prefab;
     private GameObject target;
     private Rigidbody2D rb;
-
-    public float health = 100f;
+    private Animator animator;
+    public float health = 10f;
     public float speed = 5f;
     public float range = 5f;
-    public float fireRate = 2f;
-    private float fireTime;
+    public float fireTime = 2f;
+    private bool canFire = true;
 
     void Start()
     {
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     public void Update()
@@ -37,6 +38,10 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
             transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
         }
+        else
+        {
+            Attack();
+        }
     }
 
     public void TakeDamage()
@@ -46,15 +51,18 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
     public void Attack()
     {
-        if (fireTime <= 0.0f)
+        if (canFire)
         {
             Instantiate(prefab, transform.position, Quaternion.identity);
-            fireTime = fireRate;
+            canFire = false;
+            StartCoroutine(ShootDelay());
         }
-        else
-        {
-            fireTime -= Time.deltaTime;
-        }
+    }
+
+    private IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(fireTime);
+        canFire = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
