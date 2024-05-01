@@ -6,8 +6,8 @@ namespace Enemy
 {
     public interface IEnemy
     {
+        void Update(); //action when enemy is updated
         void TakeDamage(); //action when enemy is hit
-        void Update(); //function to call on every frame
         void Attack(); //action when attacking
     }
 }
