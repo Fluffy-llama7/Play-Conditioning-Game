@@ -11,7 +11,8 @@ public class TankEnemyController : MonoBehaviour, IEnemy
     private GameObject prefab;
     private GameObject target;
     private Rigidbody2D rb;
-    private Animator animator;
+    private Vector2 direction;
+    public Animator animator;
     public float health = 10f;
     public float speed = 5f;
     public float range = 5f;
@@ -27,21 +28,27 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
     public void Update()
     {
+        direction = (target.transform.position - transform.position).normalized;
+    }
+
+    void FixedUpdate()
+    {
         float distance = Vector3.Distance(target.transform.position, transform.position);
+
+        animator.SetFloat("AnimMoveX", direction.x);
+        animator.SetFloat("AnimMoveY", direction.y);
 
         if (distance >= range)
         {
-            Vector3 direction = (target.transform.position - transform.position);
-            direction.Normalize();
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
-
-            transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
+            animator.SetBool("AnimAttack", false);
+            rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
         }
         else
         {
+            rb.velocity = Vector2.zero;
             Attack();
         }
+
     }
 
     public void TakeDamage()
@@ -51,6 +58,8 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
     public void Attack()
     {
+        animator.SetBool("AnimAttack", true);
+
         if (canFire)
         {
             Instantiate(prefab, transform.position, Quaternion.identity);

@@ -2,6 +2,7 @@ using Enemy;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static Unity.VisualScripting.Member;
 
@@ -9,9 +10,12 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
 {
     private GameObject target;
     private Rigidbody2D rb;
-    private Animator animator;
+    private Vector2 direction;
+
+    public Animator animator;
     public float health = 10f;
     public float speed = 5f;
+    public float range = 0f;
 
     void Start()
     {
@@ -22,12 +26,18 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
 
     public void Update()
     {
-        Vector3 direction = (target.transform.position - transform.position);
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
+        direction = (target.transform.position - transform.position).normalized;
+    }
 
-        transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
+    void FixedUpdate()
+    {
+        float distance = Vector3.Distance(target.transform.position, transform.position);
+
+        animator.SetFloat("AnimMoveX", direction.x);
+        animator.SetFloat("AnimMoveY", direction.y);
+        animator.SetBool("AnimAttack", false);
+
+        rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
     }
 
     public void TakeDamage()
@@ -37,7 +47,7 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
 
     public void Attack()
     {
-    
+        animator.SetBool("AnimAttack", true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

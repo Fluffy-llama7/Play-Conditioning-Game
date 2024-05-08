@@ -20,7 +20,7 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         // Prevents ball from moving outside of the field
-        if (other.gameObject.name == "Wall")
+        if (other.gameObject.name == "Walls")
         {
             // Reflects the ball's velocity when it collides with the wall
             var speed = lastVelocity.magnitude;

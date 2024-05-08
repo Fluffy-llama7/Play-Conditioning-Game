@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1109684654488869023}
   - component: {fileID: 7022800935720266623}
-  - component: {fileID: 2421679271145695995}
   - component: {fileID: 7692613447331538907}
   - component: {fileID: 6779430981502429318}
   - component: {fileID: 1440889584348658943}
+  - component: {fileID: 6006584503797185739}
   m_Layer: 6
   m_Name: Tank_Enemy
   m_TagString: Enemy
@@ -90,28 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2421679271145695995
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4116428377141593761}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 65f6baad8041f7f48a49b73823344aab, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &7692613447331538907
 Rigidbody2D:
   serializedVersion: 4
@@ -187,8 +165,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a88cb1343d32664ab10097eaf25c41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7040152947527359261, guid: b6f30409e0daf4e53acc4f32fbbca836, type: 3}
-  health: 100
+  prefab: {fileID: 7040152947527359261, guid: c1ee5399e54328c448cdb7cfcbf88c4a, type: 3}
+  animator: {fileID: 6006584503797185739}
+  health: 10
   speed: 2
   range: 4
   fireTime: 2
+--- !u!95 &6006584503797185739
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4116428377141593761}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71e43e8647075874290ef10e7b5e1db7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

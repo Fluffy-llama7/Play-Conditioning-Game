@@ -187,7 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea33f2d72584e4f47981128f4d4df97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  damage: 5
+  animator: {fileID: 7636386181009290154}
+  health: 10
   speed: 5
   range: 3
+  chargeTime: 2
