@@ -15,7 +15,7 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
     public Animator animator;
     public float health = 10f;
     public float speed = 5f;
-    public float range = 3f;
+    public float range = 2f;
     public float chargeTime = 2f;
     private bool canCharge = true;
 
@@ -29,14 +29,14 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
     public void Update()
     {
         direction = (target.transform.position - transform.position).normalized;
+
+        animator.SetFloat("AnimMoveX", direction.x);
+        animator.SetFloat("AnimMoveY", direction.y);
     }
 
     void FixedUpdate()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);
-
-        animator.SetFloat("AnimMoveX", direction.x);
-        animator.SetFloat("AnimMoveY", direction.y);
 
         if (distance >= range)
         {
@@ -46,19 +46,25 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
         else
         {
             Attack();
+            animator.SetBool("AnimAttack", true);
         }
     }
 
     public void TakeDamage()
     {
-        
+        health -= 1;
+        Debug.Log("Health: " + health);
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Attack()
     {
         if (canCharge)
         {
-            animator.SetBool("AnimAttack", true);
             var targetPosition = target.transform.position;
             var direction = targetPosition - transform.position;
             StartCoroutine(Charge(direction));
@@ -69,8 +75,11 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
 
     private IEnumerator Charge(Vector3 direction)
     {
-        rb.velocity = direction * speed;
+        Physics2D.IgnoreLayerCollision(3, 6, true);
+        rb.velocity = direction * speed * 2;
         yield return new WaitForSeconds(0.5f);
+        Physics2D.IgnoreLayerCollision(3, 6, true);
+        animator.SetBool("AnimAttack", false);
         rb.velocity = Vector2.zero;
     }
 

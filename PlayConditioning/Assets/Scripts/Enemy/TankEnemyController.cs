@@ -29,14 +29,14 @@ public class TankEnemyController : MonoBehaviour, IEnemy
     public void Update()
     {
         direction = (target.transform.position - transform.position).normalized;
+
+        animator.SetFloat("AnimMoveX", direction.x);
+        animator.SetFloat("AnimMoveY", direction.y);
     }
 
     void FixedUpdate()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);
-
-        animator.SetFloat("AnimMoveX", direction.x);
-        animator.SetFloat("AnimMoveY", direction.y);
 
         if (distance >= range)
         {
@@ -53,7 +53,13 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
     public void TakeDamage()
     {
-        
+        health -= 1;
+        Debug.Log("Health: " + health);
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Attack()
