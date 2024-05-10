@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mech;
 using System.Linq;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D body;
     float horizontal;
     float vertical;
+    private Vector3 direction;
+    public Animator animator;
     public float speed = 10.0f;
+    public float attackDelay = 3.0f;
     private IMechanic left1;
     private IMechanic right1;
     private IMechanic left2;
     private IMechanic right2;
     private IMechanic left3;
     private IMechanic right3;
+    private bool attacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +28,10 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         left1 = GetComponent<ShootMechanic>();
         right1 = GetComponent<SwingMechanic>();
+        animator = GetComponent<Animator>();
     }
 
-    public void Damage(GameObject enemy)
+    public void TakeDamage(GameObject enemy)
     {
 
     }
@@ -51,19 +57,39 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
+        direction = new Vector3(horizontal, vertical, 0).normalized;
+
+        animator.SetFloat("X", direction.x);
+        animator.SetFloat("Y", direction.y);
+
         if (Input.GetMouseButtonDown(0))
         {
             OnLeftClick("Shoot");
+            attacking = true;
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             OnRightClick("Swing");
+            attacking = true;
         }
+
+        if (attacking)
+        {
+            animator.SetBool("Attack", true);
+        }
+
+        
     }
 
     void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * speed, vertical * speed);
+    }
+
+    private IEnumerator AttackDelay()
+    {
+        yield return new WaitForSeconds(attackDelay);
+        attacking = false;
     }
 }

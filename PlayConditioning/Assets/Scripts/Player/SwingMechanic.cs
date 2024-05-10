@@ -9,7 +9,7 @@ public class SwingMechanic : MonoBehaviour, IMechanic
     [SerializeField] private float speed;
     [SerializeField] private float radius;
     private ShootMechanic shoot;
-    private GameObject ball;
+    private GameObject orb;
     private GameObject rope;
     private Rigidbody2D rb;
     private float angle;
@@ -17,10 +17,10 @@ public class SwingMechanic : MonoBehaviour, IMechanic
 
     void Awake()
     {
-        ball = GameObject.Find("Ball");
+        orb = GameObject.Find("Orb");
         rope = GameObject.Find("Rope");
         shoot = GetComponent<ShootMechanic>();
-        rb = ball.GetComponent<Rigidbody2D>();
+        rb = orb.GetComponent<Rigidbody2D>();
 
         angle = 0.0f;
         this.active = false;
@@ -46,7 +46,7 @@ public class SwingMechanic : MonoBehaviour, IMechanic
         // If active, then the player is swinging
         if (this.active)
         {
-            var distance = Vector3.Distance(ball.transform.position, rope.transform.position);
+            var distance = Vector3.Distance(orb.transform.position, rope.transform.position);
 
             // If the ball is outside the radius, snap it back to the radius
             if (distance > radius)
@@ -57,7 +57,7 @@ public class SwingMechanic : MonoBehaviour, IMechanic
             // Debug.DrawLine(rope.transform.position, ball.transform.position, Color.red);
 
             // Swinging logic
-            ball.transform.RotateAround(rope.transform.position, Vector3.forward, speed * Time.deltaTime);
+            orb.transform.RotateAround(rope.transform.position, Vector3.forward, speed * Time.deltaTime);
             
             angle += speed * Time.deltaTime;
 
@@ -75,7 +75,7 @@ public class SwingMechanic : MonoBehaviour, IMechanic
         this.active = false;
 
         angle = 0.0f;
-        ball.transform.rotation = Quaternion.identity;
+        orb.transform.rotation = Quaternion.identity;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0.0f;
     }
@@ -88,9 +88,9 @@ public class SwingMechanic : MonoBehaviour, IMechanic
     private void SnapToRadius()
     {
         // Calculate the direction vector from rope to ball and normalize it
-        Vector3 direction = (ball.transform.position - rope.transform.position).normalized;
+        Vector3 direction = (orb.transform.position - rope.transform.position).normalized;
 
         // Move the ball to the correct position on the radius
-        ball.transform.position = rope.transform.position + direction * radius;
+        orb.transform.position = rope.transform.position + direction * radius;
     }
 }

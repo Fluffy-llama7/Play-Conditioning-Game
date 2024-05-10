@@ -30,8 +30,8 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
     {
         direction = (target.transform.position - transform.position).normalized;
 
-        animator.SetFloat("AnimMoveX", direction.x);
-        animator.SetFloat("AnimMoveY", direction.y);
+        animator.SetFloat("X", direction.x);
+        animator.SetFloat("Y", direction.y);
     }
 
     void FixedUpdate()
@@ -40,24 +40,24 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
 
         if (distance >= range)
         {
-            animator.SetBool("AnimAttack", false);
+            animator.SetBool("Charge", false);
             rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
         }
         else
         {
             Attack();
-            animator.SetBool("AnimAttack", true);
+            animator.SetBool("Charge", true);
         }
     }
 
     public void TakeDamage()
     {
         health -= 1;
-        Debug.Log("Health: " + health);
+        Debug.Log("Charge's Health: " + health);
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 
@@ -75,11 +75,9 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
 
     private IEnumerator Charge(Vector3 direction)
     {
-        Physics2D.IgnoreLayerCollision(3, 6, true);
         rb.velocity = direction * speed * 2;
         yield return new WaitForSeconds(0.5f);
-        Physics2D.IgnoreLayerCollision(3, 6, true);
-        animator.SetBool("AnimAttack", false);
+        animator.SetBool("Charge", false);
         rb.velocity = Vector2.zero;
     }
 
@@ -91,7 +89,7 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name == "Ball")
+        if (other.gameObject.name == "Orb")
         {
             TakeDamage();
         }

@@ -1,19 +1,21 @@
+using Enemy;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using Enemy;
-using UnityEngine.Rendering;
-using static UnityEngine.GraphicsBuffer;
+using static Unity.VisualScripting.Member;
 
 public class BasicEnemyController : MonoBehaviour, IEnemy
 {
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
+
     public Animator animator;
     public float health = 10f;
     public float speed = 5f;
-    public float range = 5f;
+    public float range = 2f;
 
     void Start()
     {
@@ -26,8 +28,8 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
     {
         direction = (target.transform.position - transform.position).normalized;
 
-        animator.SetFloat("AnimMoveX", direction.x);
-        animator.SetFloat("AnimMoveY", direction.y);
+        animator.SetFloat("X", direction.x);
+        animator.SetFloat("Y", direction.y);
     }
 
     void FixedUpdate()
@@ -36,35 +38,34 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
 
         if (distance >= range)
         {
-            animator.SetBool("AnimAttack", false);
+            animator.SetBool("Basic", false);
             rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
         }
         else
         {
             Attack();
         }
-
     }
 
     public void TakeDamage()
     {
         health -= 1;
-        Debug.Log("Health: " + health);
+        Debug.Log("Charge's Health: " + health);
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 
     public void Attack()
     {
-        animator.SetBool("AnimAttack", true);
+        animator.SetBool("Basic", true);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name == "Ball")
+        if (other.gameObject.name == "Orb")
         {
             TakeDamage();
         }

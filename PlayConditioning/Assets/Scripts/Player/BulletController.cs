@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private GameObject ball;
-    private Rigidbody2D ballRigidBody;
+    private GameObject orb;
+    private Rigidbody2D orbRB;
     private Rigidbody2D rb;
     private float timer;
     private float force;
     
     void Awake()
     {
-        ball = GameObject.Find("Ball");
-        ballRigidBody = ball.GetComponent<Rigidbody2D>();
+        orb = GameObject.Find("Orb");
+        orbRB = orb.GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody2D>();
 
         timer = 0.0f;
@@ -36,7 +36,7 @@ public class BulletController : MonoBehaviour
     private void FixedUpdate()
     {
         // Calculate the direction of the bullet and set its velocity
-        Vector3 direction = (ball.transform.position - this.transform.position).normalized;
+        Vector3 direction = (orb.transform.position - this.transform.position).normalized;
         rb.velocity = direction * force;
 
         // Rotate the bullet to face the ball
@@ -47,11 +47,11 @@ public class BulletController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // if the bullet hits the ball, bullet is destroyed and ball's velocity is half of the bullet's velocity
-        if (other.gameObject.name == "Ball")
+        if (other.gameObject.name == "Orb")
         {
-            if (ballRigidBody != null)
+            if (orbRB != null)
             {
-                ballRigidBody.velocity = rb.velocity / 2;
+                orbRB.velocity = rb.velocity / 2;
             }
 
             Destroy(this.gameObject);

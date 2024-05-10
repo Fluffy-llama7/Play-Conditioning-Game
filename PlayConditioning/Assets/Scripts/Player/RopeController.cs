@@ -5,12 +5,12 @@ using UnityEngine;
 public class RopeController : MonoBehaviour
 {
     private LineRenderer line;
-    private GameObject ball;
+    private GameObject orb;
     private SwingMechanic swing;
 
     void Start()
     {
-        ball = GameObject.Find("Ball");
+        orb = GameObject.Find("Orb");
         swing = GameObject.Find("Player").GetComponent<SwingMechanic>();
         line = GetComponent<LineRenderer>();
 
@@ -23,7 +23,7 @@ public class RopeController : MonoBehaviour
         {
             line.enabled = true;
             line.SetPosition(0, transform.position);
-            line.SetPosition(1, ball.transform.position);
+            line.SetPosition(1, orb.transform.position);
         }
         else
         {

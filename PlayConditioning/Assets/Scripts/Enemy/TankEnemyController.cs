@@ -30,8 +30,8 @@ public class TankEnemyController : MonoBehaviour, IEnemy
     {
         direction = (target.transform.position - transform.position).normalized;
 
-        animator.SetFloat("AnimMoveX", direction.x);
-        animator.SetFloat("AnimMoveY", direction.y);
+        animator.SetFloat("X", direction.x);
+        animator.SetFloat("Y", direction.y);
     }
 
     void FixedUpdate()
@@ -40,7 +40,7 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
         if (distance >= range)
         {
-            animator.SetBool("AnimAttack", false);
+            animator.SetBool("Tank", false);
             rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
         }
         else
@@ -54,17 +54,17 @@ public class TankEnemyController : MonoBehaviour, IEnemy
     public void TakeDamage()
     {
         health -= 1;
-        Debug.Log("Health: " + health);
+        Debug.Log("Tank's Health: " + health);
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 
     public void Attack()
     {
-        animator.SetBool("AnimAttack", true);
+        animator.SetBool("Tank", true);
 
         if (canFire)
         {
@@ -80,9 +80,9 @@ public class TankEnemyController : MonoBehaviour, IEnemy
         canFire = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name == "Ball")
+        if (other.gameObject.name == "Orb")
         {
             TakeDamage();
         }

@@ -11,14 +11,14 @@ public class ShootMechanic : MonoBehaviour, IMechanic
     [SerializeField] private GameObject bullet;
     private GameObject gun;
     private SwingMechanic swing;
-    private GameObject ball;
+    private GameObject orb;
     private Rigidbody2D rb;
 
     void Awake()
     {
         gun = GameObject.Find("Gun");
-        ball = GameObject.Find("Ball");
-        rb = ball.GetComponent<Rigidbody2D>();
+        orb = GameObject.Find("Orb");
+        rb = orb.GetComponent<Rigidbody2D>();
         swing = GetComponent<SwingMechanic>();
     }
 

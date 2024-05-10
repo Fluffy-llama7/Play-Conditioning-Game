@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7022800935720266623}
   - component: {fileID: 7692613447331538907}
   - component: {fileID: 6779430981502429318}
-  - component: {fileID: 1440889584348658943}
   - component: {fileID: 6006584503797185739}
+  - component: {fileID: 1440889584348658943}
   m_Layer: 6
   m_Name: Tank_Enemy
   m_TagString: Enemy
@@ -153,24 +153,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.515625
---- !u!114 &1440889584348658943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4116428377141593761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a88cb1343d32664ab10097eaf25c41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 7040152947527359261, guid: c1ee5399e54328c448cdb7cfcbf88c4a, type: 3}
-  animator: {fileID: 6006584503797185739}
-  health: 10
-  speed: 2
-  range: 4
-  fireTime: 2
 --- !u!95 &6006584503797185739
 Animator:
   serializedVersion: 7
@@ -193,3 +175,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1440889584348658943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4116428377141593761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a88cb1343d32664ab10097eaf25c41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7040152947527359261, guid: c1ee5399e54328c448cdb7cfcbf88c4a, type: 3}
+  animator: {fileID: 6006584503797185739}
+  health: 10
+  speed: 2
+  range: 4
+  fireTime: 2
