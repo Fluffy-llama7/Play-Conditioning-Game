@@ -8,17 +8,14 @@ public class BulletController : MonoBehaviour
     private GameObject orb;
     private Rigidbody2D orbRB;
     private Rigidbody2D rb;
-    private float timer;
-    private float force;
+    private float timer = 2f;
+    private float force = 20f;
     
     void Awake()
     {
         orb = GameObject.Find("Orb");
         orbRB = orb.GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody2D>();
-
-        timer = 0.0f;
-        force = 20.0f;
     }
 
     void Update()

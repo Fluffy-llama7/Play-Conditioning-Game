@@ -7,17 +7,17 @@ using static UnityEngine.GraphicsBuffer;
 
 public class TankEnemyController : MonoBehaviour, IEnemy
 {
-    [SerializeField]
-    private GameObject prefab;
+    public GameObject prefab;
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
+    private bool canFire = true;
+
     public Animator animator;
-    public float health = 10f;
+    public float health = 5f;
     public float speed = 5f;
     public float range = 5f;
     public float fireTime = 2f;
-    private bool canFire = true;
 
     void Start()
     {
@@ -40,7 +40,7 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
         if (distance >= range)
         {
-            animator.SetBool("Tank", false);
+            animator.SetBool("Attack", false);
             rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
         }
         else
@@ -48,13 +48,11 @@ public class TankEnemyController : MonoBehaviour, IEnemy
             rb.velocity = Vector2.zero;
             Attack();
         }
-
     }
 
     public void TakeDamage()
     {
         health -= 1;
-        Debug.Log("Tank's Health: " + health);
 
         if (health <= 0)
         {
@@ -64,7 +62,7 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
     public void Attack()
     {
-        animator.SetBool("Tank", true);
+        animator.SetBool("Attack", true);
 
         if (canFire)
         {

@@ -11,13 +11,13 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
+    private bool canCharge = true;
 
     public Animator animator;
-    public float health = 10f;
+    public float health = 5f;
     public float speed = 5f;
     public float range = 2f;
     public float chargeTime = 2f;
-    private bool canCharge = true;
 
     void Start()
     {
@@ -40,20 +40,19 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
 
         if (distance >= range)
         {
-            animator.SetBool("Charge", false);
+            animator.SetBool("Attack", false);
             rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
         }
         else
         {
             Attack();
-            animator.SetBool("Charge", true);
+            animator.SetBool("Attack", true);
         }
     }
 
     public void TakeDamage()
     {
         health -= 1;
-        Debug.Log("Charge's Health: " + health);
 
         if (health <= 0)
         {
@@ -77,7 +76,7 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
     {
         rb.velocity = direction * speed * 2;
         yield return new WaitForSeconds(0.5f);
-        animator.SetBool("Charge", false);
+        animator.SetBool("Attack", false);
         rb.velocity = Vector2.zero;
     }
 

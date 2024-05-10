@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a88cb1343d32664ab10097eaf25c41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7040152947527359261, guid: c1ee5399e54328c448cdb7cfcbf88c4a, type: 3}
+  prefab: {fileID: 7040152947527359261, guid: f14ee59e1ae00a945b3012ae5ff5e8af, type: 3}
   animator: {fileID: 6006584503797185739}
   health: 10
   speed: 2

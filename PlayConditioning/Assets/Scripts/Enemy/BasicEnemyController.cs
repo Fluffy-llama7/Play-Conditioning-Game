@@ -13,7 +13,7 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
     private Vector2 direction;
 
     public Animator animator;
-    public float health = 10f;
+    public float health = 5f;
     public float speed = 5f;
     public float range = 2f;
 
@@ -38,7 +38,7 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
 
         if (distance >= range)
         {
-            animator.SetBool("Basic", false);
+            animator.SetBool("Attack", false);
             rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
         }
         else
@@ -50,7 +50,6 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
     public void TakeDamage()
     {
         health -= 1;
-        Debug.Log("Charge's Health: " + health);
 
         if (health <= 0)
         {
@@ -60,7 +59,7 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
 
     public void Attack()
     {
-        animator.SetBool("Basic", true);
+        animator.SetBool("Attack", true);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

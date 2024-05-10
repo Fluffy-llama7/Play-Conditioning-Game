@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -192,5 +192,3 @@ MonoBehaviour:
   health: 10
   speed: 4
   range: 2
-  fireTime: 2
-  chargeTime: 2

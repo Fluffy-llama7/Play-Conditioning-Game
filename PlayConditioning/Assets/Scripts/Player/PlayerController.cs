@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private IMechanic right2;
     private IMechanic left3;
     private IMechanic right3;
-    private bool attacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -65,31 +64,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             OnLeftClick("Shoot");
-            attacking = true;
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             OnRightClick("Swing");
-            attacking = true;
         }
-
-        if (attacking)
-        {
-            animator.SetBool("Attack", true);
-        }
-
-        
     }
 
     void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * speed, vertical * speed);
-    }
-
-    private IEnumerator AttackDelay()
-    {
-        yield return new WaitForSeconds(attackDelay);
-        attacking = false;
     }
 }
