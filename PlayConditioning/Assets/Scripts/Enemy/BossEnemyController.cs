@@ -8,37 +8,25 @@ using static Unity.VisualScripting.Member;
 
 public class BossEnemyController : MonoBehaviour, IEnemy
 {
-
+    [SerializeField]
+    private GameObject prefab;
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private float health = 10f;
+    [SerializeField]
+    private float speed = 5f;
+    [SerializeField]
+    private float range = 2f;
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
-    public GameObject prefab;
-    public Animator animator;
-    public float health = 10f;
-    public float speed = 5f;
-    public float range = 2f;
-
-    private int attackType = 0;
-    private float attackDelay = 2f;
-
-    private ChargeEnemyController chargeEnemyController;
-    private TankEnemyController tankEnemyController;
-    private BasicEnemyController basicEnemyController;
 
     void Start()
     {
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        chargeEnemyController = gameObject.AddComponent<ChargeEnemyController>();
-        tankEnemyController = gameObject.AddComponent<TankEnemyController>();
-        basicEnemyController = gameObject.AddComponent<BasicEnemyController>();
-
-
-        animator.SetBool("Basic", false);
-        animator.SetBool("Charge", false);
-        animator.SetBool("Tank", false);
     }
 
     public void Update()
@@ -47,16 +35,6 @@ public class BossEnemyController : MonoBehaviour, IEnemy
 
         animator.SetFloat("X", direction.x);
         animator.SetFloat("Y", direction.y);
-
-        if (attackDelay <= 0)
-        {
-            Attack();
-            attackDelay = 3f;
-        }
-        else
-        {
-            attackDelay -= Time.deltaTime;
-        }
     }
 
     void FixedUpdate()
@@ -69,51 +47,8 @@ public class BossEnemyController : MonoBehaviour, IEnemy
         }
     }
 
-    public void TakeDamage()
-    {
-        health -= 1;
-        Debug.Log("Boss's Health: " + health);
-
-        if (health <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
     public void Attack()
     {
-        attackType = Random.Range(0, 3);
 
-        switch(this.attackType)
-        {
-            case 0:
-                // basicEnemyController.Attack();
-                animator.SetBool("Charge", false);
-                animator.SetBool("Tank", false);
-                break;
-            case 1:
-                // chargeEnemyController.Attack();
-                animator.SetBool("Basic", false);
-                animator.SetBool("Tank", false);
-                break;
-            case 2:
-                // tankEnemyController.Attack();
-                animator.SetBool("Basic", false);
-                animator.SetBool("Charge", false);
-                break;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.name == "Orb")
-        {
-            TakeDamage();
-        }
-
-        if (other.gameObject.name == "Player")
-        {
-            Debug.Log("Boss Enemy Hit");
-        }
     }
 }

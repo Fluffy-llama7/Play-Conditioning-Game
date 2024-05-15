@@ -8,14 +8,17 @@ using static Unity.VisualScripting.Member;
 
 public class BasicEnemyController : MonoBehaviour, IEnemy
 {
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private float health = 5f;
+    [SerializeField]
+    private float speed = 5f;
+    [SerializeField]
+    private float range = 2f;
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
-
-    public Animator animator;
-    public float health = 5f;
-    public float speed = 5f;
-    public float range = 2f;
 
     void Start()
     {
@@ -47,26 +50,8 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
         }
     }
 
-    public void TakeDamage()
-    {
-        health -= 1;
-
-        if (health <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
     public void Attack()
     {
         animator.SetBool("Attack", true);
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.name == "Orb")
-        {
-            TakeDamage();
-        }
     }
 }

@@ -4,20 +4,26 @@ using UnityEngine;
 using Enemy;
 using UnityEngine.Rendering;
 using static UnityEngine.GraphicsBuffer;
+using Unity.VisualScripting;
 
 public class TankEnemyController : MonoBehaviour, IEnemy
 {
-    public GameObject prefab;
+    [SerializeField]
+    private GameObject prefab;
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private float health = 5f;
+    [SerializeField]
+    private float speed = 5f;
+    [SerializeField]
+    private float range = 8f;
+    [SerializeField]
+    private float fireTime = 1f;
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
     private bool canFire = true;
-
-    public Animator animator;
-    public float health = 5f;
-    public float speed = 5f;
-    public float range = 5f;
-    public float fireTime = 2f;
 
     void Start()
     {
@@ -50,16 +56,6 @@ public class TankEnemyController : MonoBehaviour, IEnemy
         }
     }
 
-    public void TakeDamage()
-    {
-        health -= 1;
-
-        if (health <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
     public void Attack()
     {
         animator.SetBool("Attack", true);
@@ -76,13 +72,5 @@ public class TankEnemyController : MonoBehaviour, IEnemy
     {
         yield return new WaitForSeconds(fireTime);
         canFire = true;
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.name == "Orb")
-        {
-            TakeDamage();
-        }
     }
 }

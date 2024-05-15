@@ -8,15 +8,16 @@ using Unity.VisualScripting;
 
 public class ShootMechanic : MonoBehaviour, IMechanic
 {
-    [SerializeField] private GameObject bullet;
-    private GameObject gun;
+    [SerializeField] 
+    private GameObject bullet;
+    private GameObject player;
     private SwingMechanic swing;
     private GameObject orb;
     private Rigidbody2D rb;
 
     void Awake()
     {
-        gun = GameObject.Find("Gun");
+        player = GameObject.Find("Player");
         orb = GameObject.Find("Orb");
         rb = orb.GetComponent<Rigidbody2D>();
         swing = GetComponent<SwingMechanic>();
@@ -29,7 +30,7 @@ public class ShootMechanic : MonoBehaviour, IMechanic
             Stop();
         }
 
-        Instantiate(bullet, gun.transform.position, Quaternion.identity);
+        Instantiate(bullet, player.transform.position, Quaternion.identity);
     }
 
     public void Update()

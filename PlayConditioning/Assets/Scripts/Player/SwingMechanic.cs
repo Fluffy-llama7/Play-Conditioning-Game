@@ -10,7 +10,7 @@ public class SwingMechanic : MonoBehaviour, IMechanic
     [SerializeField] private float radius;
     private ShootMechanic shoot;
     private GameObject orb;
-    private GameObject rope;
+    private GameObject player;
     private Rigidbody2D rb;
     private float angle;
     private bool active;
@@ -18,7 +18,7 @@ public class SwingMechanic : MonoBehaviour, IMechanic
     void Awake()
     {
         orb = GameObject.Find("Orb");
-        rope = GameObject.Find("Rope");
+        player = GameObject.Find("Player");
         shoot = GetComponent<ShootMechanic>();
         rb = orb.GetComponent<Rigidbody2D>();
 
@@ -46,7 +46,7 @@ public class SwingMechanic : MonoBehaviour, IMechanic
         // If active, then the player is swinging
         if (this.active)
         {
-            var distance = Vector3.Distance(orb.transform.position, rope.transform.position);
+            var distance = Vector3.Distance(orb.transform.position, player.transform.position);
 
             // If the ball is outside the radius, snap it back to the radius
             if (distance > radius)
@@ -57,7 +57,7 @@ public class SwingMechanic : MonoBehaviour, IMechanic
             // Debug.DrawLine(rope.transform.position, ball.transform.position, Color.red);
 
             // Swinging logic
-            orb.transform.RotateAround(rope.transform.position, Vector3.forward, speed * Time.deltaTime);
+            orb.transform.RotateAround(player.transform.position, Vector3.forward, speed * Time.deltaTime);
             
             angle += speed * Time.deltaTime;
 
@@ -88,9 +88,9 @@ public class SwingMechanic : MonoBehaviour, IMechanic
     private void SnapToRadius()
     {
         // Calculate the direction vector from rope to ball and normalize it
-        Vector3 direction = (orb.transform.position - rope.transform.position).normalized;
+        Vector3 direction = (orb.transform.position - player.transform.position).normalized;
 
         // Move the ball to the correct position on the radius
-        orb.transform.position = rope.transform.position + direction * radius;
+        orb.transform.position = player.transform.position + direction * radius;
     }
 }

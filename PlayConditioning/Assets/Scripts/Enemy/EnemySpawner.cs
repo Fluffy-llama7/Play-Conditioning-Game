@@ -9,15 +9,25 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject basicPrefab;
+    [SerializeField]
+    private GameObject tankPrefab;
+    [SerializeField]
+    private GameObject chargePrefab;
 
     [SerializeField]
     private float basicInterval = 3.5f;
+    [SerializeField]
+    private float tankInterval = 5f;
+    [SerializeField]
+    private float chargeInterval = 7.5f;
 
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Spawn(basicInterval, basicPrefab));
+        StartCoroutine(Spawn(tankInterval, tankPrefab));
+        StartCoroutine(Spawn(chargeInterval, chargePrefab));
     }
 
     private IEnumerator Spawn(float interval, GameObject enemy)

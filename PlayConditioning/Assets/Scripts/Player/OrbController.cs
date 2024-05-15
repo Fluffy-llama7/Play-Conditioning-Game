@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class OrbController : MonoBehaviour
 {
+    [SerializeField]
+    private Animator animator;
     private Rigidbody2D rb;
     private Vector3 lastVelocity;
-    public Animator animator;
 
     void Awake()
     {

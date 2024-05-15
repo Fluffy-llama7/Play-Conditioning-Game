@@ -37,18 +37,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnLeftClick(string mechanic)
     {
-        if (mechanic == "Shoot")
-        {
-            left1.Execute();
-        }
+
     }
 
     public void OnRightClick(string mechanic)
     {
-        if (mechanic == "Swing")
-        {
-            right1.Execute();
-        }
+
     }
 
     void Update()
@@ -61,15 +55,24 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("X", direction.x);
         animator.SetFloat("Y", direction.y);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnLeftClick("Shoot");
+            left1.Execute();
         }
+        else if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            right1.Execute();
+        }
+    }
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            OnRightClick("Swing");
-        }
+    public float GetCurrentSpeed()
+    {
+        return speed;
+    }
+
+    public Vector3 GetMovementDirection()
+    {
+        return direction;
     }
 
     void FixedUpdate()
