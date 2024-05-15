@@ -47,6 +47,6 @@ MonoBehaviour:
   basicPrefab: {fileID: 4371816050701670609, guid: c5c4811d90500c948aa66a0231ed1772, type: 3}
   tankPrefab: {fileID: 4116428377141593761, guid: 5b2d7552735611d4a8337f41aa8ac86d, type: 3}
   chargePrefab: {fileID: 8379575290173142930, guid: 1e403b1a77fcb1341ba08370490d34b5, type: 3}
-  basicInterval: 3.5
-  tankInterval: 5
-  chargeInterval: 7.5
+  basicInterval: 5
+  tankInterval: 10
+  chargeInterval: 15

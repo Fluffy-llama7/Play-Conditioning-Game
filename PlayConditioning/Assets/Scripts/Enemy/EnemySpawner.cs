@@ -15,11 +15,11 @@ public class EnemySpawner : MonoBehaviour
     private GameObject chargePrefab;
 
     [SerializeField]
-    private float basicInterval = 3.5f;
+    private float basicInterval = 5f;
     [SerializeField]
-    private float tankInterval = 5f;
+    private float tankInterval = 10f;
     [SerializeField]
-    private float chargeInterval = 7.5f;
+    private float chargeInterval = 15f;
 
 
     // Start is called before the first frame update
