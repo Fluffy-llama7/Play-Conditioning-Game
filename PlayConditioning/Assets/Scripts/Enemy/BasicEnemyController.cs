@@ -11,8 +11,6 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
     [SerializeField]
     private Animator animator;
     [SerializeField]
-    private float health = 5f;
-    [SerializeField]
     private float speed = 5f;
     [SerializeField]
     private float range = 2f;
