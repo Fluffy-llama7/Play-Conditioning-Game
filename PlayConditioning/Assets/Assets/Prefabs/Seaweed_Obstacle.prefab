@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7980137260007475511}
   - component: {fileID: 3036863211278034766}
   - component: {fileID: 4332794762434545699}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seaweed_Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
