@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
 
     void TakeDamage(GameObject obj)
     {
+        Debug.Log(totalHealth);
+        
         if (obj.name == "Blast")
         {
             totalHealth -= blastDamage;

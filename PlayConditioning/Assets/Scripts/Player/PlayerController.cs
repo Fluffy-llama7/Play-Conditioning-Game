@@ -4,6 +4,7 @@ using UnityEngine;
 using Mech;
 using System.Linq;
 using static UnityEngine.GraphicsBuffer;
+using System.Diagnostics;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,9 +12,10 @@ public class PlayerController : MonoBehaviour
     float horizontal;
     float vertical;
     private Vector3 direction;
-    public Animator animator;
-    public float speed = 10.0f;
-    public float attackDelay = 3.0f;
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private float speed = 10.0f;
     private IMechanic left1;
     private IMechanic right1;
     private IMechanic left2;
@@ -25,8 +27,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        left1 = GetComponent<ShootMechanic>();
-        right1 = GetComponent<SwingMechanic>();
         animator = GetComponent<Animator>();
     }
 
@@ -54,15 +54,6 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("X", direction.x);
         animator.SetFloat("Y", direction.y);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            left1.Execute();
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            right1.Execute();
-        }
     }
 
     public float GetCurrentSpeed()

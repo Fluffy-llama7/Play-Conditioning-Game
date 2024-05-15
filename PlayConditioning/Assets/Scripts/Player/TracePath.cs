@@ -22,7 +22,7 @@ public class TracePath : MonoBehaviour, IMechanic
     {
         playerCollider = gameObject.GetComponent<Collider2D>();
         
-        enemy = GameObject.Find("Enemy");
+        enemy = GameObject.FindWithTag("Enemy");
         lineRenderer = enemy.GetComponent<LineRenderer>();
         lineRenderer.useWorldSpace = false;
         lineRenderer.positionCount = 110;
