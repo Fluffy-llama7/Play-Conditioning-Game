@@ -19,8 +19,6 @@ GameObject:
   - component: {fileID: 6795868051441691940}
   - component: {fileID: 1132492830953480847}
   - component: {fileID: 5883449289312395059}
-  - component: {fileID: -7144932636854980105}
-  - component: {fileID: -5961689303553039249}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -196,7 +194,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7507060481095159239}
   speed: 10
-  attackDelay: 3
 --- !u!114 &8882788051325201690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,29 +264,3 @@ MonoBehaviour:
   blastSpeed: 2
   blastGracePeriod: 3
   moveWaitTime: 2
---- !u!114 &-7144932636854980105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3349544477550724752}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f36f1b0293a934fb8062e727dd9713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballSpeed: 5
---- !u!114 &-5961689303553039249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3349544477550724752}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc9e4b5eab126a74f8d299cfd4287237, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenOrbs: 3

@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        left1 = GetComponent<SwingMechanic>();
+        right1 = GetComponent<ShootMechanic>();
     }
 
     public void TakeDamage(GameObject enemy)
@@ -54,6 +56,15 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("X", direction.x);
         animator.SetFloat("Y", direction.y);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            left1.Execute();
+        }
+        else if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            right1.Execute();
+        }
     }
 
     public float GetCurrentSpeed()
