@@ -15,10 +15,6 @@ GameObject:
   - component: {fileID: 5834982060225566962}
   - component: {fileID: 405725627488874289}
   - component: {fileID: 8882788051325201690}
-  - component: {fileID: 8094225797704887933}
-  - component: {fileID: 6795868051441691940}
-  - component: {fileID: 1132492830953480847}
-  - component: {fileID: 5883449289312395059}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -209,58 +205,3 @@ MonoBehaviour:
   blastDamage: 3
   enemyDamage: 3
   totalHealth: 20
---- !u!114 &8094225797704887933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3349544477550724752}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ad0dd3a66c978344a9120775f3c0eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 500
-  radius: 5
---- !u!114 &6795868051441691940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3349544477550724752}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28414617f32362c4a904d87b90cc4c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 7040152947527359261, guid: f14ee59e1ae00a945b3012ae5ff5e8af, type: 3}
---- !u!114 &1132492830953480847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3349544477550724752}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c26dbb1e32cc42238cf4f5bc2465d27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  elapsedTime: 10
---- !u!114 &5883449289312395059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3349544477550724752}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47f66663dc1824e5eb9decd02500e1b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blastSpeed: 2
-  blastGracePeriod: 3
-  moveWaitTime: 2
