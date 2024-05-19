@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7507060481095159239}
-  speed: 10
+  speed: 5
   attackDelay: 3
 --- !u!114 &8882788051325201690
 MonoBehaviour:
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  radius: 5
+  radius: 1.75
 --- !u!114 &6795868051441691940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,4 +234,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28414617f32362c4a904d87b90cc4c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7040152947527359261, guid: f14ee59e1ae00a945b3012ae5ff5e8af, type: 3}
+  bullet: {fileID: 0}

@@ -14,6 +14,7 @@ public class ShootMechanic : MonoBehaviour, IMechanic
     private SwingMechanic swing;
     private GameObject orb;
     private Rigidbody2D rb;
+    // movement direction var
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class ShootMechanic : MonoBehaviour, IMechanic
         orb = GameObject.Find("Orb");
         rb = orb.GetComponent<Rigidbody2D>();
         swing = GetComponent<SwingMechanic>();
+        
     }
 
     public void Execute()
@@ -30,12 +32,14 @@ public class ShootMechanic : MonoBehaviour, IMechanic
             Stop();
         }
 
-        Instantiate(bullet, player.transform.position, Quaternion.identity);
+        Instantiate(orb, player.transform.position, Quaternion.identity);
+
+        // movement direction = direction of mouse
     }
 
     public void Update()
     {
-
+        // move bullet in direction at speed * time
     }
 
     public void Stop()
