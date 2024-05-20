@@ -5,25 +5,21 @@ using Mech;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] 
-    private float blastDamage = 3.0f;
-    [SerializeField] 
     private float totalHealth = 10.0f;
-    [SerializeField]
-    private float orbDamage = 10.0f;
+    private float currentHealth;
 
-    void TakeDamage(GameObject obj)
+    private void Awake()
     {
-        if (obj.name == "Blast")
-        {
-            totalHealth -= blastDamage;
-        }
+        currentHealth = totalHealth;
+    }
 
-        if (obj.name == "Orb")
-        {
-            totalHealth -= orbDamage;
-        }
+    void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
 
-        if (totalHealth <= 0)
+        Debug.Log("Enemy's health: " + currentHealth);
+
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }
@@ -31,9 +27,12 @@ public class EnemyHealth : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Blast" || collision.gameObject.name == "Orb")
+        Debug.Log(collision.gameObject.name);
+
+        if (collision.gameObject.name == "Orb")
         {
-            TakeDamage(collision.gameObject);
+            float damage = collision.gameObject.GetComponent<OrbController>().Damage;
+            TakeDamage(damage);
         }
     }
 }

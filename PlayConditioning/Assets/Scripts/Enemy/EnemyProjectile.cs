@@ -8,8 +8,10 @@ public class EnemyProjectile : MonoBehaviour
 {
     private Rigidbody2D rb;
     private GameObject target;
-    private float timer = 2f;
+    [SerializeField]
+    private float damage = 2.0f;
     private float force = 20f;
+    private float timer = 0.0f;
 
     void Awake()
     {
@@ -21,8 +23,8 @@ public class EnemyProjectile : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        // Destroy the bullet after 2 seconds if it doesn't hit the ball
-        if (timer >= 10.0f)
+        // Destroy the bullet after 5 seconds if it doesn't hit the ball
+        if (timer >= 2.0f)
         {
             Destroy(this.gameObject);
             timer = 0.0f;
@@ -36,11 +38,14 @@ public class EnemyProjectile : MonoBehaviour
         rb.velocity = direction * force;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.name == "Player")
         {
+            Debug.Log("Player hit by enemy projectile");
             Destroy(this.gameObject);
         }
     }
+
+    public float Damage { get { return damage; } }
 }

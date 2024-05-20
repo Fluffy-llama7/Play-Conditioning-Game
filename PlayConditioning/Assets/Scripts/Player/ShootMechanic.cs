@@ -8,44 +8,33 @@ using Unity.VisualScripting;
 
 public class ShootMechanic : MonoBehaviour, IMechanic
 {
-    [SerializeField] 
-    private GameObject bullet;
-    private GameObject player;
-    private SwingMechanic swing;
-    private GameObject orb;
+    private Vector2 mousePosition;
+    [SerializeField] private GameObject prefab;
     private Rigidbody2D rb;
-    // movement direction var
 
     void Awake()
     {
-        player = GameObject.Find("Player");
-        orb = GameObject.Find("Orb");
-        rb = orb.GetComponent<Rigidbody2D>();
-        swing = GetComponent<SwingMechanic>();
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void Execute()
     {
-        if (swing.IsActive())
-        {
-            Stop();
-        }
+        Vector2 aimDirection = mousePosition - rb.position;
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
 
-        Instantiate(orb, player.transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(prefab, transform.position, Quaternion.identity);
+        projectile.GetComponent<Rigidbody2D>().AddForce(mousePosition * 10, ForceMode2D.Impulse);
 
-        // movement direction = direction of mouse
+        Debug.Log("Shoot");
     }
 
     public void Update()
     {
-        // move bullet in direction at speed * time
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public void Stop()
     {
-        // Reset local variables
-        rb.velocity = Vector2.zero;
-        rb.angularVelocity = 0.0f;
+
     }
 }

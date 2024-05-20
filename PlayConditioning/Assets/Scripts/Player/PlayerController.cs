@@ -30,19 +30,14 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void TakeDamage(GameObject enemy)
-    {
-
-    }
-
     public void OnLeftClick(string mechanic)
     {
-
+        left1.Execute();
     }
 
     public void OnRightClick(string mechanic)
     {
-
+        right1.Execute();
     }
 
     void Update()
@@ -55,13 +50,13 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("X", direction.x);
         animator.SetFloat("Y", direction.y);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            left1.Execute();
+            OnLeftClick("Shoot");
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
+        else if (Input.GetMouseButtonDown(1))
         {
-            right1.Execute();
+            OnRightClick("Swing");
         }
     }
 

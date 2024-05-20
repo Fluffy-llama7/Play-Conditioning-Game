@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8094225797704887933}
   - component: {fileID: 6795868051441691940}
   m_Layer: 3
-  m_Name: Player (1)
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastDamage: 3
   enemyDamage: 3
-  totalHealth: 20
+  totalHealth: 100
 --- !u!114 &8094225797704887933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3349544477550724752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ad0dd3a66c978344a9120775f3c0eb6, type: 3}
   m_Name: 
@@ -234,4 +234,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28414617f32362c4a904d87b90cc4c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  prefab: {fileID: 6945065713871620848, guid: 2caf3e86b4670fd4eb53c2494ea45d09, type: 3}

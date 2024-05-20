@@ -18,6 +18,8 @@ public class TankEnemyController : MonoBehaviour, IEnemy
     private float range = 8f;
     [SerializeField]
     private float fireTime = 1f;
+    [SerializeField]
+    private float damage = 1f;
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
@@ -28,6 +30,13 @@ public class TankEnemyController : MonoBehaviour, IEnemy
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        GameManager.instance.AddEnemy(this);
+    }
+
+    void OnDestroy()
+    {
+        GameManager.instance.RemoveEnemy(this);
     }
 
     public void Update()
@@ -71,4 +80,6 @@ public class TankEnemyController : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(fireTime);
         canFire = true;
     }
+
+    public float Damage { get { return damage; } }
 }

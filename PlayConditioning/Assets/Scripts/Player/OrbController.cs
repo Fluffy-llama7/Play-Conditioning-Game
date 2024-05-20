@@ -6,6 +6,8 @@ public class OrbController : MonoBehaviour
 {
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private float damage = 5.0f;
     private Rigidbody2D rb;
     private Vector3 lastVelocity;
 
@@ -31,5 +33,10 @@ public class OrbController : MonoBehaviour
 
             rb.velocity = direction * Mathf.Max(speed, 0f);
         }
+    }
+
+    public float Damage
+    {
+        get { return damage; }
     }
 }
