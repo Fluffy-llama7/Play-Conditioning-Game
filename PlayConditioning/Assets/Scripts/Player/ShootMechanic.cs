@@ -10,27 +10,31 @@ public class ShootMechanic : MonoBehaviour, IMechanic
 {
     private Vector2 mousePosition;
     [SerializeField] private GameObject prefab;
-    private Rigidbody2D rb;
+    [SerializeField]
+    private float force = 20f;
+
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     public void Execute()
     {
-        Vector2 aimDirection = mousePosition - rb.position;
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 shootDirection = mousePosition - (Vector2)transform.position;
+        shootDirection.Normalize();
 
         GameObject projectile = Instantiate(prefab, transform.position, Quaternion.identity);
-        projectile.GetComponent<Rigidbody2D>().AddForce(mousePosition * 10, ForceMode2D.Impulse);
+        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+
+        projectileRb.AddForce(shootDirection * force, ForceMode2D.Impulse);
 
         Debug.Log("Shoot");
     }
 
     public void Update()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
     }
 
     public void Stop()

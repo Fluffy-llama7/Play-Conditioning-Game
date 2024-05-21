@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9203279988974916385, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -9203279988974916385, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -9203279988974916385, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 3541224626820526185, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,11 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910964721591853143, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
       propertyPath: m_Name
-      value: Bullet_Animation (1) Variant
+      value: Player_Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 4910964721591853143, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -832166319503565169, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
