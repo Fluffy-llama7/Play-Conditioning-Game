@@ -9,12 +9,12 @@ using Vector2 = UnityEngine.Vector2;
 
 public class Version2Mechanic1: MonoBehaviour, IMechanic
 {
-    GameObject ball;
-    private SpriteRenderer ballRenderer;
-    private CircleCollider2D ballCollider;
-    private Color ballOriginalColor;
+    GameObject orb;
+    private SpriteRenderer orbRenderer;
+    private CircleCollider2D orbCollider;
+    private Color orbOriginalColor;
     private Version2Mechanic2 otherMechanic;
-    [SerializeField] float ballSpeed = 5.0f;
+    [SerializeField] float orbSpeed = 5.0f;
 
     private bool active = false;
 
@@ -23,10 +23,10 @@ public class Version2Mechanic1: MonoBehaviour, IMechanic
     //  Orb can also damage player upon contact
     //  Orb can be guided to hit enemies
     public void Awake(){
-        ball = GameObject.Find("Ball");
-        ballCollider = ball.GetComponent<CircleCollider2D>();
-        ballRenderer = ball.GetComponent<SpriteRenderer>();
-        ballOriginalColor = ballRenderer.color;
+        orb = GameObject.Find("Orb");
+        orbCollider = orb.GetComponent<CircleCollider2D>();
+        orbRenderer = orb.GetComponent<SpriteRenderer>();
+        orbOriginalColor = orbRenderer.color;
         otherMechanic = GetComponent<Version2Mechanic2>();
     }
     public void Execute(){
@@ -37,7 +37,7 @@ public class Version2Mechanic1: MonoBehaviour, IMechanic
 
     public void Update(){
         if (active){
-            ball.transform.position = Vector2.MoveTowards(ball.transform.position, this.transform.position, ballSpeed * Time.deltaTime);
+            orb.transform.position = Vector2.MoveTowards(orb.transform.position, this.transform.position, orbSpeed * Time.deltaTime);
         }
     }
     public void Disable(){
@@ -48,8 +48,8 @@ public class Version2Mechanic1: MonoBehaviour, IMechanic
     }
     void resetLocalVariables()
     {
-        ball.transform.localScale = new Vector2(2.4452f, 2.4452f);
-        ballRenderer.color = ballOriginalColor;
-        ballCollider.enabled = true;
+        orb.transform.localScale = new Vector2(2.4452f, 2.4452f);
+        orbRenderer.color = orbOriginalColor;
+        orbCollider.enabled = true;
     }
 }

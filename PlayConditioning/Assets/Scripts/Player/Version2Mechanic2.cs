@@ -9,11 +9,11 @@ using Vector2 = UnityEngine.Vector2;
 
 public class Version2Mechanic2: MonoBehaviour, IMechanic
 {
-    GameObject ball;
-    private SpriteRenderer ballRenderer;
-    private CircleCollider2D ballCollider;
-    private Vector2 ballSize;
-    private Color ballOriginalColor;
+    GameObject orb;
+    private SpriteRenderer orbRenderer;
+    private CircleCollider2D orbCollider;
+    private Vector2 orbSize;
+    private Color orbOriginalColor;
     private float timeSinceLastFall = 0.0f;
     [SerializeField] private float timeBetweenOrbs = 3.0f;
     private bool active = false;
@@ -24,10 +24,10 @@ public class Version2Mechanic2: MonoBehaviour, IMechanic
     //  Every few seconds, orb falls on previous player position
     //  Orbs damage both enemies and player
     public void Awake(){
-        ball = GameObject.Find("Ball");
-        ballCollider = ball.GetComponent<CircleCollider2D>();
-        ballRenderer = ball.GetComponent<SpriteRenderer>();
-        ballOriginalColor = ballRenderer.color;
+        orb = GameObject.Find("Orb");
+        orbCollider = orb.GetComponent<CircleCollider2D>();
+        orbRenderer = orb.GetComponent<SpriteRenderer>();
+        orbOriginalColor = orbRenderer.color;
         otherMechanic = GetComponent<Version2Mechanic1>();
     }
     public void Execute(){
@@ -38,22 +38,22 @@ public class Version2Mechanic2: MonoBehaviour, IMechanic
 
     public void Update(){
         if (active){
-            ballRenderer.color = Color.grey;
+            orbRenderer.color = Color.grey;
             timeSinceLastFall += Time.deltaTime;
-            ballSize = new Vector2(2.4452f, 2.4452f) * Mathf.Clamp(timeSinceLastFall/timeBetweenOrbs, 0, 1);
-            ball.transform.localScale = ballSize;
+            orbSize = new Vector2(2.4452f, 2.4452f) * Mathf.Clamp(timeSinceLastFall/timeBetweenOrbs, 0, 1);
+            orb.transform.localScale = orbSize;
             if (timeSinceLastFall > timeBetweenOrbs)
             {
                 // Damage phase
-                ballRenderer.color = ballOriginalColor;
-                ballCollider.enabled = true;
+                orbRenderer.color = orbOriginalColor;
+                orbCollider.enabled = true;
             }
             if (timeSinceLastFall > timeBetweenOrbs+0.25f)
             {
                 // End of damage phase
                 timeSinceLastFall = 0.0f;
-                ballCollider.enabled = false;
-                ball.transform.position = this.transform.position;
+                orbCollider.enabled = false;
+                orb.transform.position = this.transform.position;
             }
         }
         
@@ -66,8 +66,8 @@ public class Version2Mechanic2: MonoBehaviour, IMechanic
     }
     void resetLocalVariables()
     {
-        ball.transform.localScale = new Vector2(2.4452f, 2.4452f);
-        ballRenderer.color = ballOriginalColor;
-        ballCollider.enabled = true;
+        orb.transform.localScale = new Vector2(2.4452f, 2.4452f);
+        orbRenderer.color = orbOriginalColor;
+        orbCollider.enabled = true;
     }
 }

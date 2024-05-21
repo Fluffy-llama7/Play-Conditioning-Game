@@ -22,8 +22,8 @@ public class TracePath : MonoBehaviour, IMechanic
     {
         playerCollider = gameObject.GetComponent<Collider2D>();
         
-        enemy = GameObject.Find("Enemy");
-        lineRenderer = enemy.GetComponent<LineRenderer>();
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        lineRenderer = enemy.AddComponent<LineRenderer>();
         lineRenderer.useWorldSpace = false;
         lineRenderer.positionCount = 110;
         lineRenderer.startWidth = 0.25f;

@@ -7,6 +7,7 @@ using UnityEngine.Android;
 
 public class GameManager : MonoBehaviour
 {
+    private float gameVersion = 1;
     private List <IEnemy> enemies = new List<IEnemy>();
     public static GameManager instance;
     private SceneController sceneController;
@@ -80,5 +81,26 @@ public class GameManager : MonoBehaviour
         {
             sceneController.LoadNextLevel();
         }
+    }
+
+    public void UpdateVersion(int version)
+    {
+        switch (version)
+        {
+            case 1:
+                gameVersion = 1;
+                break;
+            case 2:
+                gameVersion = 2;
+                break;
+            case 3:
+                gameVersion = 3;
+                break;
+        }
+    }
+
+    public float GetVersion()
+    {
+        return gameVersion;
     }
 }
