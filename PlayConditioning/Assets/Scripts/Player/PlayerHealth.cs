@@ -1,33 +1,46 @@
 using System.Collections;
 using UnityEngine;
 using Mech;
+using Enemy;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] 
-    private float blastDamage = 3.0f;
-    [SerializeField] 
-    private float enemyDamage = 3.0f;
-    [SerializeField] 
-    private float totalHealth = 20.0f;
-    [SerializeField] 
-    public Health_Bar healthbar;
+    [SerializeField]
+    private float totalHealth = 50.0f;
+    private float currentHealth;
+    public HealthBarController healthBar;
 
-    void Start(){
-        healthbar.SetMaxHealth(totalHealth);
+    private void Start()
+    {
+        this.currentHealth = this.totalHealth;
+        this.healthBar.SetMaxHealth(this.totalHealth);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        this.currentHealth -= damage;
+        this.healthBar.SetHealth(this.currentHealth);
+
+        Debug.Log("Player took " + damage + " damage. Current health: " + this.currentHealth);
+
+        if (this.currentHealth <= 0)
+        {
+            Debug.Log("Player died");
+            GameManager.instance.UpdateState(GameState.End);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Blast")
+        if (collision.gameObject.tag == "Enemy")
         {
-            totalHealth -= blastDamage;
+            IEnemy enemy = collision.gameObject.GetComponent<IEnemy>();
+            this.TakeDamage(enemy.Damage);
         }
-        else if (collision.gameObject.name == "Enemy")
+        else if (collision.gameObject.tag == "Enemy Projectile")
         {
-            totalHealth -= enemyDamage;
+            float damage = collision.gameObject.GetComponent<EnemyProjectile>().Damage;
+            this.TakeDamage(damage);
         }
-
-        healthbar.SetHealth(totalHealth);
     }
 }

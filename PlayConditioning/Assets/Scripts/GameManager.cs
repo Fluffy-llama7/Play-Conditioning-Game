@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private SceneController sceneController;
     public GameState currentState { get; private set;}
-    public static event Action<float, float> OnHealthChange;
 
     void Awake()
     {
@@ -61,11 +60,6 @@ public class GameManager : MonoBehaviour
                 this.sceneController.LoadEndScene();
                 break;
         }
-    }
-
-    public void UpdateHealth(float currentHealth, float maxHealth)
-    {
-        OnHealthChange?.Invoke(currentHealth, maxHealth);
     }
 
     public void AddEnemy(IEnemy enemy)
