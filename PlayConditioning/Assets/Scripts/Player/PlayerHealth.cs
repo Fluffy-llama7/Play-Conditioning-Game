@@ -10,6 +10,12 @@ public class PlayerHealth : MonoBehaviour
     private float enemyDamage = 3.0f;
     [SerializeField] 
     private float totalHealth = 20.0f;
+    [SerializeField] 
+    public Health_Bar healthbar;
+
+    void Start(){
+        healthbar.SetMaxHealth(totalHealth);
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,5 +27,7 @@ public class PlayerHealth : MonoBehaviour
         {
             totalHealth -= enemyDamage;
         }
+
+        healthbar.SetHealth(totalHealth);
     }
 }
