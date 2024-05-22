@@ -27,22 +27,43 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         left1 = GetComponent<ShootMechanic>();
         right1 = GetComponent<SwingMechanic>();
+        left2 = GetComponent<Version2Mechanic1>();
+        right2 = GetComponent<Version2Mechanic2>();
+        left3 = GetComponent<TracePath>();
+        right3 = GetComponent<Blast>();
         animator = GetComponent<Animator>();
     }
 
-    public void TakeDamage(GameObject enemy)
+    public void OnLeftClick(float version)
     {
-
+        switch (version)
+        {
+            case 1:
+                left1.Execute();
+                break;
+            case 2:
+                left2.Execute();
+                break;
+            case 3:
+                left3.Execute();
+                break;
+        }
     }
 
-    public void OnLeftClick(string mechanic)
+    public void OnRightClick(float version)
     {
-
-    }
-
-    public void OnRightClick(string mechanic)
-    {
-
+        switch (version)
+        {
+            case 1:
+                right1.Execute();
+                break;
+            case 2:
+                right2.Execute();
+                break;
+            case 3:
+                right3.Execute();
+                break;
+        }
     }
 
     void Update()
@@ -55,13 +76,13 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("X", direction.x);
         animator.SetFloat("Y", direction.y);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            left1.Execute();
+            OnLeftClick(GameManager.instance.GetVersion());
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
+        else if (Input.GetMouseButtonDown(1))
         {
-            right1.Execute();
+            OnRightClick(GameManager.instance.GetVersion());
         }
     }
 

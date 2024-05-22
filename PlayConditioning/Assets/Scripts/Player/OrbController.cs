@@ -6,6 +6,8 @@ public class OrbController : MonoBehaviour
 {
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private float damage = 5.0f;
     private Rigidbody2D rb;
     private Vector3 lastVelocity;
 
@@ -23,7 +25,7 @@ public class OrbController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         // Prevents ball from moving outside of the field
-        if (other.gameObject.name == "Walls")
+        if (other.gameObject.name == "Walls" || other.gameObject.tag == "Player Projectile")
         {
             // Reflects the ball's velocity when it collides with the wall
             var speed = lastVelocity.magnitude;
@@ -31,5 +33,10 @@ public class OrbController : MonoBehaviour
 
             rb.velocity = direction * Mathf.Max(speed, 0f);
         }
+    }
+
+    public float Damage
+    {
+        get { return damage; }
     }
 }

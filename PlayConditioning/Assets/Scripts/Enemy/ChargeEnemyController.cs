@@ -2,7 +2,7 @@ using Enemy;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static Unity.VisualScripting.Member;
 
@@ -16,6 +16,8 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
     private float range = 2f;
     [SerializeField]
     private float chargeTime = 2f;
+    [SerializeField]
+    private float damage = 2f;
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
@@ -26,6 +28,13 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        GameManager.instance.AddEnemy(this);
+    }
+
+    void OnDestroy()
+    {
+        GameManager.instance.RemoveEnemy(this);
     }
 
     public void Update()
@@ -78,4 +87,6 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(chargeTime);
         canCharge = true;
     }
+
+    public float Damage { get { return damage; } }
 }

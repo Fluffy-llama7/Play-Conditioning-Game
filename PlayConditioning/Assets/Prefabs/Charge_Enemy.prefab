@@ -189,10 +189,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7636386181009290154}
-  health: 5
   speed: 5
   range: 3
   chargeTime: 2
+  damage: 2
 --- !u!114 &4867611672230383593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,5 +205,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27727f592850242b688959e9367d36c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastDamage: 3
-  totalHealth: 20
+  totalHealth: 10
