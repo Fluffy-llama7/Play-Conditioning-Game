@@ -6,7 +6,7 @@ using Enemy;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] 
-    private float totalHealth = 100.0f;
+    private float totalHealth = 50.0f;
     private float currentHealth;
     public HealthBarController healthBar;
 
