@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject optionsMenuUI;
+
+
     // Start is called before the first frame update
     public void PlayGame()
     {
         GameManager.instance.UpdateState(GameState.Level1);
+    }
+
+    public void EnableOptions()
+    {
+        optionsMenuUI.SetActive(true);
+        Time.timeScale = 1f;
+    }
+
+    public void GoBack()
+    {
+        optionsMenuUI.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void Option1()
@@ -23,5 +38,10 @@ public class MainMenu : MonoBehaviour
     public void Option3()
     {
         GameManager.instance.UpdateVersion(3);
+    }
+
+    private void Update()
+    {
+        Debug.Log("Current Game Version: " + GameManager.instance.GetVersion());
     }
 }

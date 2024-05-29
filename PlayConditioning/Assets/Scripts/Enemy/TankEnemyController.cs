@@ -1,31 +1,22 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Enemy;
-using UnityEngine.Rendering;
-using static UnityEngine.GraphicsBuffer;
-using Unity.VisualScripting;
 
 public class TankEnemyController : MonoBehaviour, IEnemy
 {
-    [SerializeField]
-    private GameObject prefab;
-    [SerializeField]
-    private Animator animator;
-    [SerializeField]
-    private float speed = 5f;
-    [SerializeField]
-    private float range = 8f;
-    [SerializeField]
-    private float fireTime = 1f;
-    [SerializeField]
-    private float damage = 1f;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float range = 8f;
+    [SerializeField] private float fireTime = 1f;
+    [SerializeField] private float damage = 1f;
+
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
     private bool canFire = true;
 
-    void Start()
+    private void Start()
     {
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
@@ -34,7 +25,7 @@ public class TankEnemyController : MonoBehaviour, IEnemy
         GameManager.instance.AddEnemy(this);
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         GameManager.instance.RemoveEnemy(this);
     }
@@ -47,7 +38,7 @@ public class TankEnemyController : MonoBehaviour, IEnemy
         animator.SetFloat("Y", direction.y);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
@@ -69,10 +60,15 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
         if (canFire)
         {
-            Instantiate(prefab, transform.position, Quaternion.identity);
+            InstantiateProjectile();
             canFire = false;
             StartCoroutine(ShootDelay());
         }
+    }
+
+    private void InstantiateProjectile()
+    {
+        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
     }
 
     private IEnumerator ShootDelay()
@@ -81,5 +77,5 @@ public class TankEnemyController : MonoBehaviour, IEnemy
         canFire = true;
     }
 
-    public float Damage { get { return damage; } }
+    public float Damage => damage;
 }

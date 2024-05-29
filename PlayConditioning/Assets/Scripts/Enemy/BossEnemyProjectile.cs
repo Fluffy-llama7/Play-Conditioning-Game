@@ -4,17 +4,16 @@ using System.Threading;
 using UnityEngine;
 using Enemy;
 
-public class EnemyProjectile : MonoBehaviour
+public class BossEnemyProjectile : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private GameObject target;
-    [SerializeField] private float damage = 2.0f;
+    [SerializeField]
+    private float damage = 2.0f;
     private float force = 20f;
     private float timer = 0.0f;
 
     void Awake()
     {
-        target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -33,8 +32,7 @@ public class EnemyProjectile : MonoBehaviour
     private void FixedUpdate()
     {
         // Calculate the direction of the bullet and set its velocity
-        Vector3 direction = (target.transform.position - this.transform.position).normalized;
-        rb.velocity = direction * force;
+        rb.velocity = transform.right * force;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

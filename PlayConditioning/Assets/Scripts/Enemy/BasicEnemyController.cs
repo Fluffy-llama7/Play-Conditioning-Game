@@ -1,26 +1,19 @@
 using Enemy;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using static Unity.VisualScripting.Member;
 
 public class BasicEnemyController : MonoBehaviour, IEnemy
 {
-    [SerializeField]
-    private Animator animator;
-    [SerializeField]
-    private float speed = 5f;
-    [SerializeField]
-    private float range = 2f;
-    [SerializeField]
-    private float damage = 1f;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float range = 2f;
+    [SerializeField] private float damage = 1f;
+
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
 
-    void Start()
+    private void Start()
     {
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
@@ -29,7 +22,7 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
         GameManager.instance.AddEnemy(this);
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         GameManager.instance.RemoveEnemy(this);
     }
@@ -42,7 +35,7 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
         animator.SetFloat("Y", direction.y);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
@@ -61,6 +54,6 @@ public class BasicEnemyController : MonoBehaviour, IEnemy
     {
         animator.SetBool("Attack", true);
     }
-    
-    public float Damage { get { return damage; } }
+
+    public float Damage => damage;
 }

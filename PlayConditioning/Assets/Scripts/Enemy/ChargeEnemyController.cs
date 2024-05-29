@@ -1,29 +1,21 @@
 using Enemy;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using static Unity.VisualScripting.Member;
 
 public class ChargeEnemyController : MonoBehaviour, IEnemy
 {
-    [SerializeField]
-    private Animator animator;
-    [SerializeField]
-    private float speed = 5f;
-    [SerializeField]
-    private float range = 2f;
-    [SerializeField]
-    private float chargeTime = 2f;
-    [SerializeField]
-    private float damage = 2f;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float range = 2f;
+    [SerializeField] private float chargeTime = 2f;
+    [SerializeField] private float damage = 2f;
+
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
     private bool canCharge = true;
 
-    void Start()
+    private void Start()
     {
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
@@ -32,7 +24,7 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
         GameManager.instance.AddEnemy(this);
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         GameManager.instance.RemoveEnemy(this);
     }
@@ -45,7 +37,7 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
         animator.SetFloat("Y", direction.y);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
@@ -76,7 +68,7 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
 
     private IEnumerator Charge(Vector3 direction)
     {
-        rb.velocity = direction * speed * 2;
+        rb.velocity = direction.normalized * speed * 2;
         yield return new WaitForSeconds(0.5f);
         animator.SetBool("Attack", false);
         rb.velocity = Vector2.zero;
@@ -88,5 +80,5 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
         canCharge = true;
     }
 
-    public float Damage { get { return damage; } }
+    public float Damage => damage;
 }

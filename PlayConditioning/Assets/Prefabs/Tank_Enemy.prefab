@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a88cb1343d32664ab10097eaf25c41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4910964721591853143, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
+  projectilePrefab: {fileID: 4910964721591853143, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
   animator: {fileID: 6006584503797185739}
   speed: 5
   range: 4

@@ -7,7 +7,7 @@ public class OrbController : MonoBehaviour
     [SerializeField]
     private Animator animator;
     [SerializeField]
-    private float damage = 5.0f;
+    private float damage = 2.0f;
     private Rigidbody2D rb;
     private Vector3 lastVelocity;
 

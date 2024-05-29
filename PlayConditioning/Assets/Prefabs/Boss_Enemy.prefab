@@ -188,11 +188,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a27a083b413b4ed7a3bd7be9d3364b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7040152947527359261, guid: c1ee5399e54328c448cdb7cfcbf88c4a, type: 3}
+  projectilePrefab: {fileID: 6381810380955244505, guid: b51715212aec76a49b8d322787a8cb7f, type: 3}
   animator: {fileID: 1628668572845883290}
-  health: 10
-  speed: 4
-  range: 2
+  speed: 5
+  basicRange: 2
+  tankRange: 10
+  chargeRange: 10
+  chargeTime: 2
+  fireTime: 1
+  damage: 4
 --- !u!114 &3289170968253522919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,5 +209,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27727f592850242b688959e9367d36c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastDamage: 3
   totalHealth: 20
