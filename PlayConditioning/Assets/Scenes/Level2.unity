@@ -951,11 +951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8687695575190887928, guid: 19e630a75ade39246977831f99d68d4b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -314.14
+      value: -299.5
       objectReference: {fileID: 0}
     - target: {fileID: 8687695575190887928, guid: 19e630a75ade39246977831f99d68d4b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 179.15
+      value: 153.7
       objectReference: {fileID: 0}
     - target: {fileID: 9215405058265821633, guid: 19e630a75ade39246977831f99d68d4b, type: 3}
       propertyPath: m_Camera
