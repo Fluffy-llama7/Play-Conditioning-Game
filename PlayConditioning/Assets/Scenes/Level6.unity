@@ -1047,7 +1047,7 @@ PrefabInstance:
     - target: {fileID: 8882788051325201690, guid: 6d31322c719fa1540ab1490b0c4eb657, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1461441218}
     - target: {fileID: 8882788051325201690, guid: 6d31322c719fa1540ab1490b0c4eb657, type: 3}
       propertyPath: healthbar
       value: 
@@ -1529,6 +1529,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91b3a11ce0bfb9141b17e8a32fe6dbcd, type: 3}
+--- !u!114 &1461441218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4244764724580513342, guid: 19e630a75ade39246977831f99d68d4b, type: 3}
+  m_PrefabInstance: {fileID: 1696557796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c456dc6076c574b8ddd84587e6b57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1477278437
 PrefabInstance:
   m_ObjectHideFlags: 0
