@@ -1,0 +1,1172 @@
+fileFormatVersion: 2
+guid: 18811ec04dd67fd4d9cba966e94451dc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2359109150702685763
+    second: Charge Enemy Sprite Sheet_0
+  - first:
+      213: -3844682992603638604
+    second: Charge Enemy Sprite Sheet_1
+  - first:
+      213: -1802259291677317939
+    second: Charge Enemy Sprite Sheet_2
+  - first:
+      213: -3725816009743820223
+    second: Charge Enemy Sprite Sheet_3
+  - first:
+      213: 2117496284138140266
+    second: Charge Enemy Sprite Sheet_4
+  - first:
+      213: -2715600802473946494
+    second: Charge Enemy Sprite Sheet_5
+  - first:
+      213: 565819648801058898
+    second: Charge Enemy Sprite Sheet_6
+  - first:
+      213: -2851276396995994350
+    second: Charge Enemy Sprite Sheet_7
+  - first:
+      213: -3423004347769283496
+    second: Charge Enemy Sprite Sheet_8
+  - first:
+      213: 1995003973193585254
+    second: Charge Enemy Sprite Sheet_9
+  - first:
+      213: 360880379011162317
+    second: Charge Enemy Sprite Sheet_10
+  - first:
+      213: 3931939199913153635
+    second: Charge Enemy Sprite Sheet_11
+  - first:
+      213: -6834612365269715459
+    second: Charge Enemy Sprite Sheet_12
+  - first:
+      213: 3981879230827228835
+    second: Charge Enemy Sprite Sheet_13
+  - first:
+      213: 3142571815817367906
+    second: Charge Enemy Sprite Sheet_14
+  - first:
+      213: -745133319814787113
+    second: Charge Enemy Sprite Sheet_15
+  - first:
+      213: 3223881544239234737
+    second: Charge Enemy Sprite Sheet_16
+  - first:
+      213: -2631326196800442140
+    second: Charge Enemy Sprite Sheet_17
+  - first:
+      213: 1005902330650873863
+    second: Charge Enemy Sprite Sheet_18
+  - first:
+      213: 3053127232146697594
+    second: Charge Enemy Sprite Sheet_19
+  - first:
+      213: 6295691376468405663
+    second: Charge Enemy Sprite Sheet_20
+  - first:
+      213: -1339603780599602984
+    second: Charge Enemy Sprite Sheet_21
+  - first:
+      213: 870835373419811789
+    second: Charge Enemy Sprite Sheet_22
+  - first:
+      213: 2763124816336596248
+    second: Charge Enemy Sprite Sheet_23
+  - first:
+      213: -2588171802773334670
+    second: Charge Enemy Sprite Sheet_24
+  - first:
+      213: -4867693756519374730
+    second: Charge Enemy Sprite Sheet_25
+  - first:
+      213: -7222372358577799506
+    second: Charge Enemy Sprite Sheet_26
+  - first:
+      213: -7801744393598931750
+    second: Charge Enemy Sprite Sheet_27
+  - first:
+      213: 416553449598940336
+    second: Charge Enemy Sprite Sheet_28
+  - first:
+      213: 8780014782815315341
+    second: Charge Enemy Sprite Sheet_29
+  - first:
+      213: -1306260448183046539
+    second: Charge Enemy Sprite Sheet_30
+  - first:
+      213: -4464550344181030235
+    second: Charge Enemy Sprite Sheet_31
+  - first:
+      213: 9136349049851199510
+    second: Charge Enemy Sprite Sheet_32
+  - first:
+      213: 795201876253891010
+    second: Charge Enemy Sprite Sheet_33
+  - first:
+      213: 7537198203982957216
+    second: Charge Enemy Sprite Sheet_34
+  - first:
+      213: 7320111630735786938
+    second: Charge Enemy Sprite Sheet_35
+  - first:
+      213: 7466579168949429446
+    second: Charge Enemy Sprite Sheet_36
+  - first:
+      213: 8095606599530912405
+    second: Charge Enemy Sprite Sheet_37
+  - first:
+      213: 7952237622492230374
+    second: Charge Enemy Sprite Sheet_38
+  - first:
+      213: 7927242158050119244
+    second: Charge Enemy Sprite Sheet_39
+  - first:
+      213: 4796503456621452954
+    second: Charge Enemy Sprite Sheet_40
+  - first:
+      213: 6844607879275702933
+    second: Charge Enemy Sprite Sheet_41
+  - first:
+      213: -739178722326543749
+    second: Charge Enemy Sprite Sheet_42
+  - first:
+      213: 935228392376485591
+    second: Charge Enemy Sprite Sheet_43
+  - first:
+      213: 4980745890758904890
+    second: Charge Enemy Sprite Sheet_44
+  - first:
+      213: -5899560956605280601
+    second: Charge Enemy Sprite Sheet_45
+  - first:
+      213: -3756618086213015944
+    second: Charge Enemy Sprite Sheet_46
+  - first:
+      213: 2207599230586733177
+    second: Charge Enemy Sprite Sheet_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 764
+        width: 67
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ec102064d3db020800000000000000
+      internalID: 2359109150702685763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 764
+        width: 66
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4dfdf2031f4aac0800000000000000
+      internalID: -3844682992603638604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 765
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc42d6619b61df6e0800000000000000
+      internalID: -1802259291677317939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 768
+        width: 66
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a91c0541e3b4cc0800000000000000
+      internalID: -3725816009743820223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 764
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a627345c6abd26d10800000000000000
+      internalID: 2117496284138140266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 694
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28256c0457f305ad0800000000000000
+      internalID: -2715600802473946494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 697
+        width: 66
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25039b509f13ad700800000000000000
+      internalID: 565819648801058898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 698
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d1990493b3e68d0800000000000000
+      internalID: -2851276396995994350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 694
+        width: 66
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c189a7eab0f70d0800000000000000
+      internalID: -3423004347769283496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 695
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66252bb2b8dafab10800000000000000
+      internalID: 1995003973193585254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 623
+        width: 44
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc06e5deaca120500800000000000000
+      internalID: 360880379011162317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 623
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 364d149bedd019630800000000000000
+      internalID: 3931939199913153635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 623
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df53b9ed3449621a0800000000000000
+      internalID: -6834612365269715459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 622
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261d2fa9a68ac9b20800000000000000
+      internalID: 3142571815817367906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 623
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be31520f278dbc20800000000000000
+      internalID: 3223881544239234737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 564
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e0b78fe3c6ab7bd0800000000000000
+      internalID: -2631326196800442140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 565
+        width: 66
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700de2917dea5fd00800000000000000
+      internalID: 1005902330650873863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 564
+        width: 62
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7dec2e9a03ee5a20800000000000000
+      internalID: 3053127232146697594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 562
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d027958575c86de0800000000000000
+      internalID: -1339603780599602984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 562
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc358828824d51c00800000000000000
+      internalID: 870835373419811789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 494
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27553064577f41cd0800000000000000
+      internalID: -2588171802773334670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 495
+        width: 66
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 670a64f815a727cb0800000000000000
+      internalID: -4867693756519374730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 493
+        width: 62
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaebe5b0b9af4cb90800000000000000
+      internalID: -7222372358577799506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 489
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4fe49c725e7c500800000000000000
+      internalID: 416553449598940336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 492
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85a26c2de0e8d970800000000000000
+      internalID: 8780014782815315341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 413
+        width: 44
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2ed3dbd1bba02c0800000000000000
+      internalID: -4464550344181030235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 412
+        width: 55
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 610cb5ced05dace70800000000000000
+      internalID: 9136349049851199510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 416
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c956dea4ef190b00800000000000000
+      internalID: 795201876253891010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 417
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab3463a9eb2469560800000000000000
+      internalID: 7320111630735786938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 415
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a19565f4f595070800000000000000
+      internalID: 8095606599530912405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 341
+        width: 66
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e275222cf50c5e60800000000000000
+      internalID: 7952237622492230374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 341
+        width: 66
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4e041f0eb8330e60800000000000000
+      internalID: 7927242158050119244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 342
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9edad71b7a909240800000000000000
+      internalID: 4796503456621452954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 345
+        width: 66
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a61171a9eecfe50800000000000000
+      internalID: 6844607879275702933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 341
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b72033e4ed8edb5f0800000000000000
+      internalID: -739178722326543749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 271
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d6c57f84499afc00800000000000000
+      internalID: 935228392376485591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 274
+        width: 64
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ccb2f9ff92f1540800000000000000
+      internalID: 4980745890758904890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 275
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae47c2319c802ea0800000000000000
+      internalID: -5899560956605280601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 271
+        width: 66
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876277601cfcddbc0800000000000000
+      internalID: -3756618086213015944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charge Enemy Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 272
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9724c89cdc7f2ae10800000000000000
+      internalID: 2207599230586733177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c02e71e787d82924797012fbc76ba787
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Charge Enemy Sprite Sheet_0: 2359109150702685763
+      Charge Enemy Sprite Sheet_1: -3844682992603638604
+      Charge Enemy Sprite Sheet_10: 360880379011162317
+      Charge Enemy Sprite Sheet_11: 3931939199913153635
+      Charge Enemy Sprite Sheet_12: -6834612365269715459
+      Charge Enemy Sprite Sheet_13: 3981879230827228835
+      Charge Enemy Sprite Sheet_14: 3142571815817367906
+      Charge Enemy Sprite Sheet_15: -745133319814787113
+      Charge Enemy Sprite Sheet_16: 3223881544239234737
+      Charge Enemy Sprite Sheet_17: -2631326196800442140
+      Charge Enemy Sprite Sheet_18: 1005902330650873863
+      Charge Enemy Sprite Sheet_19: 3053127232146697594
+      Charge Enemy Sprite Sheet_2: -1802259291677317939
+      Charge Enemy Sprite Sheet_20: 6295691376468405663
+      Charge Enemy Sprite Sheet_21: -1339603780599602984
+      Charge Enemy Sprite Sheet_22: 870835373419811789
+      Charge Enemy Sprite Sheet_23: 2763124816336596248
+      Charge Enemy Sprite Sheet_24: -2588171802773334670
+      Charge Enemy Sprite Sheet_25: -4867693756519374730
+      Charge Enemy Sprite Sheet_26: -7222372358577799506
+      Charge Enemy Sprite Sheet_27: -7801744393598931750
+      Charge Enemy Sprite Sheet_28: 416553449598940336
+      Charge Enemy Sprite Sheet_29: 8780014782815315341
+      Charge Enemy Sprite Sheet_3: -3725816009743820223
+      Charge Enemy Sprite Sheet_30: -1306260448183046539
+      Charge Enemy Sprite Sheet_31: -4464550344181030235
+      Charge Enemy Sprite Sheet_32: 9136349049851199510
+      Charge Enemy Sprite Sheet_33: 795201876253891010
+      Charge Enemy Sprite Sheet_34: 7537198203982957216
+      Charge Enemy Sprite Sheet_35: 7320111630735786938
+      Charge Enemy Sprite Sheet_36: 7466579168949429446
+      Charge Enemy Sprite Sheet_37: 8095606599530912405
+      Charge Enemy Sprite Sheet_38: 7952237622492230374
+      Charge Enemy Sprite Sheet_39: 7927242158050119244
+      Charge Enemy Sprite Sheet_4: 2117496284138140266
+      Charge Enemy Sprite Sheet_40: 4796503456621452954
+      Charge Enemy Sprite Sheet_41: 6844607879275702933
+      Charge Enemy Sprite Sheet_42: -739178722326543749
+      Charge Enemy Sprite Sheet_43: 935228392376485591
+      Charge Enemy Sprite Sheet_44: 4980745890758904890
+      Charge Enemy Sprite Sheet_45: -5899560956605280601
+      Charge Enemy Sprite Sheet_46: -3756618086213015944
+      Charge Enemy Sprite Sheet_47: 2207599230586733177
+      Charge Enemy Sprite Sheet_5: -2715600802473946494
+      Charge Enemy Sprite Sheet_6: 565819648801058898
+      Charge Enemy Sprite Sheet_7: -2851276396995994350
+      Charge Enemy Sprite Sheet_8: -3423004347769283496
+      Charge Enemy Sprite Sheet_9: 1995003973193585254
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

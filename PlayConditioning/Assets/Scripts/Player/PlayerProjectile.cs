@@ -16,7 +16,7 @@ public class PlayerProjectile : MonoBehaviour
         timer += Time.deltaTime;
 
         // Destroy the bullet after 5 seconds if it doesn't hit the ball
-        if (timer >= 5.0f)
+        if (timer >= 10.0f)
         {
             Destroy(this.gameObject);
             timer = 0.0f;

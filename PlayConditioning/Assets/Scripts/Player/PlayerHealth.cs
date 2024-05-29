@@ -1,30 +1,31 @@
 using System.Collections;
 using UnityEngine;
 using Mech;
-using Unity.VisualScripting;
 using Enemy;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] 
-    private float totalHealth = 50.0f;
+    private float totalHealth = 100.0f;
     private float currentHealth;
+    public HealthBarController healthBar;
 
-    private void Awake()
+    private void Start()
     {
-        currentHealth = totalHealth;
+        this.currentHealth = this.totalHealth;
+        this.healthBar.SetMaxHealth(this.totalHealth);
     }
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        this.currentHealth -= damage;
+        this.healthBar.SetHealth(this.currentHealth);
 
-        Debug.Log("Player's health: " + currentHealth);
+        Debug.Log("Player took " + damage + " damage. Current health: " + this.currentHealth);
 
-        GameManager.instance.UpdateHealth(currentHealth, totalHealth);
-
-        if (currentHealth <= 0)
+        if (this.currentHealth <= 0)
         {
+            Debug.Log("Player died");
             GameManager.instance.UpdateState(GameState.End);
         }
     }
@@ -34,12 +35,12 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             IEnemy enemy = collision.gameObject.GetComponent<IEnemy>();
-            TakeDamage(enemy.Damage);
+            this.TakeDamage(enemy.Damage);
         }
         else if (collision.gameObject.tag == "Enemy Projectile")
         {
             float damage = collision.gameObject.GetComponent<EnemyProjectile>().Damage;
-            TakeDamage(damage);
+            this.TakeDamage(damage);
         }
     }
 }

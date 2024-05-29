@@ -1,0 +1,1265 @@
+fileFormatVersion: 2
+guid: 0e90e18ade5c6f047a9ca524c2656e2c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -269504366405913847
+    second: Basic Enemy Sprite Sheet_0
+  - first:
+      213: -6643213690174332639
+    second: Basic Enemy Sprite Sheet_1
+  - first:
+      213: 2934975918543287864
+    second: Basic Enemy Sprite Sheet_2
+  - first:
+      213: -5373963011899369460
+    second: Basic Enemy Sprite Sheet_3
+  - first:
+      213: -5625194965743011084
+    second: Basic Enemy Sprite Sheet_4
+  - first:
+      213: 4473570927360694149
+    second: Basic Enemy Sprite Sheet_5
+  - first:
+      213: 8977095870701488818
+    second: Basic Enemy Sprite Sheet_6
+  - first:
+      213: -3470934078350805993
+    second: Basic Enemy Sprite Sheet_7
+  - first:
+      213: 96550878096588138
+    second: Basic Enemy Sprite Sheet_8
+  - first:
+      213: -7184963746524674128
+    second: Basic Enemy Sprite Sheet_9
+  - first:
+      213: 6590038906810588649
+    second: Basic Enemy Sprite Sheet_10
+  - first:
+      213: -6563666574132958105
+    second: Basic Enemy Sprite Sheet_11
+  - first:
+      213: -1894610667269603358
+    second: Basic Enemy Sprite Sheet_12
+  - first:
+      213: -6354912984098724663
+    second: Basic Enemy Sprite Sheet_13
+  - first:
+      213: 3705705724637549750
+    second: Basic Enemy Sprite Sheet_14
+  - first:
+      213: -226011639971000572
+    second: Basic Enemy Sprite Sheet_15
+  - first:
+      213: -7951208002303648143
+    second: Basic Enemy Sprite Sheet_16
+  - first:
+      213: -4941449764002256270
+    second: Basic Enemy Sprite Sheet_17
+  - first:
+      213: -9140602945228581242
+    second: Basic Enemy Sprite Sheet_18
+  - first:
+      213: 7854484115229604453
+    second: Basic Enemy Sprite Sheet_19
+  - first:
+      213: 8533983847383222185
+    second: Basic Enemy Sprite Sheet_20
+  - first:
+      213: 3340588964675948246
+    second: Basic Enemy Sprite Sheet_21
+  - first:
+      213: 6236040232751774651
+    second: Basic Enemy Sprite Sheet_22
+  - first:
+      213: 4628560819856290145
+    second: Basic Enemy Sprite Sheet_23
+  - first:
+      213: -2192451408444261566
+    second: Basic Enemy Sprite Sheet_24
+  - first:
+      213: 8391787063873658843
+    second: Basic Enemy Sprite Sheet_25
+  - first:
+      213: 5035740349889167092
+    second: Basic Enemy Sprite Sheet_26
+  - first:
+      213: -4299205495106870016
+    second: Basic Enemy Sprite Sheet_27
+  - first:
+      213: 5634722857087363310
+    second: Basic Enemy Sprite Sheet_28
+  - first:
+      213: -6047541372425867486
+    second: Basic Enemy Sprite Sheet_29
+  - first:
+      213: -7198597845713087052
+    second: Basic Enemy Sprite Sheet_30
+  - first:
+      213: 7200894091102685863
+    second: Basic Enemy Sprite Sheet_31
+  - first:
+      213: 6269782928649750577
+    second: Basic Enemy Sprite Sheet_32
+  - first:
+      213: 7305728851881548587
+    second: Basic Enemy Sprite Sheet_33
+  - first:
+      213: -1769575662420906876
+    second: Basic Enemy Sprite Sheet_34
+  - first:
+      213: -961653359456375233
+    second: Basic Enemy Sprite Sheet_35
+  - first:
+      213: -5592996505561935066
+    second: Basic Enemy Sprite Sheet_36
+  - first:
+      213: 319700586484458038
+    second: Basic Enemy Sprite Sheet_37
+  - first:
+      213: 8542653380191115299
+    second: Basic Enemy Sprite Sheet_38
+  - first:
+      213: -3307659931187237170
+    second: Basic Enemy Sprite Sheet_39
+  - first:
+      213: 2485851801601449543
+    second: Basic Enemy Sprite Sheet_40
+  - first:
+      213: 442254728141613870
+    second: Basic Enemy Sprite Sheet_41
+  - first:
+      213: 1659747306886944432
+    second: Basic Enemy Sprite Sheet_42
+  - first:
+      213: -3060990144903789631
+    second: Basic Enemy Sprite Sheet_43
+  - first:
+      213: -1345383137945148712
+    second: Basic Enemy Sprite Sheet_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 584
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90375f6e437824cf0800000000000000
+      internalID: -269504366405913847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 584
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121a52698509ec3a0800000000000000
+      internalID: -6643213690174332639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 584
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83639193c012bb820800000000000000
+      internalID: 2934975918543287864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 586
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0856a7fc19db65b0800000000000000
+      internalID: -5373963011899369460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 587
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa72927bfa4fe1b0800000000000000
+      internalID: -5625194965743011084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 585
+        width: 64
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58759d27e01551e30800000000000000
+      internalID: 4473570927360694149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 514
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bac9c7b12d059c70800000000000000
+      internalID: 8977095870701488818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 524
+        width: 51
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7143a1578d3c4dfc0800000000000000
+      internalID: -3470934078350805993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 532
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6df2b71384075100800000000000000
+      internalID: 96550878096588138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 445
+        width: 64
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b746544a81e94c90800000000000000
+      internalID: -7184963746524674128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 525
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9edd2706875847b50800000000000000
+      internalID: 6590038906810588649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c23b0d60c29e4a0800000000000000
+      internalID: -6563666574132958105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 444
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2efbabdd2adf4b5e0800000000000000
+      internalID: -1894610667269603358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 444
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c4274c8f40dec7a0800000000000000
+      internalID: -6354912984098724663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 444
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b4172f09bf4d6330800000000000000
+      internalID: 3705705724637549750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 447
+        width: 64
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40fcc646c9b0ddcf0800000000000000
+      internalID: -226011639971000572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 444
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17e927ff272a7a190800000000000000
+      internalID: -7951208002303648143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 374
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a253dde917c6bb0800000000000000
+      internalID: -4941449764002256270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 384
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 686d2c0ec0e062180800000000000000
+      internalID: -9140602945228581242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 396
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56a753e10bbb00d60800000000000000
+      internalID: 7854484115229604453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 385
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7c23e181dce6670800000000000000
+      internalID: 8533983847383222185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 372
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6de8914d6f72c5e20800000000000000
+      internalID: 3340588964675948246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 304
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbb63e3d8dda8650800000000000000
+      internalID: 6236040232751774651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 304
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16133d0ea83fb3040800000000000000
+      internalID: 4628560819856290145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 304
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24bff546f09d291e0800000000000000
+      internalID: -2192451408444261566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 304
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf58ec7fdd957470800000000000000
+      internalID: 8391787063873658843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 307
+        width: 64
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4febe30fa2b82e540800000000000000
+      internalID: 5035740349889167092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 304
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0056fbf51672654c0800000000000000
+      internalID: -4299205495106870016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 234
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee86770a59e823e40800000000000000
+      internalID: 5634722857087363310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 244
+        width: 51
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22fe31cb921d21ca0800000000000000
+      internalID: -6047541372425867486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 254
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5116d2661791c90800000000000000
+      internalID: -7198597845713087052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 258
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa826d1607bee360800000000000000
+      internalID: 7200894091102685863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 165
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1380af8da5eb20750800000000000000
+      internalID: 6269782928649750577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 246
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2bd8b1fea9236560800000000000000
+      internalID: 7305728851881548587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 232
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ca9368f443177e0800000000000000
+      internalID: -1769575662420906876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 164
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3eaa885d5587a2f0800000000000000
+      internalID: -961653359456375233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 164
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 623daf7af4fa162b0800000000000000
+      internalID: -5592996505561935066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 164
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 632e3e35dfdcf6400800000000000000
+      internalID: 319700586484458038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 164
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328d4950df99d8670800000000000000
+      internalID: 8542653380191115299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 165
+        width: 64
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eceaacb31d4d812d0800000000000000
+      internalID: -3307659931187237170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 94
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74e18befa058f7220800000000000000
+      internalID: 2485851801601449543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 103
+        width: 51
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b2e130554332600800000000000000
+      internalID: 442254728141613870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 116
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b658e3c16b980710800000000000000
+      internalID: 1659747306886944432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 106
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c3c9085ead2585d0800000000000000
+      internalID: -3060990144903789631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Enemy Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 92
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2aaf70a2d345de0800000000000000
+      internalID: -1345383137945148712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ebbed64769d36394e85a27f8831c3a25
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Basic Enemy Sprite Sheet_0: -269504366405913847
+      Basic Enemy Sprite Sheet_1: -6643213690174332639
+      Basic Enemy Sprite Sheet_10: 6590038906810588649
+      Basic Enemy Sprite Sheet_11: -6563666574132958105
+      Basic Enemy Sprite Sheet_12: -1894610667269603358
+      Basic Enemy Sprite Sheet_13: -6354912984098724663
+      Basic Enemy Sprite Sheet_14: 3705705724637549750
+      Basic Enemy Sprite Sheet_15: -226011639971000572
+      Basic Enemy Sprite Sheet_16: -7951208002303648143
+      Basic Enemy Sprite Sheet_17: -4941449764002256270
+      Basic Enemy Sprite Sheet_18: -9140602945228581242
+      Basic Enemy Sprite Sheet_19: 7854484115229604453
+      Basic Enemy Sprite Sheet_2: 2934975918543287864
+      Basic Enemy Sprite Sheet_20: 8533983847383222185
+      Basic Enemy Sprite Sheet_21: 3340588964675948246
+      Basic Enemy Sprite Sheet_22: 6236040232751774651
+      Basic Enemy Sprite Sheet_23: 4628560819856290145
+      Basic Enemy Sprite Sheet_24: -2192451408444261566
+      Basic Enemy Sprite Sheet_25: 8391787063873658843
+      Basic Enemy Sprite Sheet_26: 5035740349889167092
+      Basic Enemy Sprite Sheet_27: -4299205495106870016
+      Basic Enemy Sprite Sheet_28: 5634722857087363310
+      Basic Enemy Sprite Sheet_29: -6047541372425867486
+      Basic Enemy Sprite Sheet_3: -5373963011899369460
+      Basic Enemy Sprite Sheet_30: -7198597845713087052
+      Basic Enemy Sprite Sheet_31: 7200894091102685863
+      Basic Enemy Sprite Sheet_32: 6269782928649750577
+      Basic Enemy Sprite Sheet_33: 7305728851881548587
+      Basic Enemy Sprite Sheet_34: -1769575662420906876
+      Basic Enemy Sprite Sheet_35: -961653359456375233
+      Basic Enemy Sprite Sheet_36: -5592996505561935066
+      Basic Enemy Sprite Sheet_37: 319700586484458038
+      Basic Enemy Sprite Sheet_38: 8542653380191115299
+      Basic Enemy Sprite Sheet_39: -3307659931187237170
+      Basic Enemy Sprite Sheet_4: -5625194965743011084
+      Basic Enemy Sprite Sheet_40: 2485851801601449543
+      Basic Enemy Sprite Sheet_41: 442254728141613870
+      Basic Enemy Sprite Sheet_42: 1659747306886944432
+      Basic Enemy Sprite Sheet_43: -3060990144903789631
+      Basic Enemy Sprite Sheet_44: -1345383137945148712
+      Basic Enemy Sprite Sheet_5: 4473570927360694149
+      Basic Enemy Sprite Sheet_6: 8977095870701488818
+      Basic Enemy Sprite Sheet_7: -3470934078350805993
+      Basic Enemy Sprite Sheet_8: 96550878096588138
+      Basic Enemy Sprite Sheet_9: -7184963746524674128
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
