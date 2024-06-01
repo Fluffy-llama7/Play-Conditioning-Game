@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        left1 = GetComponent<ShootMechanic>();
-        right1 = GetComponent<SwingMechanic>();
+        left1 = GetComponent<Version1Mechanic1>();
+        right1 = GetComponent<Version1Mechanic2>();
         left2 = GetComponent<Version2Mechanic1>();
         right2 = GetComponent<Version2Mechanic2>();
         left3 = GetComponent<TracePath>();

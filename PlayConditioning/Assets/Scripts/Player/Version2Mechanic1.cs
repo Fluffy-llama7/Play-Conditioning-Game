@@ -1,55 +1,56 @@
+using Mech;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
-using Mech;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Assertions;
-using Vector2 = UnityEngine.Vector2;
 
-public class Version2Mechanic1: MonoBehaviour, IMechanic
+public class Version2Mechanic1 : MonoBehaviour, IMechanic
 {
-    GameObject orb;
-    private SpriteRenderer orbRenderer;
-    private CircleCollider2D orbCollider;
-    private Color orbOriginalColor;
-    private Version2Mechanic2 otherMechanic;
-    [SerializeField] float orbSpeed = 5.0f;
-
-    private bool active = false;
-
+    private GameObject orb;
+    private GameObject player;
+    private Rigidbody2D orbRigidbody;
+    private Collider2D orbCollider;
+    private bool isActive = false;
+    [SerializeField] private float orbSpeed = 5.0f;
 
     // Mechanic 1: player is followed by orb
-    //  Orb can also damage player upon contact
-    //  Orb can be guided to hit enemies
-    public void Awake(){
+    // Orb can also damage player upon contact
+    // Orb can be guided to hit enemies
+
+    private void Awake()
+    {
         orb = GameObject.Find("Orb");
-        orbCollider = orb.GetComponent<CircleCollider2D>();
-        orbRenderer = orb.GetComponent<SpriteRenderer>();
-        orbOriginalColor = orbRenderer.color;
-        otherMechanic = GetComponent<Version2Mechanic2>();
-    }
-    public void Execute(){
-        active = true;
-        otherMechanic.Disable();
-        resetLocalVariables();
+        player = GameObject.FindWithTag("Player");
+
+        orbRigidbody = orb.GetComponent<Rigidbody2D>();
+        orbCollider = orb.GetComponent<Collider2D>();
+
+        enabled = false;
     }
 
-    public void Update(){
-        if (active){
-            orb.transform.position = Vector2.MoveTowards(orb.transform.position, this.transform.position, orbSpeed * Time.deltaTime);
-        }
-    }
-    public void Disable(){
-        active = false;
-    }
-    void OnDisable(){
-        resetLocalVariables();
-    }
-    void resetLocalVariables()
+    public void Execute()
     {
-        orb.transform.localScale = new Vector2(2.4452f, 2.4452f);
-        orbRenderer.color = orbOriginalColor;
-        orbCollider.enabled = true;
+        enabled = true;
+        isActive = true;
+
+        orbCollider.sharedMaterial.friction = 0f;
+        orbCollider.sharedMaterial.bounciness = 0f;
+    }
+
+    public void Update()
+    {
+        if (!isActive) return;
+
+        Vector2 direction = (player.transform.position - orb.transform.position).normalized;
+        orbRigidbody.velocity = direction * orbSpeed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!isActive) return;
+
+        if (collision.gameObject == player)
+        {
+            Debug.Log("Orb hit the player!");
+        }
     }
 }

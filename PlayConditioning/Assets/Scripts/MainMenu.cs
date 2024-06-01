@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject optionsMenuUI;
+    [SerializeField] private GameObject mainMenuUI;
 
 
     // Start is called before the first frame update
@@ -16,12 +17,14 @@ public class MainMenu : MonoBehaviour
     public void EnableOptions()
     {
         optionsMenuUI.SetActive(true);
+        mainMenuUI.SetActive(false);
         Time.timeScale = 1f;
     }
 
     public void GoBack()
     {
         optionsMenuUI.SetActive(false);
+        mainMenuUI.SetActive(true);
         Time.timeScale = 1f;
     }
 

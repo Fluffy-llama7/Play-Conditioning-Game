@@ -4,22 +4,22 @@ using UnityEditor;
 using UnityEngine;
 using Mech;
 
-public class SwingMechanic : MonoBehaviour, IMechanic
+public class Version1Mechanic2 : MonoBehaviour, IMechanic
 {
     [SerializeField] private float speed;
     [SerializeField] private float radius;
-    private ShootMechanic shoot;
     private GameObject orb;
     private GameObject player;
     private Rigidbody2D rb;
     private float angle;
     private bool active;
+    
+    // Mechanic 1: Orb swings around the player
 
     void Awake()
     {
         orb = GameObject.Find("Orb");
         player = GameObject.Find("Player");
-        shoot = GetComponent<ShootMechanic>();
         rb = orb.GetComponent<Rigidbody2D>();
 
         angle = 0.0f;
@@ -31,7 +31,6 @@ public class SwingMechanic : MonoBehaviour, IMechanic
         // If the player is not swinging, start swinging
         if (!this.active)
         {
-            shoot.Stop();
             this.active = true;
         }
         else

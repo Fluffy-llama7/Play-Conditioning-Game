@@ -239,7 +239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6945065713871620848, guid: 2caf3e86b4670fd4eb53c2494ea45d09, type: 3}
-  force: 20
 --- !u!114 &-7806466194188299587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f36f1b0293a934fb8062e727dd9713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbSpeed: 5
+  orbSpeed: 3
 --- !u!114 &-4832197861149505014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9e4b5eab126a74f8d299cfd4287237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenOrbs: 3
+  timeBetweenOrbs: 2
 --- !u!114 &5350085711914380121
 MonoBehaviour:
   m_ObjectHideFlags: 0

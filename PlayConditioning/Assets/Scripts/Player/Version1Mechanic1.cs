@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using Mech;
-using System.Threading;
-using UnityEngine.XR;
-using Unity.VisualScripting;
 
-public class ShootMechanic : MonoBehaviour, IMechanic
+public class Version1Mechanic1 : MonoBehaviour, IMechanic
 {
+    private GameObject orb;
     private Vector2 mousePosition;
     [SerializeField] private GameObject prefab;
-    [SerializeField]
     private float force = 20f;
 
+    // Mechanic 2: Player shoots a projectile in the direction of the mouse
 
     void Awake()
     {
+        orb = GameObject.Find("Orb");
     }
 
     public void Execute()
@@ -35,10 +35,5 @@ public class ShootMechanic : MonoBehaviour, IMechanic
     public void Update()
     {
         
-    }
-
-    public void Stop()
-    {
-
     }
 }
