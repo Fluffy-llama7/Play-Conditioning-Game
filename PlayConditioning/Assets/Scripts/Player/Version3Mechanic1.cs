@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using Mech;
 
-public class TracePath : MonoBehaviour, IMechanic
+public class Version3Mechanic1 : MonoBehaviour, IMechanic
 {
     private Collider2D playerCollider;
     private GameObject enemy;

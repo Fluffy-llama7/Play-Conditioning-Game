@@ -21,8 +21,6 @@ public class PlayerHealth : MonoBehaviour
         this.currentHealth -= damage;
         this.healthBar.SetHealth(this.currentHealth);
 
-        Debug.Log("Player took " + damage + " damage. Current health: " + this.currentHealth);
-
         if (this.currentHealth <= 0)
         {
             Debug.Log("Player died");

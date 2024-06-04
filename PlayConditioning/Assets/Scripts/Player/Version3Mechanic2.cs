@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using Mech;
 
-public class Blast : MonoBehaviour, IMechanic
+public class Version3Mechanic2 : MonoBehaviour, IMechanic
 {
     private GameObject blast;
     private TrailRenderer trailRenderer;

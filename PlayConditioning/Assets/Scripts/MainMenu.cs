@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject optionsMenuUI;
     [SerializeField] private GameObject mainMenuUI;
-
+    [SerializeField] private TMP_Text versionText;
 
     // Start is called before the first frame update
     public void PlayGame()
@@ -18,7 +19,15 @@ public class MainMenu : MonoBehaviour
     {
         optionsMenuUI.SetActive(true);
         mainMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
+
+        float version = GameManager.instance.GetVersion();
+        versionText.text = "current game version: " + version;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
     public void GoBack()
@@ -41,10 +50,5 @@ public class MainMenu : MonoBehaviour
     public void Option3()
     {
         GameManager.instance.UpdateVersion(3);
-    }
-
-    private void Update()
-    {
-        Debug.Log("Current Game Version: " + GameManager.instance.GetVersion());
     }
 }

@@ -31,9 +31,6 @@ public class Version2Mechanic1 : MonoBehaviour, IMechanic
     {
         enabled = true;
         isActive = true;
-
-        orbCollider.sharedMaterial.friction = 0f;
-        orbCollider.sharedMaterial.bounciness = 0f;
     }
 
     public void Update()

@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour
         right1 = GetComponent<Version1Mechanic2>();
         left2 = GetComponent<Version2Mechanic1>();
         right2 = GetComponent<Version2Mechanic2>();
-        left3 = GetComponent<TracePath>();
-        right3 = GetComponent<Blast>();
+        left3 = GetComponent<Version3Mechanic1>();
+        right3 = GetComponent<Version3Mechanic2>();
         animator = GetComponent<Animator>();
     }
 

@@ -24,11 +24,6 @@ public class Version2Mechanic2 : MonoBehaviour, IMechanic
     public void Execute()
     {
         active = true;
-
-        orbCollider.sharedMaterial.friction = 0f;
-        orbCollider.sharedMaterial.bounciness = 0f;
-
-        ResetOrb();
     }
 
     public void Update()
@@ -58,17 +53,5 @@ public class Version2Mechanic2 : MonoBehaviour, IMechanic
     public void Disable()
     {
         active = false;
-    }
-
-    private void OnDisable()
-    {
-        ResetOrb();
-    }
-
-    private void ResetOrb()
-    {
-        orb.transform.localScale = new Vector2(2.4452f, 2.4452f);
-        orbRenderer.color = orbOriginalColor;
-        orbCollider.enabled = true;
     }
 }

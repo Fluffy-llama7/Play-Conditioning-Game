@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232f0b3c983534915ac9ddd2df27e0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialUIV1: {fileID: 5228344078008726564, guid: 1ced195f3049ea34294fafb230725caa, type: 3}
+  tutorialUIV2: {fileID: 7197084918748424087, guid: 9d64ab32a7f8f7847b83bb9281894226, type: 3}
+  tutorialUIV3: {fileID: 4425218305904450925, guid: 9d7b321edb0d55f4c86d3569fc3d7e10, type: 3}
 --- !u!114 &-6003340944818023606
 MonoBehaviour:
   m_ObjectHideFlags: 0
