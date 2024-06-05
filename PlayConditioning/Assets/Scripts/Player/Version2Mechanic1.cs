@@ -8,7 +8,6 @@ public class Version2Mechanic1 : MonoBehaviour, IMechanic
     private GameObject orb;
     private GameObject player;
     private Rigidbody2D orbRigidbody;
-    private Collider2D orbCollider;
     private bool isActive = false;
     [SerializeField] private float orbSpeed = 5.0f;
 
@@ -22,14 +21,10 @@ public class Version2Mechanic1 : MonoBehaviour, IMechanic
         player = GameObject.Find("Player");
 
         orbRigidbody = orb.GetComponent<Rigidbody2D>();
-        orbCollider = orb.GetComponent<Collider2D>();
-
-        enabled = false;
     }
 
     public void Execute()
     {
-        enabled = true;
         isActive = true;
     }
 

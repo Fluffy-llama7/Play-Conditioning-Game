@@ -4,16 +4,16 @@ using Mech;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] 
-    private float totalHealth = 10.0f;
+    [SerializeField] private float totalHealth = 10.0f;
     private float currentHealth;
+    public bool isEnclosed = false;
 
     private void Awake()
     {
         currentHealth = totalHealth;
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
 
@@ -25,7 +25,16 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public void Update()
+    {
+        if (isEnclosed)
+        {
+            TakeDamage(0.5f);
+            isEnclosed = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Orb")
         {

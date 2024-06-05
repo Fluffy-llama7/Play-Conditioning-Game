@@ -14,7 +14,7 @@ public class Version1Mechanic2 : MonoBehaviour, IMechanic
     private float angle;
     private bool active;
     
-    // Mechanic 1: Orb swings around the player
+    // Mechanic 2: Orb swings around the player
 
     void Awake()
     {

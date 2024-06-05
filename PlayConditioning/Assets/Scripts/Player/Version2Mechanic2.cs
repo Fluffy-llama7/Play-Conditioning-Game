@@ -9,49 +9,85 @@ public class Version2Mechanic2 : MonoBehaviour, IMechanic
     private SpriteRenderer orbRenderer;
     private CircleCollider2D orbCollider;
     private Color orbOriginalColor;
-    private Vector2 orbSize;
+    private Vector3 orbOriginalSize;
     private float timeSinceLastFall = 0.0f;
     private bool active = false;
+    private bool orbGrowing = false;
+    private Vector3 lastPlayerPosition;
 
     private void Awake()
     {
         orb = GameObject.Find("Orb");
-        orbCollider = orb.GetComponent<CircleCollider2D>();
-        orbRenderer = orb.GetComponent<SpriteRenderer>();
-        orbOriginalColor = orbRenderer.color;
+        if (orb != null)
+        {
+            orbCollider = orb.GetComponent<CircleCollider2D>();
+            orbRenderer = orb.GetComponent<SpriteRenderer>();
+            orbOriginalColor = orbRenderer.color;
+            orbOriginalSize = orb.transform.localScale;
+        }
     }
 
     public void Execute()
     {
+        if (orb == null) return;
+
         active = true;
+        ResetOrb();
+        // Capture the player's last position
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            lastPlayerPosition = player.transform.position;
+            orb.transform.position = lastPlayerPosition;
+            orbGrowing = true;
+            timeSinceLastFall = 0.0f;
+        }
     }
 
     public void Update()
     {
-        if (active)
+        if (!active || !orbGrowing || orb == null) return;
+
+        timeSinceLastFall += Time.deltaTime;
+
+        if (timeSinceLastFall < timeBetweenOrbs)
         {
+            // Grow the orb in size and change color to grey
             orbRenderer.color = Color.grey;
-            timeSinceLastFall += Time.deltaTime;
-            orbSize = new Vector2(2.4452f, 2.4452f) * Mathf.Clamp01(timeSinceLastFall / timeBetweenOrbs);
+            Vector3 orbSize = orbOriginalSize * Mathf.Clamp01(timeSinceLastFall / timeBetweenOrbs);
             orb.transform.localScale = orbSize;
-
-            if (timeSinceLastFall > timeBetweenOrbs)
-            {
-                orbRenderer.color = orbOriginalColor;
-                orbCollider.enabled = true;
-            }
-
-            if (timeSinceLastFall > timeBetweenOrbs + 0.25f)
-            {
-                timeSinceLastFall = 0.0f;
-                orbCollider.enabled = false;
-                orb.transform.position = transform.position;
-            }
+            orbCollider.enabled = false; // Disable collider during this phase
+        }
+        else
+        {
+            // Once the orb is fully grown and the time has elapsed, revert to original color and enable collider
+            orbRenderer.color = orbOriginalColor;
+            orb.transform.localScale = orbOriginalSize;
+            orbCollider.enabled = true; // Enable collider once the orb is in position
+            orbGrowing = false;
+            active = false; // Deactivate to ensure the process happens once per Execute call
         }
     }
 
     public void Disable()
     {
         active = false;
+        orbGrowing = false;
+        ResetOrb();
+    }
+
+    private void OnDisable()
+    {
+        ResetOrb();
+    }
+
+    private void ResetOrb()
+    {
+        if (orb != null)
+        {
+            orb.transform.localScale = orbOriginalSize;
+            orbRenderer.color = orbOriginalColor;
+            orbCollider.enabled = false; // Ensure collider is disabled until the orb is active again
+        }
     }
 }

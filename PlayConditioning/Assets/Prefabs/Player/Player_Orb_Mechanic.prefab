@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6567288752347564077}
   - component: {fileID: 5988997330150316805}
   - component: {fileID: 9090735163808588223}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Player_Orb_Mechanic
   m_TagString: Orb
   m_Icon: {fileID: 0}
@@ -187,5 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be2f1e19c10c3946aee67d36cdde5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 5988997330150316805}
   damage: 2

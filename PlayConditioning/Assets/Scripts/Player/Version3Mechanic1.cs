@@ -1,109 +1,116 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
 using Mech;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Version3Mechanic1 : MonoBehaviour, IMechanic
 {
-    private Collider2D playerCollider;
-    private GameObject enemy;
+    public float recordTime = 5.0f; // Time in seconds to keep track of the player's position
     private LineRenderer lineRenderer;
-    private TrailRenderer trailRenderer;
-    private List<Vector2> positionList;
-    private bool active;
-    [SerializeField]
-    private float elapsedTime;
-    private float radius = 3.0f;
-    private float trackTime = 3.0f;
-    private float thetaScale = 0.01f;
+    private List<Vector3> positions;
+    private float timer;
+    private bool isActive = false;
 
-    void Awake()
+    private void Awake()
     {
-        playerCollider = gameObject.GetComponent<Collider2D>();
-        
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        lineRenderer = enemy.AddComponent<LineRenderer>();
-        lineRenderer.useWorldSpace = false;
-        lineRenderer.positionCount = 110;
-        lineRenderer.startWidth = 0.25f;
-        lineRenderer.endWidth = 0.25f;
-
-        trailRenderer = GetComponent<TrailRenderer>();
-        trailRenderer.enabled = true;
-        
-        positionList = new List<Vector2>();
-        active = false;
-        elapsedTime = 0.0f;
+        lineRenderer = GetComponent<LineRenderer>();
+        positions = new List<Vector3>();
+        enabled = false;
     }
 
-    /// <summary>
-    /// Traces the path of the player
-    /// </summary>
     public void Execute()
     {
-        if (!active)
-        {
-            active = true;
-        }
+        enabled = true;
+        isActive = true;
+        positions.Clear();
+        timer = 0f;
+        lineRenderer.positionCount = 0; // Reset the line renderer
     }
 
     public void Update()
     {
-        if (active)
+        if (!isActive) return;
+
+        timer += Time.deltaTime;
+
+        // Record the player's position every frame
+        positions.Add(transform.position);
+
+        // Remove positions that are older than the record time
+        while (positions.Count > 0 && timer > recordTime)
         {
-            if (elapsedTime >= trackTime)
-            {
-                trailRenderer.enabled = false;
-            }
-            else
-            {
-                elapsedTime += Time.deltaTime;
-                positionList.Add(this.transform.position);
-            }
+            positions.RemoveAt(0);
+            timer -= Time.deltaTime;
+        }
 
-            for (int i = 0; i < positionList.Count; i++) 
+        // Update the LineRenderer
+        lineRenderer.positionCount = positions.Count;
+        if (positions.Count > 1) // Ensure there are enough points to draw a line
+        {
+            lineRenderer.SetPositions(positions.ToArray());
+        }
+
+        // Check if any enemies are enclosed by the path
+        CheckForEnclosedEnemies();
+    }
+
+    private void CheckForEnclosedEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
             {
-                if (playerCollider.bounds.Contains(positionList[i]))
-                {
-                    Debug.Log("Collision detected between the player and the line.");
-                }
-            }
-
-            for (int i = 0; i < positionList.Count - 1; i++) 
-            {
-                Collider2D hit1 = Physics2D.OverlapPoint(positionList[i], LayerMask.GetMask("Default"));
-                Collider2D hit2 = Physics2D.OverlapPoint(positionList[i + 1], 
-                    LayerMask.GetMask("Default"));
-
-                if (hit1 != null && hit2 != null)
-                {
-                    Debug.Log("Collision detected within the line.");
-                }
-            }
-
-            float theta = 0f;
-            for (int i = 0; i < lineRenderer.positionCount; i++)
-            {          
-                theta += (2.0f * Mathf.PI * thetaScale);         
-                float x = radius * Mathf.Cos(theta);
-                float y = radius * Mathf.Sin(theta);
-                x += enemy.transform.position.x;
-                y += enemy.transform.position.y;
-                lineRenderer.SetPosition(i, new Vector3(x, y, 1));
+                enemyHealth.isEnclosed = IsPointEnclosed(enemy.transform.position);
             }
         }
     }
 
-    /// <summary>
-    /// Stops tracing the path
-    /// </summary>
-    public void Stop()
+    public bool IsPointEnclosed(Vector3 point)
     {
-        active = false;
-        positionList.Clear();
-        lineRenderer.positionCount = 0;
-        trailRenderer.enabled = false;
-        trailRenderer.Clear();
+        // Ensure there are enough points to form a polygon
+        if (positions.Count < 3) return false;
+
+        int intersectionCount = 0;
+        Vector3 lastPoint = positions[positions.Count - 1];
+
+        foreach (Vector3 vertex in positions)
+        {
+            // Check if the ray intersects with the edge formed by the current and last vertex
+            if ((vertex.y > point.y) != (lastPoint.y > point.y) &&
+                point.x < (lastPoint.x - vertex.x) * (point.y - vertex.y) / (lastPoint.y - vertex.y) + vertex.x)
+            {
+                intersectionCount++;
+            }
+            lastPoint = vertex;
+        }
+
+        // If the intersection count is odd, the point is inside the polygon
+        return intersectionCount % 2 == 1;
+    }
+
+    // Point-in-polygon algorithm to determine if a point is inside a polygon
+    private bool IsPointInPolygon(List<Vector3> polygon, Vector3 point)
+    {
+        int polygonLength = polygon.Count, i = 0;
+        bool inside = false;
+
+        // Get the point in 2D space
+        float pointX = point.x, pointY = point.y;
+        float startX, startY, endX, endY;
+        Vector3 endPoint = polygon[polygonLength - 1];
+        endX = endPoint.x;
+        endY = endPoint.y;
+        while (i < polygonLength)
+        {
+            startX = endX;
+            startY = endY;
+            endPoint = polygon[i++];
+            endX = endPoint.x;
+            endY = endPoint.y;
+            inside ^= (endY > pointY ^ startY > pointY) && (pointX < (startX - endX) * (pointY - endY) / (startY - endY) + endX);
+        }
+        return inside;
     }
 }

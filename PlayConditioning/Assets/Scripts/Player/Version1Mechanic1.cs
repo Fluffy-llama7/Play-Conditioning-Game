@@ -11,7 +11,7 @@ public class Version1Mechanic1 : MonoBehaviour, IMechanic
     [SerializeField] private GameObject prefab;
     private float force = 20f;
 
-    // Mechanic 2: Player shoots a projectile in the direction of the mouse
+    // Mechanic 1: Player shoots a projectile in the direction of the mouse
 
     void Awake()
     {
