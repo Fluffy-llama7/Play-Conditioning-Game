@@ -7,13 +7,13 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody2D body;
-    float horizontal;
-    float vertical;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float attackDelay = 3.0f;
+    private Rigidbody2D body;
+    private float horizontal;
+    private float vertical;
     private Vector3 direction;
-    public Animator animator;
-    public float speed = 10.0f;
-    public float attackDelay = 3.0f;
     private IMechanic left1;
     private IMechanic right1;
     private IMechanic left2;

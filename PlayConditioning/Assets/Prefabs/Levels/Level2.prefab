@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2803660087562184109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,6 +87,26 @@ PrefabInstance:
     - target: {fileID: 1113615759287224945, guid: d62bb52e229abe0439231367a9d354a6, type: 3}
       propertyPath: m_Name
       value: Background2_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335807692935133795, guid: d62bb52e229abe0439231367a9d354a6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223653479015984235, guid: d62bb52e229abe0439231367a9d354a6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853888807084628776, guid: d62bb52e229abe0439231367a9d354a6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167087547021671146, guid: d62bb52e229abe0439231367a9d354a6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771243792194396693, guid: d62bb52e229abe0439231367a9d354a6, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

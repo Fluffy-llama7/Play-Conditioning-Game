@@ -42,5 +42,8 @@ public class EnemyProjectile : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public float Damage { get { return damage; } }
+    public float GetDamage()
+    {
+        return damage;
+    }
 }

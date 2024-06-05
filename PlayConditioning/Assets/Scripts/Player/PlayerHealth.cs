@@ -48,8 +48,17 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy Projectile")
         {
-            float damage = collision.gameObject.GetComponent<EnemyProjectile>().Damage;
+            float damage = collision.gameObject.GetComponent<EnemyProjectile>().GetDamage();
             this.TakeDamage(damage);
+        }
+
+        if (GameManager.instance.GetVersion() == 2)
+        {
+            if (collision.gameObject.name == "Orb")
+            {
+                float damage = collision.gameObject.GetComponent<OrbController>().GetDamage();
+                this.TakeDamage(damage);
+            }
         }
     }
 }

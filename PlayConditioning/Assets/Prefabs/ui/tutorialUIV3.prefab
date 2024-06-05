@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1965321797702848175}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: tutorialUIV3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

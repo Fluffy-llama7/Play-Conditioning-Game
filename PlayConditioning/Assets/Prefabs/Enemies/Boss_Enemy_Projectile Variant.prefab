@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_Enemy_Projectile Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4910964721591853143, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -832166319503565169, guid: 33b18effc39542647b0fad4d6b0f91ab, type: 3}
     m_RemovedGameObjects: []

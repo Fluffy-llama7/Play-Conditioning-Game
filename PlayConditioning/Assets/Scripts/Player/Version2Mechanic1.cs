@@ -19,7 +19,7 @@ public class Version2Mechanic1 : MonoBehaviour, IMechanic
     private void Awake()
     {
         orb = GameObject.Find("Orb");
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.Find("Player");
 
         orbRigidbody = orb.GetComponent<Rigidbody2D>();
         orbCollider = orb.GetComponent<Collider2D>();

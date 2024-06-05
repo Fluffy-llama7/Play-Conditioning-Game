@@ -27,11 +27,9 @@ public class EnemyHealth : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-
         if (collision.gameObject.name == "Orb")
         {
-            float damage = collision.gameObject.GetComponent<OrbController>().Damage;
+            float damage = collision.gameObject.GetComponent<OrbController>().GetDamage();
             TakeDamage(damage);
         }
     }

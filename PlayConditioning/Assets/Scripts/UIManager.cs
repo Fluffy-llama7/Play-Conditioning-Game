@@ -6,13 +6,13 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    public GameObject uiV1;
-    public GameObject uiV2;
-    public GameObject uiV3;
+    [SerializeField] private GameObject uiV1;
+    [SerializeField] private GameObject uiV2;
+    [SerializeField] private GameObject uiV3;
 
-    public GameObject tutorialUIV1;
-    public GameObject tutorialUIV2;
-    public GameObject tutorialUIV3;
+    [SerializeField] private GameObject tutorialUIV1;
+    [SerializeField] private GameObject tutorialUIV2;
+    [SerializeField] private GameObject tutorialUIV3;
 
     private bool isTutorialActive;
 

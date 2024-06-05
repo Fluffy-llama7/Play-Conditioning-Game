@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 5350085711914380121}
   - component: {fileID: 7530500391530139669}
   - component: {fileID: -649471028982460717}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -334,8 +334,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1112381139
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 5
   m_PreviewTimeScale: 1

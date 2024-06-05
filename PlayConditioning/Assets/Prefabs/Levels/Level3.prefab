@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3181004623424059721}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,6 +44,10 @@ PrefabInstance:
     - target: {fileID: 5282283722823528283, guid: d6b84478c3d54e94d835e638c907ace3, type: 3}
       propertyPath: m_Name
       value: pool 1_0 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282283722823528283, guid: d6b84478c3d54e94d835e638c907ace3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6413287763663698218, guid: d6b84478c3d54e94d835e638c907ace3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -103,6 +107,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3181004623424059721}
     m_Modifications:
+    - target: {fileID: 1394258013939997476, guid: 5907e684b07dd5f4a8d895a02663978f, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995473490347300726, guid: 5907e684b07dd5f4a8d895a02663978f, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2078214307871834926, guid: 5907e684b07dd5f4a8d895a02663978f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9168216
@@ -146,6 +158,14 @@ PrefabInstance:
     - target: {fileID: 6622166901928966473, guid: 5907e684b07dd5f4a8d895a02663978f, type: 3}
       propertyPath: m_Name
       value: Background_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797304217259071064, guid: 5907e684b07dd5f4a8d895a02663978f, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706548689886755279, guid: 5907e684b07dd5f4a8d895a02663978f, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
