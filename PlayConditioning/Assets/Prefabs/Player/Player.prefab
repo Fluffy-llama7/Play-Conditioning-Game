@@ -278,9 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f66663dc1824e5eb9decd02500e1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastSpeed: 2
-  blastGracePeriod: 3
-  moveWaitTime: 2
+  prefab: {fileID: 6945065713871620848, guid: 2caf3e86b4670fd4eb53c2494ea45d09, type: 3}
 --- !u!114 &7530500391530139669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recordTime: 5
+  cooldownTime: 2
 --- !u!120 &-1084991140189764563
 LineRenderer:
   serializedVersion: 2

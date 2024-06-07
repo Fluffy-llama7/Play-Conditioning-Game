@@ -5,10 +5,13 @@ using UnityEngine;
 public class Version3Mechanic1 : MonoBehaviour, IMechanic
 {
     public float recordTime = 5.0f; // Time in seconds to keep track of the player's position
+    public float cooldownTime = 2.0f; // Time in seconds for the mechanic to remain active
     private LineRenderer lineRenderer;
     private List<Vector3> positions;
     private float timer;
     private bool isActive = false;
+
+    // Mechanic 1: Draw a path and enclose enemies within it
 
     private void Awake()
     {
@@ -32,25 +35,34 @@ public class Version3Mechanic1 : MonoBehaviour, IMechanic
 
         timer += Time.deltaTime;
 
-        // Record the player's position every frame
-        positions.Add(transform.position);
-
-        // Remove positions that are older than the record time
-        while (positions.Count > 0 && timer > recordTime)
+        if (timer > recordTime + cooldownTime)
         {
-            positions.RemoveAt(0);
-            timer -= Time.deltaTime;
+            isActive = false;
+            lineRenderer.positionCount = 0;
+            CheckForEnclosedEnemies();
+            enabled = false;
+            return;
         }
 
-        // Update the LineRenderer
-        lineRenderer.positionCount = positions.Count;
-        if (positions.Count > 1) // Ensure there are enough points to draw a line
+        if (timer <= recordTime)
         {
-            lineRenderer.SetPositions(positions.ToArray());
-        }
+            // Record the player's position every frame
+            positions.Add(transform.position);
 
-        // Check if any enemies are enclosed by the path
-        CheckForEnclosedEnemies();
+            // Remove positions that are older than the record time
+            while (positions.Count > 0 && timer > recordTime)
+            {
+                positions.RemoveAt(0);
+                timer -= Time.deltaTime;
+            }
+
+            // Update the LineRenderer
+            lineRenderer.positionCount = positions.Count;
+            if (positions.Count > 1) // Ensure there are enough points to draw a line
+            {
+                lineRenderer.SetPositions(positions.ToArray());
+            }
+        }
     }
 
     private void CheckForEnclosedEnemies()
@@ -62,7 +74,10 @@ public class Version3Mechanic1 : MonoBehaviour, IMechanic
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                enemyHealth.isEnclosed = IsPointEnclosed(enemy.transform.position);
+                if (IsPointEnclosed(enemy.transform.position))
+                {
+                    enemyHealth.TakeDamage(3.0f); // Assume there's a method to apply damage
+                }
             }
         }
     }
@@ -88,29 +103,5 @@ public class Version3Mechanic1 : MonoBehaviour, IMechanic
 
         // If the intersection count is odd, the point is inside the polygon
         return intersectionCount % 2 == 1;
-    }
-
-    // Point-in-polygon algorithm to determine if a point is inside a polygon
-    private bool IsPointInPolygon(List<Vector3> polygon, Vector3 point)
-    {
-        int polygonLength = polygon.Count, i = 0;
-        bool inside = false;
-
-        // Get the point in 2D space
-        float pointX = point.x, pointY = point.y;
-        float startX, startY, endX, endY;
-        Vector3 endPoint = polygon[polygonLength - 1];
-        endX = endPoint.x;
-        endY = endPoint.y;
-        while (i < polygonLength)
-        {
-            startX = endX;
-            startY = endY;
-            endPoint = polygon[i++];
-            endX = endPoint.x;
-            endY = endPoint.y;
-            inside ^= (endY > pointY ^ startY > pointY) && (pointX < (startX - endX) * (pointY - endY) / (startY - endY) + endX);
-        }
-        return inside;
     }
 }

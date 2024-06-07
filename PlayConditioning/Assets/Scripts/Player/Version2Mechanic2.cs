@@ -4,7 +4,6 @@ using Mech;
 public class Version2Mechanic2 : MonoBehaviour, IMechanic
 {
     [SerializeField] private float timeBetweenOrbs = 3.0f;
-
     private GameObject orb;
     private SpriteRenderer orbRenderer;
     private CircleCollider2D orbCollider;
@@ -14,6 +13,8 @@ public class Version2Mechanic2 : MonoBehaviour, IMechanic
     private bool active = false;
     private bool orbGrowing = false;
     private Vector3 lastPlayerPosition;
+
+    // Mechanic 2: Summons an orb that targets the player's last position and falls on it
 
     private void Awake()
     {

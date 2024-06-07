@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6381810380955244505, guid: b51715212aec76a49b8d322787a8cb7f, type: 3}
   animator: {fileID: 1628668572845883290}
-  speed: 5
+  speed: 4
   basicRange: 2
   tankRange: 10
   chargeRange: 10
@@ -210,3 +210,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHealth: 20
+  isEnclosed: 0

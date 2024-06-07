@@ -20,9 +20,7 @@ public class MainMenu : MonoBehaviour
         optionsMenuUI.SetActive(true);
         mainMenuUI.SetActive(false);
         Time.timeScale = 0f;
-
-        float version = GameManager.instance.GetVersion();
-        versionText.text = "current game version: " + version;
+        UpdateVersionText();
     }
 
     public void ExitGame()
@@ -40,15 +38,24 @@ public class MainMenu : MonoBehaviour
     public void Option1()
     {
         GameManager.instance.UpdateVersion(1);
+        UpdateVersionText();
     }
 
     public void Option2()
     {
         GameManager.instance.UpdateVersion(2);
+        UpdateVersionText();
     }
 
     public void Option3()
     {
         GameManager.instance.UpdateVersion(3);
+        UpdateVersionText();
+    }
+
+    private void UpdateVersionText()
+    {
+        float version = GameManager.instance.GetVersion();
+        versionText.text = "current game version: " + version;
     }
 }

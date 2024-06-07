@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7636386181009290154}
-  speed: 5
+  speed: 3
   range: 3
   chargeTime: 2
   damage: 2
@@ -206,3 +206,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHealth: 15
+  isEnclosed: 0

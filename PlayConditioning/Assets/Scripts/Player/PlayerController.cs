@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mech;
-using System.Linq;
-using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private float speed = 10.0f;
     [SerializeField] private float attackDelay = 3.0f;
+    [SerializeField] private float mechanicCooldown = 1.0f; // Cooldown duration in seconds
     private Rigidbody2D body;
     private float horizontal;
     private float vertical;
@@ -20,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private IMechanic right2;
     private IMechanic left3;
     private IMechanic right3;
+    private bool isCooldownActive;
+    private float cooldownTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +33,13 @@ public class PlayerController : MonoBehaviour
         left3 = GetComponent<Version3Mechanic1>();
         right3 = GetComponent<Version3Mechanic2>();
         animator = GetComponent<Animator>();
+        isCooldownActive = false;
     }
 
     public void OnLeftClick(float version)
     {
+        if (isCooldownActive) return;
+
         switch (version)
         {
             case 1:
@@ -48,10 +52,13 @@ public class PlayerController : MonoBehaviour
                 left3.Execute();
                 break;
         }
+        StartCooldown();
     }
 
     public void OnRightClick(float version)
     {
+        if (isCooldownActive) return;
+
         switch (version)
         {
             case 1:
@@ -64,6 +71,7 @@ public class PlayerController : MonoBehaviour
                 right3.Execute();
                 break;
         }
+        StartCooldown();
     }
 
     void Update()
@@ -84,6 +92,15 @@ public class PlayerController : MonoBehaviour
         {
             OnRightClick(GameManager.instance.GetVersion());
         }
+
+        if (isCooldownActive)
+        {
+            cooldownTimer -= Time.deltaTime;
+            if (cooldownTimer <= 0f)
+            {
+                isCooldownActive = false;
+            }
+        }
     }
 
     public float GetCurrentSpeed()
@@ -99,5 +116,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * speed, vertical * speed);
+    }
+
+    private void StartCooldown()
+    {
+        isCooldownActive = true;
+        cooldownTimer = mechanicCooldown;
     }
 }

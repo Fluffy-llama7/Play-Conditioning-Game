@@ -6,18 +6,11 @@ using Mech;
 
 public class Version1Mechanic1 : MonoBehaviour, IMechanic
 {
-    private GameObject orb;
     private Vector2 mousePosition;
     [SerializeField] private GameObject prefab;
     private float force = 20f;
 
     // Mechanic 1: Player shoots a projectile in the direction of the mouse
-
-    void Awake()
-    {
-        orb = GameObject.Find("Orb");
-    }
-
     public void Execute()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

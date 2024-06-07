@@ -22,7 +22,6 @@ public class EnemyProjectile : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        // Destroy the bullet after 5 seconds if it doesn't hit the ball
         if (timer >= 2.0f)
         {
             Destroy(this.gameObject);
@@ -32,7 +31,6 @@ public class EnemyProjectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Calculate the direction of the bullet and set its velocity
         Vector3 direction = (target.transform.position - this.transform.position).normalized;
         rb.velocity = direction * force;
     }

@@ -6,7 +6,6 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float totalHealth = 10.0f;
     private float currentHealth;
-    public bool isEnclosed = false;
 
     private void Awake()
     {
@@ -22,15 +21,6 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-        }
-    }
-
-    public void Update()
-    {
-        if (isEnclosed)
-        {
-            TakeDamage(0.5f);
-            isEnclosed = false;
         }
     }
 

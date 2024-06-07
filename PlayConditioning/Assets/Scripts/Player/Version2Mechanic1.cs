@@ -11,9 +11,7 @@ public class Version2Mechanic1 : MonoBehaviour, IMechanic
     private bool isActive = false;
     [SerializeField] private float orbSpeed = 5.0f;
 
-    // Mechanic 1: player is followed by orb
-    // Orb can also damage player upon contact
-    // Orb can be guided to hit enemies
+    // Mechanic 1: Summon an orb that follows the player
 
     private void Awake()
     {

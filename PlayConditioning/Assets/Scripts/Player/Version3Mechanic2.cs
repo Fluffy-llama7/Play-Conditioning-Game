@@ -6,77 +6,53 @@ using Mech;
 
 public class Version3Mechanic2 : MonoBehaviour, IMechanic
 {
-    private GameObject blast;
-    private TrailRenderer trailRenderer;
-    private Vector2 targetPosition;
-    private bool active;
-    private bool gracePeriodFlag;
-    private float elapsedTime;
-    [SerializeField] 
-    private float blastSpeed = 2.0f;
-    [SerializeField] 
-    private float blastGracePeriod = 3.0f;
-    [SerializeField] 
-    private float moveWaitTime = 2.0f;
+    private Vector2 mousePosition;
+    [SerializeField] private GameObject prefab;
+    private float force = 75f;
+    private bool isCharging = false;
+    private float chargeStartTime;
+    private float maxChargeTime = 2f; // Faster charging
 
-    void Awake()
-    {
-        blast = GameObject.Find("Blast");
-        trailRenderer = GetComponent<TrailRenderer>();
-        trailRenderer.enabled = false;
-        active = false;
-        gracePeriodFlag = false;
-        elapsedTime = 0.0f;
-    }
+    // Mechanic 2: Charge and shoot a projectile
 
-    /// <summary>
-    /// Charges up the blast
-    /// </summary>
     public void Execute()
     {
-        if (!active)
+        if (!isCharging)
         {
-            active = true;
+            // Start charging
+            isCharging = true;
+            chargeStartTime = Time.time;
+            Debug.Log("Charging started");
+        }
+        else
+        {
+            // Shoot the projectile
+            float chargeTime = Mathf.Min(Time.time - chargeStartTime, maxChargeTime);
+            float chargeFactor = chargeTime / maxChargeTime;
+
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 shootDirection = mousePosition - (Vector2)transform.position;
+            shootDirection.Normalize();
+
+            GameObject projectile = Instantiate(prefab, transform.position, Quaternion.identity);
+            Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+
+            // Adjust the projectile size based on charge time
+            float size = Mathf.Lerp(1f, 5f, chargeFactor); // Increase size growth faster
+            projectile.transform.localScale = new Vector3(size, size, 1f);
+
+            // Apply force based on charge time
+            projectileRb.AddForce(shootDirection * force * chargeFactor, ForceMode2D.Impulse);
+
+            Debug.Log("Shoot with charge time: " + chargeTime + " seconds");
+
+            // Reset charging state
+            isCharging = false;
         }
     }
 
     public void Update()
     {
-        if (active)
-        {
-            if (!gracePeriodFlag)
-            {
-                elapsedTime += Time.deltaTime;
-                if (elapsedTime >= moveWaitTime)
-                {
-                    targetPosition = this.transform.position;
-                    elapsedTime = 0.0f;
-                    gracePeriodFlag = true;
-                    Debug.Log("The grace period has started.");
-                }
-            }
-            else
-            {
-                elapsedTime += Time.deltaTime;
-                if (elapsedTime >= blastGracePeriod)
-                {
-                    blast.transform.position = Vector2.MoveTowards(blast.transform.position, targetPosition, 
-                        blastSpeed * Time.deltaTime);
-                    if (Vector2.Distance(blast.transform.position, targetPosition) <= 0)
-                    {
-                        elapsedTime = 0.0f;
-                        gracePeriodFlag = false;
-                    }
-                }
-            }
-        }
-    }
-
-    /// <summary>
-    /// Stops charging up the blast
-    /// </summary>
-    public void Stop()
-    {
-        active = false;
+        
     }
 }
