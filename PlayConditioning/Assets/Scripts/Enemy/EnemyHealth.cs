@@ -4,17 +4,31 @@ using Mech;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] HealthBarController healthBar;
     [SerializeField] private float totalHealth = 10.0f;
     private float currentHealth;
 
     private void Awake()
     {
-        currentHealth = totalHealth;
+        this.currentHealth = totalHealth;
+        this.healthBar.SetMaxHealth(totalHealth);
+    }
+
+    public float GetHealth()
+    {
+        return currentHealth;
+    }
+
+    public void SetHealth(float health)
+    {
+        currentHealth = health;
+        healthBar.SetHealth(health);
     }
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        this.currentHealth -= damage;
+        this.healthBar.SetHealth(currentHealth);
 
         Debug.Log("Enemy's health: " + currentHealth);
 
@@ -29,6 +43,12 @@ public class EnemyHealth : MonoBehaviour
         if (collision.gameObject.name == "Orb")
         {
             float damage = collision.gameObject.GetComponent<OrbController>().GetDamage();
+            TakeDamage(damage);
+        }
+
+        if (collision.gameObject.CompareTag("Player Projectile"))
+        {
+            float damage = collision.gameObject.GetComponent<PlayerProjectile>().GetDamage();
             TakeDamage(damage);
         }
     }

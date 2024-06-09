@@ -6,20 +6,32 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
     private float timer = 0.0f;
+    [SerializeField] private float damage = 1.0f;
 
     private void Update()
     {
         timer += Time.deltaTime;
 
-        if (timer >= 30.0f)
+        if (timer >= 15.0f)
         {
             Destroy(this.gameObject);
             timer = 0.0f;
         }
     }
 
+    public void SetDamage(float damageAmt)
+    {
+        damage = damageAmt;
+    }
+
+    public float GetDamage()
+    {
+        return damage;
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log("Projectile collided with " + other.gameObject.name);
         Destroy(this.gameObject);
     }
 }

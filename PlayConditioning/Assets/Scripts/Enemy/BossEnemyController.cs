@@ -143,7 +143,10 @@ public class BossEnemyController : MonoBehaviour, IEnemy
         for (float angle = 0; angle < 360; angle += 45)
         {
             Quaternion rotation = Quaternion.Euler(0, 0, angle);
-            Instantiate(projectilePrefab, transform.position, rotation);
+            GameObject projectiles = Instantiate(projectilePrefab, transform.position, rotation);
+            Rigidbody2D projectileRb = projectiles.GetComponent<Rigidbody2D>();
+            projectileRb.AddForce(rotation * Vector2.up * 5f, ForceMode2D.Impulse);
+
         }
     }
 

@@ -7,9 +7,10 @@ public class TankEnemyController : MonoBehaviour, IEnemy
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Animator animator;
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float range = 8f;
+    [SerializeField] private float range = 10f;
     [SerializeField] private float fireTime = 1f;
     [SerializeField] private float damage = 1f;
+    [SerializeField] private float projectileForce = 10f;
 
     private GameObject target;
     private Rigidbody2D rb;
@@ -60,16 +61,22 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
         if (canFire)
         {
+            Debug.Log("Tank enemy fired a projectile");
             InstantiateProjectile();
+
             canFire = false;
             StartCoroutine(ShootDelay());
         }
     }
 
+
     private void InstantiateProjectile()
     {
-        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        GameObject projectileObject = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        Rigidbody2D projectileRb = projectileObject.GetComponent<Rigidbody2D>();
+        projectileRb.AddForce(direction * projectileForce, ForceMode2D.Impulse);
     }
+
 
     private IEnumerator ShootDelay()
     {

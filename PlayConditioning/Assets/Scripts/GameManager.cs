@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (!GameManager.instance)
+        if (!instance)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
                 }
 
                 enemies.Clear();
-                
                 break;
         }
     }

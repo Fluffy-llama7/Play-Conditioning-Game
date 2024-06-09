@@ -8,4 +8,9 @@ public class EndMenu : MonoBehaviour
     {
         GameManager.instance.UpdateState(GameState.Menu);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private float speed = 10.0f;
-    [SerializeField] private float attackDelay = 3.0f;
     [SerializeField] private float mechanicCooldown = 1.0f; // Cooldown duration in seconds
     private Rigidbody2D body;
     private float horizontal;
@@ -52,6 +51,7 @@ public class PlayerController : MonoBehaviour
                 left3.Execute();
                 break;
         }
+
         StartCooldown();
     }
 
@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
                 right3.Execute();
                 break;
         }
+
         StartCooldown();
     }
 
@@ -96,6 +97,7 @@ public class PlayerController : MonoBehaviour
         if (isCooldownActive)
         {
             cooldownTimer -= Time.deltaTime;
+
             if (cooldownTimer <= 0f)
             {
                 isCooldownActive = false;
