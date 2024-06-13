@@ -6,8 +6,8 @@ using Mech;
 
 public class Version1Mechanic1 : MonoBehaviour, IMechanic
 {
-    private Vector2 mousePosition;
     [SerializeField] private GameObject prefab;
+    private Vector2 mousePosition;
     private float force = 20f;
 
     // Mechanic 1: Player shoots a projectile in the direction of the mouse

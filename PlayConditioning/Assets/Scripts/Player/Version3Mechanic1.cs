@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Version3Mechanic1 : MonoBehaviour, IMechanic
 {
-    public float recordTime = 5.0f; // Time in seconds to keep track of the player's position
-    public float cooldownTime = 2.0f; // Time in seconds for the mechanic to remain active
+    public float recordTime = 5.0f;
+    public float cooldownTime = 2.0f;
     private LineRenderer lineRenderer;
     private List<Vector3> positions;
     private float timer;

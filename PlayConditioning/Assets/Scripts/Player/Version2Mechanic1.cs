@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Version2Mechanic1 : MonoBehaviour, IMechanic
 {
+    [SerializeField] private float orbSpeed = 5.0f;
+    [SerializeField] private float duration = 5.0f;
     private GameObject orb;
     private GameObject player;
     private Rigidbody2D orbRigidbody;
     private bool isActive = false;
     private float activeTime;
-    [SerializeField] private float orbSpeed = 5.0f;
-    [SerializeField] private float duration = 5.0f; // Duration the mechanic will last
 
     // Mechanic 1: Summon an orb that follows the player
 
@@ -35,7 +35,7 @@ public class Version2Mechanic1 : MonoBehaviour, IMechanic
     public void Execute()
     {
         isActive = true;
-        activeTime = Time.time + duration; // Set the time when the mechanic will end
+        activeTime = Time.time + duration;
     }
 
     public void Update()
@@ -44,8 +44,8 @@ public class Version2Mechanic1 : MonoBehaviour, IMechanic
 
         if (Time.time > activeTime)
         {
-            isActive = false; // Deactivate the mechanic after the duration
-            orbRigidbody.velocity = Vector2.zero; // Stop the orb movement
+            isActive = false;
+            orbRigidbody.velocity = Vector2.zero;
             return;
         }
 

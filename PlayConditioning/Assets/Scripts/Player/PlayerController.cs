@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private float speed = 10.0f;
-    [SerializeField] private float mechanicCooldown = 1.0f; // Cooldown duration in seconds
+    [SerializeField] private float mechanicCooldown = 1.0f;
     private Rigidbody2D body;
     private float horizontal;
     private float vertical;

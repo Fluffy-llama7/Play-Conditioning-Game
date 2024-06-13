@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class OrbController : MonoBehaviour
 {
-    [SerializeField]
-    private float damage = 3.0f;
-    private Rigidbody2D rb;
+    [SerializeField] private float damage = 3.0f;
     private CircleCollider2D orbCollider;
     private PhysicsMaterial2D orbPhysics;
-    private Vector3 lastVelocity;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         orbCollider = GetComponent<CircleCollider2D>();
         orbPhysics = orbCollider.sharedMaterial;
 
@@ -36,11 +32,6 @@ public class OrbController : MonoBehaviour
                 Destroy(this.gameObject);
                 break;
         }
-    }
-
-    void FixedUpdate()
-    {
-        lastVelocity = rb.velocity;
     }
 
     public float GetDamage()

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
-    private float timer = 0.0f;
     [SerializeField] private float damage = 1.0f;
+    private float timer = 0.0f;
 
     private void Update()
     {

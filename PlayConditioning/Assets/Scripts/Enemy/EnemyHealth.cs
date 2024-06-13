@@ -14,6 +14,11 @@ public class EnemyHealth : MonoBehaviour
         this.healthBar.SetMaxHealth(totalHealth);
     }
 
+    private void OnDestroy()
+    {
+        EnemyManager.instance.EnemyKilled();
+    }
+
     public float GetHealth()
     {
         return currentHealth;

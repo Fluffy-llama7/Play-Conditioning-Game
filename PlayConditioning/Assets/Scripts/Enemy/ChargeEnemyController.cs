@@ -9,7 +9,6 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
     [SerializeField] private float range = 2f;
     [SerializeField] private float chargeTime = 2f;
     [SerializeField] private float damage = 2f;
-
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
@@ -20,13 +19,6 @@ public class ChargeEnemyController : MonoBehaviour, IEnemy
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        GameManager.instance.AddEnemy(this);
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.instance.RemoveEnemy(this);
     }
 
     public void Update()

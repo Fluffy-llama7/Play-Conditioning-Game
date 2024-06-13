@@ -4,21 +4,16 @@ using Mech;
 
 public class Version3Mechanic2 : MonoBehaviour, IMechanic
 {
-    private enum State
-    {
-        Charging,
-        Launching,
-    }
-
-    private State currentState = State.Charging;
-    private Vector2 mousePosition;
     [SerializeField] private GameObject prefab;
     [SerializeField] private float force = 25f;
+    [SerializeField] private float maxChargeTime = 5f;
+    [SerializeField] private float minSize = 1f;
+    [SerializeField] private float maxSize = 8f;
+    private enum State { Charging, Launching }
+    private State currentState = State.Charging;
+    private Vector2 mousePosition;
     private GameObject currentProjectile = null;
     private float growStartTime;
-    [SerializeField] private float maxChargeTime = 5f; // Charging time
-    [SerializeField] private float minSize = 1f; // Minimum size of the projectile
-    [SerializeField] private float maxSize = 8f; // Maximum size of the projectile
     private float baseDamage = 1f;
 
     // Mechanic 2: Charge and shoot a projectile

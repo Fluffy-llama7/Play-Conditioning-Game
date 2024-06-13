@@ -24,7 +24,6 @@ public class SceneController : MonoBehaviour
         }
     }
 
-
     public void LoadEndScene()
     {
         SceneManager.LoadScene("End Menu");

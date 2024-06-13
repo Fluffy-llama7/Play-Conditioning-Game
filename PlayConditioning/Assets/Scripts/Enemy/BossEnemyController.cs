@@ -7,21 +7,18 @@ public class BossEnemyController : MonoBehaviour, IEnemy
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Animator animator;
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float basicRange = 0f; // Separate range for Basic attack
-    [SerializeField] private float tankRange = 10f; // Separate range for Tank attack
-    [SerializeField] private float chargeRange = 10f; // Separate range for Charge attack
+    [SerializeField] private float basicRange = 0f;
+    [SerializeField] private float tankRange = 10f;
+    [SerializeField] private float chargeRange = 10f;
     [SerializeField] private float chargeTime = 2f;
     [SerializeField] private float fireTime = 1f;
     [SerializeField] private float damage = 4f;
-
     private GameObject target;
     private Rigidbody2D rb;
     private Vector2 direction;
-
     private bool canCharge = true;
     private bool canFire = true; 
     private bool isCharging = false; 
-
     private enum AttackMode { Basic, Tank, Charge }
     private AttackMode currentAttackMode;
 
@@ -30,14 +27,7 @@ public class BossEnemyController : MonoBehaviour, IEnemy
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        GameManager.instance.AddEnemy(this);
         StartCoroutine(SwitchAttackModeCycle());
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.instance.RemoveEnemy(this);
     }
 
     public void Update()
@@ -104,29 +94,24 @@ public class BossEnemyController : MonoBehaviour, IEnemy
         while (true)
         {
             currentAttackMode = AttackMode.Basic;
-            Debug.Log("Switching to Basic Attack");
-            yield return new WaitForSeconds(4f); // Basic attack for 4 seconds
+            yield return new WaitForSeconds(4f);
 
             currentAttackMode = AttackMode.Tank;
-            Debug.Log("Switching to Tank Attack");
-            yield return new WaitForSeconds(4f); // Tank attack for 4 seconds
+            yield return new WaitForSeconds(4f);
 
             currentAttackMode = AttackMode.Charge;
-            Debug.Log("Switching to Charge Attack");
-            yield return new WaitForSeconds(1f); // Charge attack for 1 second
+            yield return new WaitForSeconds(1f);
         }
     }
 
     private void BasicAttack()
     {
-        Debug.Log("Basic Attack");
         ResetAnimations();
         animator.SetBool("Basic", true);
     }
 
     private void TankAttack()
     {
-        Debug.Log("Tank Attack");
         ResetAnimations();
         animator.SetBool("Tank", true);
 
@@ -158,7 +143,6 @@ public class BossEnemyController : MonoBehaviour, IEnemy
 
     private void ChargeAttack()
     {
-        Debug.Log("Charge Attack");
         ResetAnimations();
         animator.SetBool("Charge", true);
 
@@ -174,13 +158,10 @@ public class BossEnemyController : MonoBehaviour, IEnemy
 
     private IEnumerator Charge(Vector3 chargeDirection)
     {
-        Debug.Log("Starting Charge");
         isCharging = true;
-        Debug.Log("isCharging: " + isCharging);
         rb.velocity = chargeDirection * speed * 4; 
         yield return new WaitForSeconds(0.3f);
         rb.velocity = Vector2.zero;
-        Debug.Log("Charge Complete");
         isCharging = false;
         animator.SetBool("Charge", false);
     }
@@ -189,7 +170,6 @@ public class BossEnemyController : MonoBehaviour, IEnemy
     {
         yield return new WaitForSeconds(chargeTime);
         canCharge = true;
-        Debug.Log("Can charge again");
     }
 
     private void ResetAnimations()

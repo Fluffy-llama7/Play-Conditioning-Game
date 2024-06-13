@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
-
-    [SerializeField] private GameObject uiV1;
-    [SerializeField] private GameObject uiV2;
-    [SerializeField] private GameObject uiV3;
-
-    [SerializeField] private GameObject tutorialUIV1;
-    [SerializeField] private GameObject tutorialUIV2;
-    [SerializeField] private GameObject tutorialUIV3;
-
+    [SerializeField] private GameObject controlsV1;
+    [SerializeField] private GameObject controlsV2;
+    [SerializeField] private GameObject controlsV3;
+    [SerializeField] private GameObject tutorialV1;
+    [SerializeField] private GameObject tutorialV2;
+    [SerializeField] private GameObject tutorialV3;
     private bool isTutorialActive;
+    public static UIManager instance;
 
     void Awake()
     {
-        if (!UIManager.instance)
+        if (!instance)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -36,13 +33,13 @@ public class UIManager : MonoBehaviour
         switch (GameManager.instance.GetVersion())
         {
             case 1:
-                uiV1.SetActive(true);
+                controlsV1.SetActive(true);
                 break;
             case 2:
-                uiV2.SetActive(true);
+                controlsV2.SetActive(true);
                 break;
             case 3:
-                uiV3.SetActive(true);
+                controlsV3.SetActive(true);
                 break;
         }
     }
@@ -55,13 +52,13 @@ public class UIManager : MonoBehaviour
         switch (GameManager.instance.GetVersion())
         {
             case 1:
-                tutorialUIV1.SetActive(true);
+                tutorialV1.SetActive(true);
                 break;
             case 2:
-                tutorialUIV2.SetActive(true);
+                tutorialV2.SetActive(true);
                 break;
             case 3:
-                tutorialUIV3.SetActive(true);
+                tutorialV3.SetActive(true);
                 break;
         }
     }
@@ -69,9 +66,9 @@ public class UIManager : MonoBehaviour
     public void CloseTutorialUI()
     {
         Time.timeScale = 1f;
-        tutorialUIV1.SetActive(false);
-        tutorialUIV2.SetActive(false);
-        tutorialUIV3.SetActive(false);
+        tutorialV1.SetActive(false);
+        tutorialV2.SetActive(false);
+        tutorialV3.SetActive(false);
         isTutorialActive = false;
     }
 
