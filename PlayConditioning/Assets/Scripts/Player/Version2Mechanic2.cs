@@ -3,76 +3,117 @@ using Mech;
 
 public class Version2Mechanic2 : MonoBehaviour, IMechanic
 {
-    [SerializeField] private float timeBetweenOrbs = 3.0f;
+    private enum State
+    {
+        Growing,
+        Smashing,
+    }
+
+    private State currentState = State.Growing;
     private GameObject orb;
     private SpriteRenderer orbRenderer;
     private CircleCollider2D orbCollider;
     private Color orbOriginalColor;
-    private Vector3 orbOriginalSize;
-    private float timeSinceLastFall = 0.0f;
-    private bool active = false;
-    private bool orbGrowing = false;
+    private float growStartTime;
+    [SerializeField] private float timeBetweenOrbs = 3.0f; // Time between orbs
     private Vector3 lastPlayerPosition;
+    private bool orbGrowing = false;
 
-    // Mechanic 2: Summons an orb that targets the player's last position and falls on it
+    [SerializeField] private float minSize = 0.1f; // Minimum size of the orb
+    [SerializeField] private float maxSize = 1.0f; // Maximum size of the orb
+    [SerializeField] private float growthSpeed = 1.0f; // Growth speed of the orb
 
     private void Awake()
     {
+        if (GameManager.instance.GetVersion() != 2)
+        {
+            this.enabled = false;
+        }
+        else
+        {
+            this.enabled = true;
+        }
+
         orb = GameObject.Find("Orb");
+
         if (orb != null)
         {
             orbCollider = orb.GetComponent<CircleCollider2D>();
             orbRenderer = orb.GetComponent<SpriteRenderer>();
             orbOriginalColor = orbRenderer.color;
-            orbOriginalSize = orb.transform.localScale;
         }
     }
 
     public void Execute()
     {
+        switch (currentState)
+        {
+            case State.Growing:
+                StartGrowing();
+                break;
+
+            case State.Smashing:
+                SmashOrb();
+                break;
+        }
+    }
+
+    private void StartGrowing()
+    {
         if (orb == null) return;
 
-        active = true;
-        ResetOrb();
         // Capture the player's last position
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+
         if (player != null)
         {
             lastPlayerPosition = player.transform.position;
             orb.transform.position = lastPlayerPosition;
+            orb.transform.localScale = new Vector3(minSize, minSize, minSize); // Start with minimum size
+            orbRenderer.color = Color.grey; // Change color to grey
+            orbCollider.enabled = false; // Disable collider during growing
+            growStartTime = Time.time;
             orbGrowing = true;
-            timeSinceLastFall = 0.0f;
+            currentState = State.Smashing;
+            Debug.Log("Growing started");
+        }
+    }
+
+    private void SmashOrb()
+    {
+        if (orb == null) return;
+
+        float elapsedTime = Time.time - growStartTime;
+
+        if (elapsedTime < timeBetweenOrbs)
+        {
+            // Grow the orb in size based on the growth speed
+            float growFactor = elapsedTime / (timeBetweenOrbs / growthSpeed);
+            float size = Mathf.Lerp(minSize, maxSize, growFactor);
+            orb.transform.localScale = new Vector3(size, size, size);
+        }
+        else
+        {
+            // Orb is fully grown, revert to original color and enable collider
+            orbRenderer.color = orbOriginalColor;
+            orbCollider.enabled = true; // Enable collider once the orb is in position
+            orbGrowing = false;
+            currentState = State.Growing; // Reset state for the next execution
+            Debug.Log("Orb fully grown and ready to smash");
         }
     }
 
     public void Update()
     {
-        if (!active || !orbGrowing || orb == null) return;
-
-        timeSinceLastFall += Time.deltaTime;
-
-        if (timeSinceLastFall < timeBetweenOrbs)
+        if (currentState == State.Smashing && orbGrowing && orb != null)
         {
-            // Grow the orb in size and change color to grey
-            orbRenderer.color = Color.grey;
-            Vector3 orbSize = orbOriginalSize * Mathf.Clamp01(timeSinceLastFall / timeBetweenOrbs);
-            orb.transform.localScale = orbSize;
-            orbCollider.enabled = false; // Disable collider during this phase
-        }
-        else
-        {
-            // Once the orb is fully grown and the time has elapsed, revert to original color and enable collider
-            orbRenderer.color = orbOriginalColor;
-            orb.transform.localScale = orbOriginalSize;
-            orbCollider.enabled = true; // Enable collider once the orb is in position
-            orbGrowing = false;
-            active = false; // Deactivate to ensure the process happens once per Execute call
+            SmashOrb();
         }
     }
 
     public void Disable()
     {
-        active = false;
+        currentState = State.Growing;
         orbGrowing = false;
         ResetOrb();
     }
@@ -86,9 +127,9 @@ public class Version2Mechanic2 : MonoBehaviour, IMechanic
     {
         if (orb != null)
         {
-            orb.transform.localScale = orbOriginalSize;
+            orb.transform.localScale = new Vector3(minSize, minSize, minSize); // Ensure the orb size resets to minSize
             orbRenderer.color = orbOriginalColor;
-            orbCollider.enabled = false; // Ensure collider is disabled until the orb is active again
+            orbCollider.enabled = true; // Ensure collider is disabled until the orb is active again
         }
     }
 }

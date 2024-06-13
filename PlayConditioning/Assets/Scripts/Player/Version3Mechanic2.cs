@@ -23,6 +23,18 @@ public class Version3Mechanic2 : MonoBehaviour, IMechanic
 
     // Mechanic 2: Charge and shoot a projectile
 
+    private void Awake()
+    {
+        if (GameManager.instance.GetVersion() != 3)
+        {
+            this.enabled = false;
+        }
+        else
+        {
+            this.enabled = true;
+        }
+    }
+
     public void Execute()
     {
         switch (currentState)
@@ -71,7 +83,7 @@ public class Version3Mechanic2 : MonoBehaviour, IMechanic
 
         // Set the damage based on the projectile size
         float projectileSize = currentProjectile.transform.localScale.x;
-        float damage = baseDamage * projectileSize;
+        float damage = baseDamage * Mathf.Pow(projectileSize, 2); // Quadratic scaling for damage
         currentProjectile.GetComponent<PlayerProjectile>().SetDamage(damage);
 
         Debug.Log("Projectile launched with charge time: " + chargeTime + " seconds and damage: " + damage);

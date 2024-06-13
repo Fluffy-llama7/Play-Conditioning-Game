@@ -15,9 +15,17 @@ public class Version3Mechanic1 : MonoBehaviour, IMechanic
 
     private void Awake()
     {
+        if (GameManager.instance.GetVersion() != 3)
+        {
+            this.enabled = false;
+        }
+        else
+        {
+            this.enabled = true;
+        }
+
         lineRenderer = GetComponent<LineRenderer>();
         positions = new List<Vector3>();
-        enabled = false;
     }
 
     public void Execute()

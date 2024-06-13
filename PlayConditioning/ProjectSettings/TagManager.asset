@@ -12,12 +12,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player layer
+  - Player
   - Water
   - UI
-  - Enemy layer
-  - Orb Layer
-  - 
+  - Enemy
+  - Orb
+  - Projectile
   - Obstacle
   - Background
   - 

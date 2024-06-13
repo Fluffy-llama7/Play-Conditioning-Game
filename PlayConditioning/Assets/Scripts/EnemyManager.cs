@@ -17,12 +17,11 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private float minSpawnInterval = 1f; // Minimum spawn interval in seconds
     [SerializeField] private float maxSpawnInterval = 5f; // Maximum spawn interval in seconds
 
-    [SerializeField] private int initialEnemies = 10; // Number of enemies spawning initially
-    [SerializeField] private int additionalEnemiesPerLevel = 5; // Number of additional enemies to spawn after each level
+    // Serialized field for the number of enemies to spawn for each level
+    [SerializeField] private int[] enemiesPerLevel = { 10, 15, 20, 25, 30, 35, 40 };
 
     private List<GameObject> enemyPrefabs;
-    private int currentLevel = 1;
-    private int enemiesPerLevel;
+    private GameManager gameManager;
     private int maxLevel = 7;
 
     private void Awake()
@@ -37,52 +36,56 @@ public class EnemyManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        gameManager = GameManager.instance;
     }
 
     private void Start()
     {
         enemyPrefabs = new List<GameObject> { basicEnemyPrefab, chargedEnemyPrefab, tankEnemyPrefab, bossEnemyPrefab };
-        enemiesPerLevel = initialEnemies;
         StartCoroutine(SpawnEnemies());
     }
 
     private IEnumerator SpawnEnemies()
     {
-        while (currentLevel <= maxLevel)
+        while (gameManager.currentState != GameState.End && gameManager.currentState != GameState.Menu)
         {
-            // Check if the game is in a level state
-            if (GameManager.instance.currentState != GameState.Menu && GameManager.instance.currentState != GameState.End)
+            int currentLevel = (int)gameManager.currentState;
+
+            if (currentLevel > maxLevel)
             {
-                for (int i = 0; i < enemiesPerLevel; i++)
-                {
-                    SpawnRandomEnemy();
-                    yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval)); // Random spawn interval
-                }
-                currentLevel++;
-                enemiesPerLevel += additionalEnemiesPerLevel;
+                Debug.LogWarning("Current level exceeds max level defined.");
+                yield break;
             }
-            else
+
+            int enemiesToSpawn = CalculateEnemiesForLevel(currentLevel);
+
+            for (int i = 0; i < enemiesToSpawn; i++)
             {
-                // If not in a level state, wait for a short time before checking again
-                yield return new WaitForSeconds(1f);
+                SpawnRandomEnemy();
+                yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval)); // Random spawn interval
             }
+
+            yield return null; // Wait for a frame before checking the game state again
+        }
+    }
+
+    private int CalculateEnemiesForLevel(int level)
+    {
+        // Fetch the number of enemies for the specified level from the serialized array
+        if (level >= 1 && level <= maxLevel)
+        {
+            return enemiesPerLevel[level - 1]; // Subtract 1 to account for zero-based indexing
+        }
+        else
+        {
+            return 0; // Return 0 for levels outside the specified range
         }
     }
 
     private void SpawnRandomEnemy()
     {
-        int randomIndex;
-
-        // Exclude boss enemies for the first 3 levels
-        if (currentLevel < 4)
-        {
-            randomIndex = Random.Range(0, enemyPrefabs.Count - 1); // Exclude the last element (boss)
-        }
-        else
-        {
-            randomIndex = Random.Range(0, enemyPrefabs.Count); // Include all enemies
-        }
-
+        int randomIndex = Random.Range(0, enemyPrefabs.Count);
         Vector2 randomPosition = new Vector2(Random.Range(spawnAreaMin.x, spawnAreaMax.x), Random.Range(spawnAreaMin.y, spawnAreaMax.y));
         Instantiate(enemyPrefabs[randomIndex], randomPosition, Quaternion.identity);
     }

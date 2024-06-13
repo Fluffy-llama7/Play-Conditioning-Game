@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  totalHealth: 100
+  totalHealth: 200
 --- !u!114 &6795868051441691940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbSpeed: 3
+  duration: 5
 --- !u!114 &-4832197861149505014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenOrbs: 2
+  minSize: 0.1
+  maxSize: 1.5
+  growthSpeed: 1
 --- !u!114 &7530500391530139669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,10 +297,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1234921944697912299, guid: 7406ab65bdbb447459b0d1478308cbf0, type: 3}
   force: 20
-  firePoint: {fileID: 0}
-  maxChargeTime: 10
+  maxChargeTime: 15
   minSize: 1
-  maxSize: 5
+  maxSize: 8
 --- !u!120 &-1084991140189764563
 LineRenderer:
   serializedVersion: 2

@@ -12,7 +12,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 15.0f)
+        if (timer >= 30.0f)
         {
             Destroy(this.gameObject);
             timer = 0.0f;
@@ -31,7 +31,6 @@ public class PlayerProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Projectile collided with " + other.gameObject.name);
         Destroy(this.gameObject);
     }
 }

@@ -30,8 +30,6 @@ public class EnemyHealth : MonoBehaviour
         this.currentHealth -= damage;
         this.healthBar.SetHealth(currentHealth);
 
-        Debug.Log("Enemy's health: " + currentHealth);
-
         if (currentHealth <= 0)
         {
             Destroy(gameObject);

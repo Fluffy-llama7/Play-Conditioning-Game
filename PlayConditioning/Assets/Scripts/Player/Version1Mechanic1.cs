@@ -11,6 +11,18 @@ public class Version1Mechanic1 : MonoBehaviour, IMechanic
     private float force = 20f;
 
     // Mechanic 1: Player shoots a projectile in the direction of the mouse
+    private void Awake()
+    {
+        if (GameManager.instance.GetVersion() != 1)
+        {
+            this.enabled = false;
+        }
+        else
+        {
+            this.enabled = true;
+        }
+    }
+
     public void Execute()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -21,8 +33,6 @@ public class Version1Mechanic1 : MonoBehaviour, IMechanic
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
 
         projectileRb.AddForce(shootDirection * force, ForceMode2D.Impulse);
-
-        Debug.Log("Shoot");
     }
 
     public void Update()

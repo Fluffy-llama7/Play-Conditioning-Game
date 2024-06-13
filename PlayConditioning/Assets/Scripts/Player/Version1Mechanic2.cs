@@ -18,6 +18,15 @@ public class Version1Mechanic2 : MonoBehaviour, IMechanic
 
     void Awake()
     {
+        if (GameManager.instance.GetVersion() != 1)
+        {
+            this.enabled = false;
+        }
+        else
+        {
+            this.enabled = true;
+        }
+
         orb = GameObject.Find("Orb");
         player = GameObject.Find("Player");
         rb = orb.GetComponent<Rigidbody2D>();

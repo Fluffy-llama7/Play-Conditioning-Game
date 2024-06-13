@@ -61,7 +61,6 @@ public class TankEnemyController : MonoBehaviour, IEnemy
 
         if (canFire)
         {
-            Debug.Log("Tank enemy fired a projectile");
             InstantiateProjectile();
 
             canFire = false;
